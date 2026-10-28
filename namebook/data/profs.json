@@ -119,28 +119,6 @@
    "source": "bk"
   },
   {
-   "name": "김인겸",
-   "rank": "교수",
-   "dept": "약리학교실",
-   "kind": "기초",
-   "line": "고혈압이 생기는 원리를 면역세포·장내 미생물 관점에서 단일세포 분석으로 연구해요",
-   "keywords": [
-    "고혈압",
-    "면역",
-    "단일세포 분석"
-   ],
-   "links": [
-    [
-     "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTMwMQ==",
-     "교수 소개 페이지"
-    ]
-   ],
-   "contact": null,
-   "photo": "photos/inkim.jpg",
-   "email": "inkim@knu.ac.kr",
-   "source": "dir,bk"
-  },
-  {
    "name": "김정민",
    "rank": "교수",
    "dept": "미생물학교실",
@@ -273,28 +251,6 @@
    "source": "bk"
   },
   {
-   "name": "박낭운",
-   "rank": "교수",
-   "dept": "생화학·세포생물학교실",
-   "kind": "기초",
-   "line": "엘라스틴 유사 폴리펩타이드로 암을 찾아가는 약물·유전자(siRNA) 전달체를 개발해요",
-   "keywords": [
-    "약물전달",
-    "종양 표적",
-    "유전자 전달"
-   ],
-   "links": [
-    [
-     "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTMxNQ==",
-     "교수 소개 페이지"
-    ]
-   ],
-   "contact": null,
-   "photo": "photos/nwpark.jpg",
-   "email": "nwpark@knu.ac.kr",
-   "source": "pubmed"
-  },
-  {
    "name": "박지영",
    "rank": "교수",
    "dept": "병리학교실",
@@ -362,28 +318,6 @@
    "photo": "photos/mcbaek.jpg",
    "email": "mcbaek@knu.ac.kr",
    "source": "bk"
-  },
-  {
-   "name": "부용출",
-   "rank": "교수",
-   "dept": "분자의학교실",
-   "kind": "기초",
-   "line": "피부 항산화·미백·항노화 소재를 찾고, 고혈당이 상처 회복을 늦추는 원리를 연구해요",
-   "keywords": [
-    "피부 항산화",
-    "미백",
-    "화장품 소재"
-   ],
-   "links": [
-    [
-     "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTE5ODg=",
-     "교수 소개 페이지"
-    ]
-   ],
-   "contact": null,
-   "photo": "photos/ycboo.jpg",
-   "email": "ycboo@knu.ac.kr",
-   "source": "pubmed"
   },
   {
    "name": "석경호",
