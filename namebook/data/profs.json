@@ -1536,7 +1536,10 @@
     "김은경",
     "kek8735@knu.ac.kr"
    ],
-   "style": "DQC",
+   "style": [
+    "DQC",
+    "DQP"
+   ],
    "topics": [
     "brain"
    ],

@@ -46,9 +46,10 @@
     });
     const code = type.map(t => t[0]).join("");
     const [icon, name, text] = D.types[code];
-    // 주제가 겹치면 3점, 스타일 글자가 같으면 1점씩. 동점은 섞어서 매번 조금씩 다르게
+    // 주제가 겹치면 3점, 스타일 글자가 같으면 1점씩(유형이 여럿이면 가장 가까운 것). 동점은 섞어서 매번 조금씩 다르게
     const recs = shuffle(D.profs).map(p => ({ p,
-      s: 3 * p.topics.filter(t => picks.includes(t)).length + [...code].filter((c, i) => p.style[i] === c).length,
+      s: 3 * p.topics.filter(t => picks.includes(t)).length
+        + Math.max(...[].concat(p.style).map(st => [...code].filter((c, i) => st[i] === c).length)),
     })).sort((x, y) => y.s - x.s).slice(0, 5).map(r => r.p);
     return `<p class="label">나의 연구 스타일</p>
       <div class="type"><span class="emoji">${icon}</span><div><h2>${esc(name)}</h2>
