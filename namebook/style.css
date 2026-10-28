@@ -25,23 +25,21 @@ h2 { font-size: 20pt; font-weight: 700; letter-spacing: -0.03em; line-height: 1.
 
 /* 카드 6장 (2 x 3) */
 .grid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3, 1fr); gap: 5mm; flex: 1; margin-bottom: 4mm; }
-.card { position: relative; display: grid; grid-template-columns: 26mm 1fr 21mm; grid-template-rows: 35mm 1fr;
+.card { position: relative; display: grid; grid-template-columns: 26mm 1fr; grid-template-rows: 35mm 1fr;
   column-gap: 4mm; row-gap: 4mm; padding: 5mm; border: 1px solid var(--line); border-radius: 2mm; }
 .photo { grid-column: 1; grid-row: 1; width: 26mm; height: 35mm; object-fit: cover; object-position: 50% 20%;
   background: var(--photo); border-radius: 1mm; }
-.id { grid-column: 2 / 4; grid-row: 1; align-self: start; }
+.id { grid-column: 2; grid-row: 1; align-self: start; }
 .id h3 { display: flex; align-items: baseline; gap: 2mm; }
 .name { color: var(--accent); font-size: 16pt; font-weight: 700; letter-spacing: -0.02em; }
 .rank { font-size: 9.5pt; font-weight: 500; }
 .dept { color: var(--sub); font-size: 9pt; margin-top: 1mm; }
-.about { grid-column: 1 / 3; grid-row: 2; display: flex; flex-direction: column; justify-content: space-between; }
-.line { font-size: 9.5pt; line-height: 1.55; }
-.kw { display: flex; flex-wrap: wrap; gap: 1.2mm; }
+.about { grid-column: 1 / 3; grid-row: 2; display: flex; flex-direction: column; gap: 2mm; }
+.line { font-size: 10pt; line-height: 1.55; }
+.kw { display: flex; flex-wrap: wrap; gap: 1.2mm; margin-top: auto; }
 .kw li { color: var(--sub); font-size: 7.5pt; }
 .kw li::before { content: "#"; color: var(--accent); margin-right: 0.3mm; }
-.qr { grid-column: 3; grid-row: 2; align-self: end; text-align: center; }
-.qr svg { display: block; width: 21mm; height: 21mm; }
-.qr figcaption { margin-top: 2.4mm; color: var(--sub); font-size: 6.5pt; line-height: 1.3; }
+.go { align-self: flex-start; color: var(--accent); font-size: 8.5pt; font-weight: 600; }
 
 /* 표지 */
 .cover > header { margin-bottom: 7mm; }
@@ -61,13 +59,12 @@ h2 { font-size: 20pt; font-weight: 700; letter-spacing: -0.03em; line-height: 1.
 .index i { flex: 1; border-bottom: 1px dotted #c5cad2; transform: translateY(-1mm); }
 .index b { color: var(--accent); font-weight: 600; min-width: 4mm; text-align: right; }
 .home { align-self: start; padding: 5mm; border: 1px solid var(--line); border-radius: 2mm; font-size: 8.5pt; }
-.home .qr svg { width: 34mm; height: 34mm; margin: 0 auto 3mm; }
+.home .qr svg { display: block; width: 34mm; height: 34mm; margin: 0 auto 3mm; }
 .home .how { margin-top: 3mm; color: var(--sub); font-size: 8pt; }
 .note { color: var(--sub); font-size: 7.5pt; margin-bottom: 4mm; }
 
-/* 휴대폰·좁은 화면: 카드를 한 줄로 쌓고, QR 대신 누르는 링크 */
+/* 휴대폰·좁은 화면: 카드를 한 줄로 쌓기 */
 a { color: inherit; text-decoration: none; }
-.go { display: none; }
 @media screen and (max-width: 800px) {
   body { background: #f7f8fa; font-size: 14px; }
   .page { width: auto; height: auto; margin: 0; padding: 28px 16px 4px; background: none; display: block; overflow: visible; }
@@ -85,8 +82,9 @@ a { color: inherit; text-decoration: none; }
   .about { grid-column: 1 / 3; gap: 10px; }
   .line { font-size: 15px; }
   .kw li { font-size: 12px; }
-  .qr, .home .how { display: none; }
-  .go { display: block; padding: 10px 0 2px; border-top: 1px solid var(--line); color: var(--accent); font-size: 14px; font-weight: 600; }
+  .home .qr { display: none; }
+  .home .how { font-size: 13px; }
+  .go { align-self: stretch; padding: 10px 0 2px; border-top: 1px solid var(--line); color: var(--accent); font-size: 14px; font-weight: 600; }
 
   .cover .label { font-size: 14px; }
   .cover h2 { font-size: 26px; }

@@ -35,7 +35,6 @@ def card(p):
     <ul class="kw">{kws}</ul>
     <a class="go" href="{e(p['link'])}">{e(p['linkLabel'])} →</a>
   </div>
-  <figure class="qr">{qr_svg(p['link'])}<figcaption>{e(p['linkLabel'])}</figcaption></figure>
 </article>"""
 
 
@@ -82,7 +81,7 @@ def build():
     <aside class="home">
       <figure class="qr big">{qr_svg(meta['deptUrl'])}</figure>
       <p><b>의과학과 홈페이지</b><br><a href="{e(meta['deptUrl'])}">{e(meta['deptUrl'].split('//')[1].rstrip('/'))}</a></p>
-      <p class="how">카드마다 있는 QR을 찍으면 연구실 홈페이지나 교수 소개 페이지로 연결돼요.</p>
+      <p class="how">카드 아래 링크를 누르면 연구실 홈페이지나 교수 소개 페이지가 열려요.</p>
     </aside>
   </div>
   <p class="note">{e(meta['note'])}</p>""", "cover")
