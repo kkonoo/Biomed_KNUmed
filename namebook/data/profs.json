@@ -1,0 +1,1150 @@
+{
+ "meta": {
+  "school": "경북대학교 일반대학원",
+  "title": "의과학과 교수진 · 연구실 소개",
+  "lead": "의과학과에서는 기초의학과 임상의학 교수님들이 함께 대학원생을 지도해요. 관심 가는 연구 주제를 찾아보고, QR을 찍어 연구실을 더 알아보세요.",
+  "deptUrl": "https://biomed.knu.ac.kr/",
+  "note": "2026년 10월 기준 · 사진과 소속은 경북대 의과대학 홈페이지, 연구 소개는 교수님 실적 자료와 공개 프로필을 바탕으로 정리했어요."
+ },
+ "profs": [
+  {
+   "name": "구윤경",
+   "rank": "교수",
+   "dept": "기생충학·열대의학교실",
+   "kind": "기초",
+   "line": "말라리아 원충이 약에 내성을 갖는 원리를 밝히고 새 항말라리아 약물을 찾아요",
+   "keywords": [
+    "말라리아",
+    "약물 내성",
+    "열대의학"
+   ],
+   "link": "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTI4Mw==",
+   "linkLabel": "교수 소개 페이지",
+   "photo": "photos/kuku1819.jpg",
+   "email": "kuku1819@knu.ac.kr",
+   "source": "dir,bk"
+  },
+  {
+   "name": "권태균",
+   "rank": "교수",
+   "dept": "비뇨기과학교실",
+   "kind": "임상",
+   "line": "비뇨기암 치료와 조직공학·세포치료 기반 재생의학을 연구해요",
+   "keywords": [
+    "비뇨기종양",
+    "재생의학",
+    "세포치료"
+   ],
+   "link": "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTkx",
+   "linkLabel": "교수 소개 페이지",
+   "photo": "photos/tgkwon.jpg",
+   "email": "tgkwon@knu.ac.kr",
+   "source": "dir"
+  },
+  {
+   "name": "권태환",
+   "rank": "교수",
+   "dept": "생화학·세포생물학교실",
+   "kind": "기초",
+   "line": "콩팥이 몸의 수분을 조절하는 원리(수분통로 AQP2)를 유전자 전사 수준에서 연구해요",
+   "keywords": [
+    "신장 생리",
+    "수분통로단백",
+    "전사 조절"
+   ],
+   "link": "https://scholar.google.com/citations?user=e2JgDbkAAAAJ",
+   "linkLabel": "Google Scholar",
+   "photo": "photos/thkwon.jpg",
+   "email": "thkwon@knu.ac.kr",
+   "source": "bk"
+  },
+  {
+   "name": "김동선",
+   "rank": "교수",
+   "dept": "해부학교실",
+   "kind": "기초",
+   "line": "후성유전체 분석으로 미세먼지가 폐·피부 질환을 일으키는 기전과 바이오마커를 찾아요",
+   "keywords": [
+    "후성유전체",
+    "미세먼지",
+    "바이오마커"
+   ],
+   "link": "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTMyMw==",
+   "linkLabel": "교수 소개 페이지",
+   "photo": "photos/doskim.jpg",
+   "email": "doskim@knu.ac.kr",
+   "source": "bk"
+  },
+  {
+   "name": "김상현",
+   "rank": "교수",
+   "dept": "약리학교실",
+   "kind": "기초",
+   "line": "아토피피부염·알레르기 염증의 기전을 밝히고 새 치료 물질과 약물전달 기술을 개발해요",
+   "keywords": [
+    "아토피피부염",
+    "알레르기",
+    "면역약리"
+   ],
+   "link": "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTI5OA==",
+   "linkLabel": "교수 소개 페이지",
+   "photo": "photos/shkim72.jpg",
+   "email": "shkim72@knu.ac.kr",
+   "source": "bk"
+  },
+  {
+   "name": "김인겸",
+   "rank": "교수",
+   "dept": "약리학교실",
+   "kind": "기초",
+   "line": "고혈압이 생기는 원리를 면역세포·장내 미생물 관점에서 단일세포 분석으로 연구해요",
+   "keywords": [
+    "고혈압",
+    "면역",
+    "단일세포 분석"
+   ],
+   "link": "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTMwMQ==",
+   "linkLabel": "교수 소개 페이지",
+   "photo": "photos/inkim.jpg",
+   "email": "inkim@knu.ac.kr",
+   "source": "dir,bk"
+  },
+  {
+   "name": "김정민",
+   "rank": "교수",
+   "dept": "미생물학교실",
+   "kind": "기초",
+   "line": "다제내성 세균을 잡는 박테리오파지 치료제와 장내 미생물을 연구해요",
+   "keywords": [
+    "박테리오파지",
+    "슈퍼박테리아",
+    "장내 미생물"
+   ],
+   "link": "https://research.knu.ac.kr/en/persons/jungmin-kim/",
+   "linkLabel": "연구자 프로필",
+   "photo": "photos/minkim.jpg",
+   "email": "minkim@knu.ac.kr",
+   "source": "dir,bk"
+  },
+  {
+   "name": "김하정",
+   "rank": "부교수",
+   "dept": "생리학교실",
+   "kind": "기초",
+   "line": "죽은 세포를 치우는 탐식 작용과 염증 조절, 종양미세환경을 연구해요",
+   "keywords": [
+    "세포생리",
+    "염증 조절",
+    "종양미세환경"
+   ],
+   "link": "https://research.knu.ac.kr/en/persons/hajeong-kim/",
+   "linkLabel": "연구자 프로필",
+   "photo": "photos/kimhajeong.jpg",
+   "email": "kimhajeong@knu.ac.kr",
+   "source": "pure,pubmed"
+  },
+  {
+   "name": "김홍균",
+   "rank": "교수",
+   "dept": "안과학교실",
+   "kind": "임상",
+   "line": "안구건조증·각막질환을 장기칩 모델, 세포외소포 치료제, AI 영상 분석으로 연구해요",
+   "keywords": [
+    "안구건조증",
+    "장기칩",
+    "세포외소포"
+   ],
+   "link": "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTExMQ==",
+   "linkLabel": "교수 소개 페이지",
+   "photo": "photos/okeye.jpg",
+   "email": "okeye@knu.ac.kr",
+   "source": "bk"
+  },
+  {
+   "name": "남성욱",
+   "rank": "교수",
+   "dept": "분자의학교실",
+   "kind": "기초",
+   "line": "장 오가노이드 배양 칩과 이미지 분석 기술로 동물실험을 대신할 모델을 만들어요",
+   "keywords": [
+    "오가노이드",
+    "바이오칩",
+    "이미지 분석"
+   ],
+   "link": "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTI2NA==",
+   "linkLabel": "교수 소개 페이지",
+   "photo": "photos/nams.jpg",
+   "email": "nams@knu.ac.kr",
+   "source": "bk"
+  },
+  {
+   "name": "박권무",
+   "rank": "교수",
+   "dept": "해부학교실",
+   "kind": "기초",
+   "line": "급성 신장 손상과 섬유화가 생기고 회복되는 기전을 연구해요",
+   "keywords": [
+    "신장 손상",
+    "섬유화",
+    "일차섬모"
+   ],
+   "link": "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTMyMg==",
+   "linkLabel": "교수 소개 페이지",
+   "photo": "photos/kmpark.jpg",
+   "email": "kmpark@knu.ac.kr",
+   "source": "bk"
+  },
+  {
+   "name": "박근규",
+   "rank": "교수",
+   "dept": "내과학교실",
+   "kind": "임상",
+   "line": "간암 등 암세포의 대사와 페롭토시스 내성 기전을 밝혀 새 치료 표적을 찾아요",
+   "keywords": [
+    "암 대사",
+    "간암",
+    "페롭토시스"
+   ],
+   "link": "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTIyMQ==",
+   "linkLabel": "교수 소개 페이지",
+   "photo": "photos/kpark.jpg",
+   "email": "kpark@knu.ac.kr",
+   "source": "bk"
+  },
+  {
+   "name": "박낭운",
+   "rank": "교수",
+   "dept": "생화학·세포생물학교실",
+   "kind": "기초",
+   "line": "엘라스틴 유사 폴리펩타이드로 암을 찾아가는 약물·유전자(siRNA) 전달체를 개발해요",
+   "keywords": [
+    "약물전달",
+    "종양 표적",
+    "유전자 전달"
+   ],
+   "link": "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTMxNQ==",
+   "linkLabel": "교수 소개 페이지",
+   "photo": "photos/nwpark.jpg",
+   "email": "nwpark@knu.ac.kr",
+   "source": "pubmed"
+  },
+  {
+   "name": "박지영",
+   "rank": "교수",
+   "dept": "병리학교실",
+   "kind": "기초",
+   "line": "차세대 염기서열 분석(NGS)으로 갑상선암·부인암을 진단하는 분자병리를 연구해요",
+   "keywords": [
+    "분자병리",
+    "암 유전체",
+    "NGS"
+   ],
+   "link": "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTMwNw==",
+   "linkLabel": "교수 소개 페이지",
+   "photo": "photos/jyparkmd.jpg",
+   "email": "jyparkmd@knu.ac.kr",
+   "source": "pubmed"
+  },
+  {
+   "name": "배재성",
+   "rank": "교수",
+   "dept": "생리학교실",
+   "kind": "기초",
+   "line": "알츠하이머병 등 뇌질환에서 지질 신호와 미세아교세포의 역할을 연구해요",
+   "keywords": [
+    "알츠하이머병",
+    "지질 신호",
+    "신경줄기세포"
+   ],
+   "link": "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTMxNw==",
+   "linkLabel": "교수 소개 페이지",
+   "photo": "photos/jsbae.jpg",
+   "email": "jsbae@knu.ac.kr",
+   "source": "bk"
+  },
+  {
+   "name": "백문창",
+   "rank": "교수",
+   "dept": "분자의학교실",
+   "kind": "기초",
+   "line": "엑소좀(세포외소포)으로 암을 진단·치료하는 면역항암 기술을 개발해요",
+   "keywords": [
+    "엑소좀",
+    "면역항암",
+    "나노소포"
+   ],
+   "link": "http://exosome.knu.ac.kr",
+   "linkLabel": "연구실 홈페이지",
+   "photo": "photos/mcbaek.jpg",
+   "email": "mcbaek@knu.ac.kr",
+   "source": "bk"
+  },
+  {
+   "name": "부용출",
+   "rank": "교수",
+   "dept": "분자의학교실",
+   "kind": "기초",
+   "line": "피부 항산화·미백·항노화 소재를 찾고, 고혈당이 상처 회복을 늦추는 원리를 연구해요",
+   "keywords": [
+    "피부 항산화",
+    "미백",
+    "화장품 소재"
+   ],
+   "link": "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTE5ODg=",
+   "linkLabel": "교수 소개 페이지",
+   "photo": "photos/ycboo.jpg",
+   "email": "ycboo@knu.ac.kr",
+   "source": "pubmed"
+  },
+  {
+   "name": "석경호",
+   "rank": "교수",
+   "dept": "약리학교실",
+   "kind": "기초",
+   "line": "뇌의 교세포와 신경염증이 뇌 노화와 뇌질환에 미치는 영향을 연구해요",
+   "keywords": [
+    "신경염증",
+    "교세포",
+    "뇌 노화"
+   ],
+   "link": "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTI5OQ==",
+   "linkLabel": "교수 소개 페이지",
+   "photo": "photos/ksuk.jpg",
+   "email": "ksuk@knu.ac.kr",
+   "source": "dir,bk"
+  },
+  {
+   "name": "성영관",
+   "rank": "교수",
+   "dept": "면역학교실",
+   "kind": "기초",
+   "line": "탈모가 생기는 원리를 밝히고 모낭 재생과 발모 치료제를 개발해요",
+   "keywords": [
+    "탈모",
+    "모낭 재생",
+    "피부생물학"
+   ],
+   "link": "https://scholar.google.com/citations?user=fU6gc4EAAAAJ",
+   "linkLabel": "Google Scholar",
+   "photo": "photos/ysung.jpg",
+   "email": "ysung@knu.ac.kr",
+   "source": "dir,bk"
+  },
+  {
+   "name": "신민상",
+   "rank": "교수",
+   "dept": "미생물학교실",
+   "kind": "기초",
+   "line": "다제내성균(아시네토박터)의 병원성 조절 기전과 항균 단백질을 연구해요",
+   "keywords": [
+    "다제내성균",
+    "세균 병원성",
+    "항균 단백질"
+   ],
+   "link": "https://scholar.google.com/citations?user=o4Ucq2sAAAAJ",
+   "linkLabel": "Google Scholar",
+   "photo": "photos/shinms.jpg",
+   "email": "shinms@knu.ac.kr",
+   "source": "bk"
+  },
+  {
+   "name": "안병철",
+   "rank": "교수",
+   "dept": "핵의학교실",
+   "kind": "임상",
+   "line": "방사성요오드 치료가 듣지 않는 갑상선암을 재분화시키는 치료와 세포외소포를 연구해요",
+   "keywords": [
+    "갑상선암",
+    "핵의학",
+    "세포외소포"
+   ],
+   "link": "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTM4",
+   "linkLabel": "교수 소개 페이지",
+   "photo": "photos/abc2000.jpg",
+   "email": "abc2000@knu.ac.kr",
+   "source": "bk"
+  },
+  {
+   "name": "김석호",
+   "rank": "부교수",
+   "dept": "미생물학교실",
+   "kind": "기초",
+   "line": "박테리오파지와 엔도리신으로 다제내성균 감염을 치료하는 방법을 개발해요",
+   "keywords": [
+    "다제내성균",
+    "박테리오파지",
+    "엔도리신"
+   ],
+   "link": "https://www.researchgate.net/lab/Shukho-Kim-Lab-MDR-Phages-Shukho-Kim",
+   "linkLabel": "ResearchGate",
+   "photo": "photos/shukhokim.jpg",
+   "email": "shukhokim@knu.ac.kr",
+   "source": "dir,bk"
+  },
+  {
+   "name": "유정수",
+   "rank": "교수",
+   "dept": "분자의학교실",
+   "kind": "기초",
+   "line": "암을 찾아 영상화하고 치료하는 방사성의약품과 분자영상 프로브를 개발해요",
+   "keywords": [
+    "방사성의약품",
+    "분자영상",
+    "나노의학"
+   ],
+   "link": "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTI2Nw==",
+   "linkLabel": "교수 소개 페이지",
+   "photo": "photos/yooj.jpg",
+   "email": "yooj@knu.ac.kr",
+   "source": "bk"
+  },
+  {
+   "name": "윤영란",
+   "rank": "교수",
+   "dept": "분자의학교실",
+   "kind": "기초",
+   "line": "약이 몸속에서 움직이는 방식(약동학)과 대사체를 분석하고 AI로 신약 개발을 도와요",
+   "keywords": [
+    "임상약리",
+    "대사체학",
+    "약동학"
+   ],
+   "link": "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTI2Ng==",
+   "linkLabel": "교수 소개 페이지",
+   "photo": "photos/yry.jpg",
+   "email": "yry@knu.ac.kr",
+   "source": "bk"
+  },
+  {
+   "name": "이경민",
+   "rank": "교수",
+   "dept": "해부학교실",
+   "kind": "기초",
+   "line": "인지·시스템 신경과학과 분자신경생물학으로 뇌가 일하는 원리를 연구해요",
+   "keywords": [
+    "신경과학",
+    "인지",
+    "분자신경생물학"
+   ],
+   "link": "https://research.knu.ac.kr/en/persons/kyungmin-lee/",
+   "linkLabel": "연구자 프로필",
+   "photo": "photos/irislkm.jpg",
+   "email": "irislkm@knu.ac.kr",
+   "source": "pure"
+  },
+  {
+   "name": "이병헌",
+   "rank": "교수",
+   "dept": "생화학·세포생물학교실",
+   "kind": "기초",
+   "line": "파지 디스플레이로 암을 찾아가는 펩타이드를 발굴해 표적 항암제를 개발해요",
+   "keywords": [
+    "펩타이드",
+    "표적항암제",
+    "종양미세환경"
+   ],
+   "link": "https://scholar.google.com/citations?user=NCNICI0AAAAJ",
+   "linkLabel": "Google Scholar",
+   "photo": "photos/leebh.jpg",
+   "email": "leebh@knu.ac.kr",
+   "source": "dir,bk"
+  },
+  {
+   "name": "전재한",
+   "rank": "부교수",
+   "dept": "내과학교실",
+   "kind": "임상",
+   "line": "미토콘드리아 대사 조절로 심장·신장·대사질환의 새 치료법을 찾아요",
+   "keywords": [
+    "미토콘드리아",
+    "대사질환",
+    "심장·신장"
+   ],
+   "link": "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTIyNQ==",
+   "linkLabel": "교수 소개 페이지",
+   "photo": "photos/jeonjh.jpg",
+   "email": "jeonjh@knu.ac.kr",
+   "source": "bk"
+  },
+  {
+   "name": "이재만",
+   "rank": "부교수",
+   "dept": "생화학·세포생물학교실",
+   "kind": "기초",
+   "line": "핵수용체(PPARα 등)가 간 대사와 섭식·체중을 조절하는 원리를 연구해요",
+   "keywords": [
+    "핵수용체",
+    "간 대사",
+    "자가포식"
+   ],
+   "link": "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTMxMA==",
+   "linkLabel": "교수 소개 페이지",
+   "photo": "photos/jaemanlee.jpg",
+   "email": "jaemanlee@knu.ac.kr",
+   "source": "dir,bk"
+  },
+  {
+   "name": "이제철",
+   "rank": "교수",
+   "dept": "미생물학교실",
+   "kind": "기초",
+   "line": "다제내성균의 독성 단백질과 막소포를 연구해 항생제를 대신할 치료 전략을 찾아요",
+   "keywords": [
+    "다제내성균",
+    "막소포",
+    "항균 전략"
+   ],
+   "link": "https://scholar.google.com/citations?user=5TlwgOYAAAAJ",
+   "linkLabel": "Google Scholar",
+   "photo": "photos/leejc.jpg",
+   "email": "leejc@knu.ac.kr",
+   "source": "bk"
+  },
+  {
+   "name": "장용민",
+   "rank": "교수",
+   "dept": "분자의학교실",
+   "kind": "기초",
+   "line": "MRI·자기공명분광으로 뇌와 질병을 들여다보는 분자영상 기술을 개발해요",
+   "keywords": [
+    "MRI",
+    "분자영상",
+    "뇌영상"
+   ],
+   "link": "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTI2NQ==",
+   "linkLabel": "교수 소개 페이지",
+   "photo": "photos/ychang.jpg",
+   "email": "ychang@knu.ac.kr",
+   "source": "bk"
+  },
+  {
+   "name": "정호윤",
+   "rank": "교수",
+   "dept": "성형외과학교실",
+   "kind": "임상",
+   "line": "혈관기형과 흉터를 줄기세포 오가노이드로 재현하고 조직 재건 기술을 개발해요",
+   "keywords": [
+    "혈관기형",
+    "오가노이드",
+    "조직 재건"
+   ],
+   "link": "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTE1Mg==",
+   "linkLabel": "교수 소개 페이지",
+   "photo": "photos/hy-chung.jpg",
+   "email": "hy-chung@knu.ac.kr",
+   "source": "bk"
+  },
+  {
+   "name": "최제용",
+   "rank": "교수",
+   "dept": "생화학·세포생물학교실",
+   "kind": "기초",
+   "line": "뼈와 연골이 만들어지고 망가지는 원리를 밝혀 골다공증·골관절염 치료를 연구해요",
+   "keywords": [
+    "뼈 생물학",
+    "골다공증",
+    "골관절염"
+   ],
+   "link": "https://bonechoi.knu.ac.kr/",
+   "linkLabel": "연구실 홈페이지",
+   "photo": "photos/jechoi.jpg",
+   "email": "jechoi@knu.ac.kr",
+   "source": "bk"
+  },
+  {
+   "name": "한형수",
+   "rank": "교수",
+   "dept": "생리학교실",
+   "kind": "기초",
+   "line": "멀티오믹스와 인공지능으로 암·치매를 연구하고 디지털 헬스케어를 개발해요",
+   "keywords": [
+    "멀티오믹스",
+    "인공지능",
+    "디지털 헬스케어"
+   ],
+   "link": "https://scholar.google.com/citations?user=8Sr9DVcAAAAJ",
+   "linkLabel": "Google Scholar",
+   "photo": "photos/hshan.jpg",
+   "email": "hshan@knu.ac.kr",
+   "source": "dir"
+  },
+  {
+   "name": "허근",
+   "rank": "교수",
+   "dept": "생화학·세포생물학교실",
+   "kind": "기초",
+   "line": "엑소좀 마이크로RNA·원형RNA로 혈액에서 암을 찾는 액체생검을 연구해요",
+   "keywords": [
+    "액체생검",
+    "엑소좀 RNA",
+    "암 바이오마커"
+   ],
+   "link": "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTMxMQ==",
+   "linkLabel": "교수 소개 페이지",
+   "photo": "photos/keunhur.jpg",
+   "email": "keunhur@knu.ac.kr",
+   "source": "bk"
+  },
+  {
+   "name": "홍연철",
+   "rank": "교수",
+   "dept": "기생충학·열대의학교실",
+   "kind": "기초",
+   "line": "아메바성 뇌염을 일으키는 가시아메바 등 병원성 원충의 생존 기전과 진단·치료법을 연구해요",
+   "keywords": [
+    "병원성 원충",
+    "가시아메바",
+    "진단법"
+   ],
+   "link": "https://research.knu.ac.kr/en/persons/yeonchul-hong/",
+   "linkLabel": "연구자 프로필",
+   "photo": "photos/ychong.jpg",
+   "email": "ychong@knu.ac.kr",
+   "source": "pure"
+  },
+  {
+   "name": "홍장원",
+   "rank": "교수",
+   "dept": "생리학교실",
+   "kind": "기초",
+   "line": "호중구 등 선천면역세포가 지방간·당뇨 합병증에 관여하는 원리를 연구해요",
+   "keywords": [
+    "호중구",
+    "선천면역",
+    "지방간"
+   ],
+   "link": "https://scholar.google.com/citations?user=5HZWdXcAAAAJ",
+   "linkLabel": "Google Scholar",
+   "photo": "photos/cwhong.jpg",
+   "email": "cwhong@knu.ac.kr",
+   "source": "bk"
+  },
+  {
+   "name": "이충용",
+   "rank": "부교수",
+   "dept": "미생물학교실",
+   "kind": "기초",
+   "line": "인플루엔자 등 인수공통 바이러스의 진화와 종간 전파를 머신러닝과 백신 연구로 추적해요",
+   "keywords": [
+    "인플루엔자",
+    "바이러스 진화",
+    "백신"
+   ],
+   "link": "http://virus.knu.ac.kr/",
+   "linkLabel": "연구실 홈페이지",
+   "photo": "photos/cylee87.jpg",
+   "email": "cylee87@knu.ac.kr",
+   "source": "dir,bk"
+  },
+  {
+   "name": "서인철",
+   "rank": "부교수",
+   "dept": "면역학교실",
+   "kind": "기초",
+   "line": "마이크로바이옴과 다중오믹스, 대규모 코호트 데이터로 면역·감염 질환을 연구해요",
+   "keywords": [
+    "마이크로바이옴",
+    "다중오믹스",
+    "코호트 연구"
+   ],
+   "link": "https://scholar.google.com/citations?user=zDr9aw0AAAAJ",
+   "linkLabel": "Google Scholar",
+   "photo": "photos/iseo.jpg",
+   "email": "iseo@knu.ac.kr",
+   "source": "pure,pubmed"
+  },
+  {
+   "name": "박준석",
+   "rank": "교수",
+   "dept": "외과학교실",
+   "kind": "임상",
+   "line": "수술용 접착·지혈 바이오소재와 세포외소포 기반 암 진단 기술을 개발해요",
+   "keywords": [
+    "바이오소재",
+    "액체생검",
+    "외과"
+   ],
+   "link": "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTE5Ng==",
+   "linkLabel": "교수 소개 페이지",
+   "photo": "photos/parkjs0802.jpg",
+   "email": "parkjs0802@knu.ac.kr",
+   "source": "bk"
+  },
+  {
+   "name": "전성우",
+   "rank": "교수",
+   "dept": "내과학교실",
+   "kind": "임상",
+   "line": "치료 내시경(ESD)과 시술 기구 개발, 헬리코박터와 위암을 연구해요",
+   "keywords": [
+    "치료 내시경",
+    "헬리코박터",
+    "위암"
+   ],
+   "link": "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTIzMA==",
+   "linkLabel": "교수 소개 페이지",
+   "photo": "photos/swjeon.jpg",
+   "email": "swjeon@knu.ac.kr",
+   "source": "dir"
+  },
+  {
+   "name": "박동호",
+   "rank": "교수",
+   "dept": "안과학교실",
+   "kind": "임상",
+   "line": "망막 세포의 대사 이상을 겨냥해 황반변성을 먹는 약으로 치료하는 방법을 연구해요",
+   "keywords": [
+    "망막",
+    "황반변성",
+    "대사 재프로그래밍"
+   ],
+   "link": "https://scholar.google.com/citations?user=CJjSb9MAAAAJ",
+   "linkLabel": "Google Scholar",
+   "photo": "photos/dongho_park.jpg",
+   "email": "dongho_park@knu.ac.kr",
+   "source": "dir,bk"
+  },
+  {
+   "name": "박한기",
+   "rank": "부교수",
+   "dept": "내과학교실",
+   "kind": "임상",
+   "line": "장내 미생물과 장관 면역이 천식·두드러기 같은 알레르기 질환에 미치는 영향을 연구해요",
+   "keywords": [
+    "알레르기",
+    "천식",
+    "장내 미생물"
+   ],
+   "link": "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTIyMw==",
+   "linkLabel": "교수 소개 페이지",
+   "photo": "photos/hankipark.jpg",
+   "email": "hankipark@knu.ac.kr",
+   "source": "bk"
+  },
+  {
+   "name": "성숙진",
+   "rank": "부교수",
+   "dept": "융합연구진료센터",
+   "kind": "임상",
+   "line": "혈액·소변의 대사체·지질체를 분석해 질병 바이오마커와 약물 반응을 연구해요",
+   "keywords": [
+    "대사체학",
+    "지질체학",
+    "임상약리"
+   ],
+   "link": "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTQ=",
+   "linkLabel": "교수 소개 페이지",
+   "photo": "photos/wintersj.jpg",
+   "email": "wintersj@knu.ac.kr",
+   "source": "bk"
+  },
+  {
+   "name": "이현주",
+   "rank": "부교수",
+   "dept": "정형외과학교실",
+   "kind": "임상",
+   "line": "생체신호 센서·가상현실 같은 공학 기술로 절단 환자 재활과 정형외과 수술을 도와요",
+   "keywords": [
+    "재활공학",
+    "생체역학",
+    "정형외과"
+   ],
+   "link": "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTE2Nw==",
+   "linkLabel": "교수 소개 페이지",
+   "photo": "photos/hjleee.jpg",
+   "email": "hjleee@knu.ac.kr",
+   "source": "bk"
+  },
+  {
+   "name": "이호원",
+   "rank": "교수",
+   "dept": "신경과학교실",
+   "kind": "임상",
+   "line": "신경퇴행성 질환의 조기진단 바이오마커와 줄기세포 치료, 웨어러블 보행 분석을 연구해요",
+   "keywords": [
+    "신경퇴행성 질환",
+    "바이오마커",
+    "줄기세포 치료"
+   ],
+   "link": "https://research.knu.ac.kr/en/persons/ho-won-lee/",
+   "linkLabel": "연구자 프로필",
+   "photo": "photos/neuromd.jpg",
+   "email": "neuromd@knu.ac.kr",
+   "source": "pure,pubmed"
+  },
+  {
+   "name": "남용석",
+   "rank": "조교수",
+   "dept": "해부학교실",
+   "kind": "기초",
+   "line": "시신 해부 연구로 수술에 필요한 신경·혈관의 정확한 해부학 지도를 만들어요",
+   "keywords": [
+    "임상해부학",
+    "신경·혈관",
+    "수술 해부"
+   ],
+   "link": "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTIxMjg=",
+   "linkLabel": "교수 소개 페이지",
+   "photo": "photos/namys.jpg",
+   "email": "namys@knu.ac.kr",
+   "source": "bk"
+  },
+  {
+   "name": "윤성원",
+   "rank": "교수",
+   "dept": "영상의학교실",
+   "kind": "임상",
+   "line": "뇌혈관 질환 중재시술, 자기장으로 움직이는 로봇 가이드와이어, AI 영상 분석을 연구해요",
+   "keywords": [
+    "뇌혈관 중재",
+    "의료로봇",
+    "AI 영상"
+   ],
+   "link": "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTIxNDI=",
+   "linkLabel": "교수 소개 페이지",
+   "photo": "photos/ysw24neurorad.jpg",
+   "email": "ysw24neurorad@knu.ac.kr",
+   "source": "bk"
+  },
+  {
+   "name": "권용환",
+   "rank": "부교수",
+   "dept": "내과학교실",
+   "kind": "임상",
+   "line": "헬리코박터 감염과 위암을 단일세포 분석과 임상시험으로 연구해요",
+   "keywords": [
+    "헬리코박터",
+    "위암",
+    "단일세포"
+   ],
+   "link": "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTIyNg==",
+   "linkLabel": "교수 소개 페이지",
+   "photo": "photos/tear9754006.jpg",
+   "email": "tear9754006@yahoo.co.kr",
+   "source": "bk"
+  },
+  {
+   "name": "이태영",
+   "rank": "조교수",
+   "dept": "정신건강의학교실",
+   "kind": "임상",
+   "line": "조현병 등 정신질환을 뇌영상으로 일찍 찾아내고 예측하는 연구를 해요",
+   "keywords": [
+    "조현병",
+    "뇌영상",
+    "정신질환 예측"
+   ],
+   "link": "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTIxNTQ=",
+   "linkLabel": "교수 소개 페이지",
+   "photo": "photos/tylee.jpg",
+   "email": "tylee@knu.ac.kr",
+   "source": "bk"
+  },
+  {
+   "name": "김성준",
+   "rank": "조교수",
+   "dept": "미생물학교실",
+   "kind": "기초",
+   "line": "바이러스가 미토콘드리아 등 세포소기관을 이용하는 원리를 밝히고 백신을 연구해요",
+   "keywords": [
+    "바이러스",
+    "미토콘드리아",
+    "백신"
+   ],
+   "link": "https://scholar.google.com/citations?user=MeQ0ov4AAAAJ",
+   "linkLabel": "Google Scholar",
+   "photo": "photos/sjkim0080.jpg",
+   "email": "sjkim0080@knu.ac.kr",
+   "source": "dir,bk"
+  },
+  {
+   "name": "김예리",
+   "rank": "조교수",
+   "dept": "면역학교실",
+   "kind": "기초",
+   "line": "난청이 생기는 기전을 밝히고 청력을 지키는 치료제를 개발해요",
+   "keywords": [
+    "난청",
+    "이독성",
+    "미토콘드리아"
+   ],
+   "link": "https://scholar.google.com/citations?user=TFwfm9IAAAAJ",
+   "linkLabel": "Google Scholar",
+   "photo": "photos/yell_90.jpg",
+   "email": "yell_90@knu.ac.kr",
+   "source": "bk"
+  },
+  {
+   "name": "이종걸",
+   "rank": "조교수",
+   "dept": "면역학교실",
+   "kind": "기초",
+   "line": "자궁 내 환경을 모사해 임신 질환과 난임의 원인·치료 전략을 연구해요",
+   "keywords": [
+    "난임",
+    "자궁내막",
+    "생식독성"
+   ],
+   "link": "https://im.knu.ac.kr/lee",
+   "linkLabel": "연구실 홈페이지",
+   "photo": "photos/jglee.jpg",
+   "email": "jglee@knu.ac.kr",
+   "source": "bk"
+  },
+  {
+   "name": "장세영",
+   "rank": "교수",
+   "dept": "내과학교실",
+   "kind": "임상",
+   "line": "지방간과 간암을 동물모델과 의료 빅데이터로 연구해요",
+   "keywords": [
+    "지방간",
+    "간암",
+    "빅데이터"
+   ],
+   "link": "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTIyOA==",
+   "linkLabel": "교수 소개 페이지",
+   "photo": "photos/vocjsy.jpg",
+   "email": "vocjsy@knu.ac.kr",
+   "source": "bk"
+  },
+  {
+   "name": "남수연",
+   "rank": "조교수",
+   "dept": "융합연구진료센터",
+   "kind": "임상",
+   "line": "헬리코박터·위암과 비만 관련 소화기 질환을 환자유래 오가노이드와 빅데이터로 연구해요",
+   "keywords": [
+    "위암",
+    "오가노이드",
+    "중개연구"
+   ],
+   "link": "https://scholar.google.com/citations?user=gXYBmIMAAAAJ",
+   "linkLabel": "Google Scholar",
+   "photo": "photos/namsy.jpg",
+   "email": "namsy@knu.ac.kr",
+   "source": "dir"
+  },
+  {
+   "name": "오진영",
+   "rank": "조교수",
+   "dept": "마취통증의학교실",
+   "kind": "임상",
+   "line": "마취통증의학 임상 연구와 뼈·연골 생물학 공동연구를 하고 있어요",
+   "keywords": [
+    "통증의학",
+    "신경차단",
+    "골·연골"
+   ],
+   "link": "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTQx",
+   "linkLabel": "교수 소개 페이지",
+   "photo": "photos/sgcms3.jpg",
+   "email": "sgcms3@knu.ac.kr",
+   "source": "pubmed(확인 필요)"
+  },
+  {
+   "name": "이화림",
+   "rank": "조교수",
+   "dept": "약리학교실",
+   "kind": "기초",
+   "line": "3D 바이오프린팅으로 숨 쉬는 폐 모델 같은 인공 장기를 만들어 약효를 평가해요",
+   "keywords": [
+    "3D 바이오프린팅",
+    "인공장기",
+    "폐 모델"
+   ],
+   "link": "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTI0MzM=",
+   "linkLabel": "교수 소개 페이지",
+   "photo": "photos/hrl.jpg",
+   "email": "hrl@knu.ac.kr",
+   "source": "bk"
+  },
+  {
+   "name": "김민지",
+   "rank": "조교수",
+   "dept": "내과학교실",
+   "kind": "임상",
+   "line": "미토콘드리아 대사(PDK4)를 겨냥해 당뇨병·비만·근감소증을 연구해요",
+   "keywords": [
+    "내분비대사",
+    "당뇨병",
+    "미토콘드리아"
+   ],
+   "link": "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTI0MzQ=",
+   "linkLabel": "교수 소개 페이지",
+   "photo": "photos/mjikim.jpg",
+   "email": "mjikim@knu.ac.kr",
+   "source": "pubmed(확인 필요)"
+  },
+  {
+   "name": "하대룡",
+   "rank": "부교수",
+   "dept": "피부과학교실",
+   "kind": "임상",
+   "line": "인공지능으로 피부암을 판별하는 피부과 AI와 피부질환을 연구해요",
+   "keywords": [
+    "피부과 AI",
+    "피부암",
+    "건선"
+   ],
+   "link": "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTkz",
+   "linkLabel": "교수 소개 페이지",
+   "photo": "photos/dlha.jpg",
+   "email": "dlha@knu.ac.kr",
+   "source": "pubmed"
+  },
+  {
+   "name": "최지웅",
+   "rank": "조교수",
+   "dept": "면역학교실",
+   "kind": "기초",
+   "line": "세포외소포·나노의약·마이크로로봇으로 종양 면역을 바꾸는 치료 기술을 개발해요",
+   "keywords": [
+    "나노의학",
+    "세포외소포",
+    "면역치료"
+   ],
+   "link": "https://scholar.google.com/citations?user=IZrgQWMAAAAJ",
+   "linkLabel": "Google Scholar",
+   "photo": "photos/wooong0110.jpg",
+   "email": "wooong0110@knu.ac.kr",
+   "source": "bk"
+  },
+  {
+   "name": "하은지",
+   "rank": "조교수",
+   "dept": "분자의학교실",
+   "kind": "기초",
+   "line": "AI 기반 멀티오믹스로 뇌 회로와 정신질환 유전자 조절을 연구해요",
+   "keywords": [
+    "멀티오믹스",
+    "뇌 회로",
+    "정신질환"
+   ],
+   "link": "https://halab.knu.ac.kr",
+   "linkLabel": "연구실 홈페이지",
+   "photo": "photos/eha.jpg",
+   "email": "eha@knu.ac.kr",
+   "source": "bk"
+  },
+  {
+   "name": "박진성",
+   "rank": "부교수",
+   "dept": "신경과학교실",
+   "kind": "임상",
+   "line": "루게릭병(ALS) 등 신경근육질환의 혈액 바이오마커와 치료를 연구해요",
+   "keywords": [
+    "신경근육질환",
+    "루게릭병",
+    "바이오마커"
+   ],
+   "link": "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTI5",
+   "linkLabel": "교수 소개 페이지",
+   "photo": "photos/neurojspark.jpg",
+   "email": "neurojspark@gmail.com",
+   "source": "pubmed"
+  },
+  {
+   "name": "이주헌",
+   "rank": "조교수",
+   "dept": "산부인과학교실",
+   "kind": "임상",
+   "line": "HPV 유전형별 자궁경부암 위험과 난소종양, CT 딥러닝 진단을 연구해요",
+   "keywords": [
+    "부인종양",
+    "HPV",
+    "딥러닝"
+   ],
+   "link": "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTIxMzk=",
+   "linkLabel": "교수 소개 페이지",
+   "photo": "photos/gyjhlee.jpg",
+   "email": "gyjhlee@knu.ac.kr",
+   "source": "pubmed"
+  },
+  {
+   "name": "한승우",
+   "rank": "부교수",
+   "dept": "내과학교실",
+   "kind": "임상",
+   "line": "골관절염에서 연골세포의 대사와 노화를 밝히고 나노입자 치료제를 개발해요",
+   "keywords": [
+    "골관절염",
+    "연골세포 대사",
+    "나노입자"
+   ],
+   "link": "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTIwNQ==",
+   "linkLabel": "교수 소개 페이지",
+   "photo": "photos/kiefedr.jpg",
+   "email": "kiefedr@knu.ac.kr",
+   "source": "dir,bk"
+  },
+  {
+   "name": "김균후",
+   "rank": "조교수",
+   "dept": "생화학·세포생물학교실",
+   "kind": "기초",
+   "line": "췌장 베타세포가 대사 스트레스에 반응하는 원리와 당뇨병 유전 변이를 연구해요",
+   "keywords": [
+    "베타세포",
+    "당뇨병",
+    "유전 변이"
+   ],
+   "link": "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTI0NzM=",
+   "linkLabel": "교수 소개 페이지",
+   "photo": "photos/khookim.jpg",
+   "email": "khookim@knu.ac.kr",
+   "source": "bk"
+  },
+  {
+   "name": "김은수",
+   "rank": "교수",
+   "dept": "내과학교실",
+   "kind": "임상",
+   "line": "궤양성대장염·크론병 같은 염증성 장질환을 임상 연구, AI, 장내 미생물로 연구해요",
+   "keywords": [
+    "염증성 장질환",
+    "장내 미생물",
+    "AI 진단"
+   ],
+   "link": "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTIyNw==",
+   "linkLabel": "교수 소개 페이지",
+   "photo": "photos/dandy813.jpg",
+   "email": "dandy813@knu.ac.kr",
+   "source": "bk"
+  },
+  {
+   "name": "최연경",
+   "rank": "부교수",
+   "dept": "내과학교실",
+   "kind": "임상",
+   "line": "암과 대사질환에서 세포 대사가 바뀌는 원리(글루타민·피리미딘 대사)를 연구해요",
+   "keywords": [
+    "대사 재프로그래밍",
+    "간암",
+    "지방간염"
+   ],
+   "link": "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTIxNA==",
+   "linkLabel": "교수 소개 페이지",
+   "photo": "photos/ykchoi.jpg",
+   "email": "ykchoi@knu.ac.kr",
+   "source": "pubmed"
+  },
+  {
+   "name": "김범수",
+   "rank": "교수",
+   "dept": "비뇨기과학교실",
+   "kind": "임상",
+   "line": "요로결석 내시경 치료와 하이드로젤·엑소좀을 이용한 신장 조직 재생을 연구해요",
+   "keywords": [
+    "요로결석",
+    "신장 재생",
+    "바이오소재"
+   ],
+   "link": "https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&mode=view&mv_data=aWR4PTg5",
+   "linkLabel": "교수 소개 페이지",
+   "photo": "photos/urokbs.jpg",
+   "email": "urokbs@knu.ac.kr",
+   "source": "dir,bk"
+  }
+ ]
+}
