@@ -26,6 +26,10 @@
     ]
    ],
    "contact": null,
+   "style": "WQC",
+   "topics": [
+    "infection"
+   ],
    "photo": "photos/kuku1819.jpg",
    "email": "kuku1819@knu.ac.kr",
    "source": "dir,bk"
@@ -48,6 +52,11 @@
     ]
    ],
    "contact": null,
+   "style": "WSP",
+   "topics": [
+    "cancer",
+    "musculo"
+   ],
    "photo": "photos/tgkwon.jpg",
    "email": "tgkwon@knu.ac.kr",
    "source": "dir"
@@ -70,6 +79,10 @@
     ]
    ],
    "contact": null,
+   "style": "WQC",
+   "topics": [
+    "metabolic"
+   ],
    "photo": "photos/thkwon.jpg",
    "email": "thkwon@knu.ac.kr",
    "source": "bk"
@@ -92,6 +105,10 @@
     ]
    ],
    "contact": null,
+   "style": "WQC",
+   "topics": [
+    "cancer"
+   ],
    "photo": "photos/doskim.jpg",
    "email": "doskim@knu.ac.kr",
    "source": "bk"
@@ -114,6 +131,10 @@
     ]
    ],
    "contact": null,
+   "style": "WSC",
+   "topics": [
+    "immune"
+   ],
    "photo": "photos/shkim72.jpg",
    "email": "shkim72@knu.ac.kr",
    "source": "bk"
@@ -136,6 +157,10 @@
     ]
    ],
    "contact": null,
+   "style": "WSC",
+   "topics": [
+    "infection"
+   ],
    "photo": "photos/minkim.jpg",
    "email": "minkim@knu.ac.kr",
    "source": "dir,bk"
@@ -158,6 +183,11 @@
     ]
    ],
    "contact": null,
+   "style": "WQC",
+   "topics": [
+    "immune",
+    "cancer"
+   ],
    "photo": "photos/kimhajeong.jpg",
    "email": "kimhajeong@knu.ac.kr",
    "source": "pure,pubmed"
@@ -180,6 +210,10 @@
     ]
    ],
    "contact": null,
+   "style": "WSP",
+   "topics": [
+    "sense"
+   ],
    "photo": "photos/okeye.jpg",
    "email": "okeye@knu.ac.kr",
    "source": "bk"
@@ -202,6 +236,10 @@
     ]
    ],
    "contact": null,
+   "style": "WSC",
+   "topics": [
+    "immune"
+   ],
    "photo": "photos/nams.jpg",
    "email": "nams@knu.ac.kr",
    "source": "bk"
@@ -224,6 +262,10 @@
     ]
    ],
    "contact": null,
+   "style": "WQC",
+   "topics": [
+    "metabolic"
+   ],
    "photo": "photos/kmpark.jpg",
    "email": "kmpark@knu.ac.kr",
    "source": "bk"
@@ -246,6 +288,11 @@
     ]
    ],
    "contact": null,
+   "style": "WQC",
+   "topics": [
+    "cancer",
+    "metabolic"
+   ],
    "photo": "photos/kpark.jpg",
    "email": "kpark@knu.ac.kr",
    "source": "bk"
@@ -268,6 +315,10 @@
     ]
    ],
    "contact": null,
+   "style": "WSP",
+   "topics": [
+    "cancer"
+   ],
    "photo": "photos/jyparkmd.jpg",
    "email": "jyparkmd@knu.ac.kr",
    "source": "pubmed"
@@ -293,6 +344,11 @@
     "한완희",
     "wanuni2004@naver.com"
    ],
+   "style": "WQC",
+   "topics": [
+    "brain",
+    "metabolic"
+   ],
    "photo": "photos/jsbae.jpg",
    "email": "jsbae@knu.ac.kr",
    "source": "flyer"
@@ -315,6 +371,11 @@
     ]
    ],
    "contact": null,
+   "style": "WSC",
+   "topics": [
+    "cancer",
+    "immune"
+   ],
    "photo": "photos/mcbaek.jpg",
    "email": "mcbaek@knu.ac.kr",
    "source": "bk"
@@ -337,6 +398,11 @@
     ]
    ],
    "contact": null,
+   "style": "WQC",
+   "topics": [
+    "brain",
+    "immune"
+   ],
    "photo": "photos/ksuk.jpg",
    "email": "ksuk@knu.ac.kr",
    "source": "dir,bk"
@@ -359,6 +425,10 @@
     ]
    ],
    "contact": null,
+   "style": "WSC",
+   "topics": [
+    "musculo"
+   ],
    "photo": "photos/ysung.jpg",
    "email": "ysung@knu.ac.kr",
    "source": "dir,bk"
@@ -381,6 +451,10 @@
     ]
    ],
    "contact": null,
+   "style": "WQC",
+   "topics": [
+    "infection"
+   ],
    "photo": "photos/shinms.jpg",
    "email": "shinms@knu.ac.kr",
    "source": "bk"
@@ -403,6 +477,10 @@
     ]
    ],
    "contact": null,
+   "style": "WSC",
+   "topics": [
+    "cancer"
+   ],
    "photo": "photos/abc2000.jpg",
    "email": "abc2000@knu.ac.kr",
    "source": "bk"
@@ -428,6 +506,10 @@
     "조경민",
     "gmj350124@naver.com"
    ],
+   "style": "WSC",
+   "topics": [
+    "infection"
+   ],
    "photo": "photos/shukhokim.jpg",
    "email": "shukhokim@knu.ac.kr",
    "source": "flyer"
@@ -450,6 +532,10 @@
     ]
    ],
    "contact": null,
+   "style": "WSC",
+   "topics": [
+    "cancer"
+   ],
    "photo": "photos/yooj.jpg",
    "email": "yooj@knu.ac.kr",
    "source": "bk"
@@ -472,6 +558,10 @@
     ]
    ],
    "contact": null,
+   "style": "DSC",
+   "topics": [
+    "metabolic"
+   ],
    "photo": "photos/yry.jpg",
    "email": "yry@knu.ac.kr",
    "source": "bk"
@@ -494,6 +584,10 @@
     ]
    ],
    "contact": null,
+   "style": "WQC",
+   "topics": [
+    "brain"
+   ],
    "photo": "photos/irislkm.jpg",
    "email": "irislkm@knu.ac.kr",
    "source": "pure"
@@ -516,6 +610,10 @@
     ]
    ],
    "contact": null,
+   "style": "WSC",
+   "topics": [
+    "cancer"
+   ],
    "photo": "photos/leebh.jpg",
    "email": "leebh@knu.ac.kr",
    "source": "dir,bk"
@@ -538,6 +636,10 @@
     ]
    ],
    "contact": null,
+   "style": "WSC",
+   "topics": [
+    "metabolic"
+   ],
    "photo": "photos/jeonjh.jpg",
    "email": "jeonjh@knu.ac.kr",
    "source": "bk"
@@ -560,6 +662,10 @@
     ]
    ],
    "contact": null,
+   "style": "WQC",
+   "topics": [
+    "metabolic"
+   ],
    "photo": "photos/jaemanlee.jpg",
    "email": "jaemanlee@knu.ac.kr",
    "source": "dir,bk"
@@ -582,6 +688,10 @@
     ]
    ],
    "contact": null,
+   "style": "WQC",
+   "topics": [
+    "infection"
+   ],
    "photo": "photos/leejc.jpg",
    "email": "leejc@knu.ac.kr",
    "source": "bk"
@@ -604,6 +714,10 @@
     ]
    ],
    "contact": null,
+   "style": "DSP",
+   "topics": [
+    "brain"
+   ],
    "photo": "photos/ychang.jpg",
    "email": "ychang@knu.ac.kr",
    "source": "bk"
@@ -626,6 +740,10 @@
     ]
    ],
    "contact": null,
+   "style": "WSP",
+   "topics": [
+    "musculo"
+   ],
    "photo": "photos/hy-chung.jpg",
    "email": "hy-chung@knu.ac.kr",
    "source": "bk"
@@ -651,6 +769,10 @@
     "박민",
     "010-3689-0321"
    ],
+   "style": "WQC",
+   "topics": [
+    "musculo"
+   ],
    "photo": "photos/jechoi.jpg",
    "email": "jechoi@knu.ac.kr",
    "source": "flyer"
@@ -673,6 +795,11 @@
     ]
    ],
    "contact": null,
+   "style": "DSC",
+   "topics": [
+    "cancer",
+    "brain"
+   ],
    "photo": "photos/hshan.jpg",
    "email": "hshan@knu.ac.kr",
    "source": "dir"
@@ -698,6 +825,10 @@
     "허근",
     "keunhur@knu.ac.kr"
    ],
+   "style": "WQC",
+   "topics": [
+    "cancer"
+   ],
    "photo": "photos/keunhur.jpg",
    "email": "keunhur@knu.ac.kr",
    "source": "flyer"
@@ -720,6 +851,10 @@
     ]
    ],
    "contact": null,
+   "style": "WQC",
+   "topics": [
+    "infection"
+   ],
    "photo": "photos/ychong.jpg",
    "email": "ychong@knu.ac.kr",
    "source": "pure"
@@ -742,6 +877,11 @@
     ]
    ],
    "contact": null,
+   "style": "WQC",
+   "topics": [
+    "immune",
+    "metabolic"
+   ],
    "photo": "photos/cwhong.jpg",
    "email": "cwhong@knu.ac.kr",
    "source": "bk"
@@ -764,6 +904,10 @@
     ]
    ],
    "contact": null,
+   "style": "DQC",
+   "topics": [
+    "infection"
+   ],
    "photo": "photos/cylee87.jpg",
    "email": "cylee87@knu.ac.kr",
    "source": "dir,bk"
@@ -786,6 +930,11 @@
     ]
    ],
    "contact": null,
+   "style": "DQP",
+   "topics": [
+    "immune",
+    "infection"
+   ],
    "photo": "photos/iseo.jpg",
    "email": "iseo@knu.ac.kr",
    "source": "pure,pubmed"
@@ -811,6 +960,10 @@
     "김혜정",
     "khj8232@knu.ac.kr"
    ],
+   "style": "WSP",
+   "topics": [
+    "cancer"
+   ],
    "photo": "photos/parkjs0802.jpg",
    "email": "parkjs0802@knu.ac.kr",
    "source": "flyer"
@@ -833,6 +986,10 @@
     ]
    ],
    "contact": null,
+   "style": "WSP",
+   "topics": [
+    "cancer"
+   ],
    "photo": "photos/swjeon.jpg",
    "email": "swjeon@knu.ac.kr",
    "source": "dir"
@@ -855,6 +1012,10 @@
     ]
    ],
    "contact": null,
+   "style": "WSC",
+   "topics": [
+    "sense"
+   ],
    "photo": "photos/dongho_park.jpg",
    "email": "dongho_park@knu.ac.kr",
    "source": "dir,bk"
@@ -880,6 +1041,11 @@
     "박한기",
     "haan33@naver.com"
    ],
+   "style": "WQP",
+   "topics": [
+    "immune",
+    "infection"
+   ],
    "photo": "photos/hankipark.jpg",
    "email": "hankipark@knu.ac.kr",
    "source": "flyer"
@@ -902,6 +1068,10 @@
     ]
    ],
    "contact": null,
+   "style": "DQP",
+   "topics": [
+    "metabolic"
+   ],
    "photo": "photos/wintersj.jpg",
    "email": "wintersj@knu.ac.kr",
    "source": "bk"
@@ -924,6 +1094,10 @@
     ]
    ],
    "contact": null,
+   "style": "DSP",
+   "topics": [
+    "musculo"
+   ],
    "photo": "photos/hjleee.jpg",
    "email": "hjleee@knu.ac.kr",
    "source": "bk"
@@ -946,6 +1120,10 @@
     ]
    ],
    "contact": null,
+   "style": "WSP",
+   "topics": [
+    "brain"
+   ],
    "photo": "photos/neuromd.jpg",
    "email": "neuromd@knu.ac.kr",
    "source": "pure,pubmed"
@@ -968,6 +1146,10 @@
     ]
    ],
    "contact": null,
+   "style": "WQP",
+   "topics": [
+    "musculo"
+   ],
    "photo": "photos/namys.jpg",
    "email": "namys@knu.ac.kr",
    "source": "bk"
@@ -990,6 +1172,10 @@
     ]
    ],
    "contact": null,
+   "style": "DSP",
+   "topics": [
+    "brain"
+   ],
    "photo": "photos/ysw24neurorad.jpg",
    "email": "ysw24neurorad@knu.ac.kr",
    "source": "bk"
@@ -1012,6 +1198,11 @@
     ]
    ],
    "contact": null,
+   "style": "WQP",
+   "topics": [
+    "cancer",
+    "infection"
+   ],
    "photo": "photos/tear9754006.jpg",
    "email": "tear9754006@yahoo.co.kr",
    "source": "bk"
@@ -1037,6 +1228,10 @@
     "이태영",
     "tylee@knu.ac.kr"
    ],
+   "style": "DQP",
+   "topics": [
+    "brain"
+   ],
    "photo": "photos/tylee.jpg",
    "email": "tylee@knu.ac.kr",
    "source": "flyer"
@@ -1059,6 +1254,10 @@
     ]
    ],
    "contact": null,
+   "style": "WQC",
+   "topics": [
+    "infection"
+   ],
    "photo": "photos/sjkim0080.jpg",
    "email": "sjkim0080@knu.ac.kr",
    "source": "dir,bk"
@@ -1083,6 +1282,10 @@
    "contact": [
     "김예리",
     "yell_90@knu.ac.kr"
+   ],
+   "style": "WQC",
+   "topics": [
+    "sense"
    ],
    "photo": "photos/yell_90.jpg",
    "email": "yell_90@knu.ac.kr",
@@ -1109,6 +1312,10 @@
     "이종걸",
     "jglee@knu.ac.kr"
    ],
+   "style": "WQC",
+   "topics": [
+    "repro"
+   ],
    "photo": "photos/jglee.jpg",
    "email": "jglee@knu.ac.kr",
    "source": "flyer"
@@ -1131,6 +1338,11 @@
     ]
    ],
    "contact": null,
+   "style": "DQP",
+   "topics": [
+    "metabolic",
+    "cancer"
+   ],
    "photo": "photos/vocjsy.jpg",
    "email": "vocjsy@knu.ac.kr",
    "source": "bk"
@@ -1156,6 +1368,10 @@
     "김도향",
     "kmdh77@knuh-ext.kr"
    ],
+   "style": "DQP",
+   "topics": [
+    "cancer"
+   ],
    "photo": "photos/namsy.jpg",
    "email": "namsy@knu.ac.kr",
    "source": "flyer"
@@ -1178,6 +1394,10 @@
     ]
    ],
    "contact": null,
+   "style": "WSP",
+   "topics": [
+    "musculo"
+   ],
    "photo": "photos/sgcms3.jpg",
    "email": "sgcms3@knu.ac.kr",
    "source": "pubmed(확인 필요)"
@@ -1203,6 +1423,11 @@
     "이화림",
     "hrl@knu.ac.kr"
    ],
+   "style": "WSC",
+   "topics": [
+    "musculo",
+    "cancer"
+   ],
    "photo": "photos/hrl.jpg",
    "email": "hrl@knu.ac.kr",
    "source": "flyer"
@@ -1225,6 +1450,10 @@
     ]
    ],
    "contact": null,
+   "style": "WQC",
+   "topics": [
+    "metabolic"
+   ],
    "photo": "photos/mjikim.jpg",
    "email": "mjikim@knu.ac.kr",
    "source": "pubmed(확인 필요)"
@@ -1247,6 +1476,10 @@
     ]
    ],
    "contact": null,
+   "style": "DSP",
+   "topics": [
+    "cancer"
+   ],
    "photo": "photos/dlha.jpg",
    "email": "dlha@knu.ac.kr",
    "source": "pubmed"
@@ -1269,6 +1502,11 @@
     ]
    ],
    "contact": null,
+   "style": "WSC",
+   "topics": [
+    "cancer",
+    "immune"
+   ],
    "photo": "photos/wooong0110.jpg",
    "email": "wooong0110@knu.ac.kr",
    "source": "bk"
@@ -1298,6 +1536,10 @@
     "김은경",
     "kek8735@knu.ac.kr"
    ],
+   "style": "DQC",
+   "topics": [
+    "brain"
+   ],
    "photo": "photos/eha.jpg",
    "email": "eha@knu.ac.kr",
    "source": "flyer"
@@ -1320,6 +1562,10 @@
     ]
    ],
    "contact": null,
+   "style": "WQP",
+   "topics": [
+    "brain"
+   ],
    "photo": "photos/neurojspark.jpg",
    "email": "neurojspark@gmail.com",
    "source": "pubmed"
@@ -1342,6 +1588,11 @@
     ]
    ],
    "contact": null,
+   "style": "DQP",
+   "topics": [
+    "cancer",
+    "repro"
+   ],
    "photo": "photos/gyjhlee.jpg",
    "email": "gyjhlee@knu.ac.kr",
    "source": "pubmed"
@@ -1364,6 +1615,10 @@
     ]
    ],
    "contact": null,
+   "style": "WSC",
+   "topics": [
+    "musculo"
+   ],
    "photo": "photos/kiefedr.jpg",
    "email": "kiefedr@knu.ac.kr",
    "source": "dir,bk"
@@ -1386,6 +1641,10 @@
     ]
    ],
    "contact": null,
+   "style": "WQC",
+   "topics": [
+    "metabolic"
+   ],
    "photo": "photos/khookim.jpg",
    "email": "khookim@knu.ac.kr",
    "source": "bk"
@@ -1408,6 +1667,11 @@
     ]
    ],
    "contact": null,
+   "style": "WQP",
+   "topics": [
+    "immune",
+    "infection"
+   ],
    "photo": "photos/dandy813.jpg",
    "email": "dandy813@knu.ac.kr",
    "source": "bk"
@@ -1430,6 +1694,11 @@
     ]
    ],
    "contact": null,
+   "style": "WQC",
+   "topics": [
+    "metabolic",
+    "cancer"
+   ],
    "photo": "photos/ykchoi.jpg",
    "email": "ykchoi@knu.ac.kr",
    "source": "pubmed"
@@ -1452,6 +1721,11 @@
     ]
    ],
    "contact": null,
+   "style": "WSP",
+   "topics": [
+    "musculo",
+    "metabolic"
+   ],
    "photo": "photos/urokbs.jpg",
    "email": "urokbs@knu.ac.kr",
    "source": "dir,bk"
@@ -1476,6 +1750,11 @@
    "contact": [
     "김정은",
     "kjeun@knu.ac.kr"
+   ],
+   "style": "WQC",
+   "topics": [
+    "musculo",
+    "metabolic"
    ],
    "photo": "photos/kjeun.jpg",
    "email": "kjeun@knu.ac.kr",
@@ -1502,6 +1781,8 @@
     "정현준",
     "hjjung@knu.ac.kr"
    ],
+   "style": "DQC",
+   "topics": [],
    "photo": "photos/hjjung.jpg",
    "email": "hjjung@knu.ac.kr",
    "source": "flyer"

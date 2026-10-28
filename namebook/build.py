@@ -86,22 +86,33 @@ def build():
     <div class="index"><h3>교수님 찾아보기 <small>가나다순 · 쪽</small></h3><ol>{index}</ol></div>
     <aside class="home">
       <figure class="qr big">{qr_svg(meta['bookUrl'])}</figure>
-      <p class="book"><b>휴대폰으로 보기</b><br><a href="{e(meta['bookUrl'])}">{e(meta['bookUrl'].split('//')[1].rstrip('/')).replace('/', '/<wbr>')}</a></p>
+      <p class="book"><b>휴대폰으로 보기</b><br>나에게 맞는 연구실 찾기 테스트도 있어요<br><a href="{e(meta['bookUrl'])}">{e(meta['bookUrl'].split('//')[1].rstrip('/')).replace('/', '/<wbr>')}</a></p>
       <p class="how">카드 아래 링크를 누르면 연구실 홈페이지나 교수 소개 페이지가 열려요.</p>
       <p class="how">의과학과 홈페이지<br><a href="{e(meta['deptUrl'])}">{e(meta['deptUrl'].split('//')[1].rstrip('/'))}</a></p>
     </aside>
   </div>
   <p class="note">{e(meta['note'])}</p>""", "cover")
 
+    # 화면 맨 앞의 관심 분야 테스트 (인쇄에서는 숨김)
+    quiz = json.loads((ROOT / "data/quiz.json").read_text(encoding="utf-8"))
+    quiz["profs"] = [{k: p[k] for k in ("name", "rank", "dept", "photo", "keywords", "style", "topics")}
+                     | {"page": where[p["name"]]} for p in profs]
+    quiz_json = json.dumps(quiz, ensure_ascii=False).replace("</", "<\\/")
+
     css = (ROOT / "style.css").read_text(encoding="utf-8")
+    js = (ROOT / "quiz.js").read_text(encoding="utf-8")
     out = f"""<!doctype html>
 <html lang="ko"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{e(meta['title'])}</title>
 <style>{css}</style></head>
 <body>
+<section class="quiz" id="quiz"></section>
+<div id="book"></div>
 {cover}
 {''.join(pages)}
+<script id="quiz-data" type="application/json">{quiz_json}</script>
+<script>{js}</script>
 </body></html>"""
     (ROOT / "namebook.html").write_text(out, encoding="utf-8")
     print(f"namebook.html: {len(profs)}명, {len(pages) + 1}쪽")

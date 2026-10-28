@@ -69,6 +69,41 @@ h2 { font-size: 20pt; font-weight: 700; letter-spacing: -0.03em; line-height: 1.
 .home .how { margin-top: 3mm; color: var(--sub); font-size: 8pt; }
 .note { color: var(--sub); font-size: 7.5pt; margin-bottom: 4mm; }
 
+/* 관심 분야 테스트 (화면에서만, 인쇄에서는 숨김) */
+.quiz { width: 210mm; margin: 0 auto 8mm; padding: 12mm 14mm; background: #fff; font-size: 11pt; }
+.quiz:empty { display: none; }
+.quiz .lead { margin-top: 3mm; }
+.row { display: flex; flex-wrap: wrap; gap: 3mm; margin-top: 6mm; }
+.btn { display: inline-block; padding: 3mm 6mm; border: 1px solid var(--line); border-radius: 2mm; background: #fff;
+  color: var(--text); font: inherit; font-weight: 600; cursor: pointer; }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn:disabled, .chip:disabled { opacity: .4; cursor: default; }
+.bar { height: 1.2mm; margin-bottom: 4mm; background: var(--line); border-radius: 1mm; overflow: hidden; }
+.bar i { display: block; height: 100%; background: var(--accent); }
+.q { margin: 2mm 0 6mm; font-size: 16pt; font-weight: 700; letter-spacing: -0.02em; }
+.q small { margin-left: 2mm; color: var(--sub); font-size: 10pt; font-weight: 400; }
+.opts { display: grid; gap: 3mm; }
+.opt { padding: 5mm 6mm; border: 1px solid var(--line); border-radius: 2mm; background: #fff; color: var(--text);
+  font: inherit; font-size: 12pt; text-align: left; cursor: pointer; }
+.opt.on { border-color: var(--accent); background: var(--tint); }
+@media (hover: hover) { .opt:hover, .recs a:hover { border-color: var(--accent); } }
+.back { margin-top: 5mm; padding: 0; border: 0; background: none; color: var(--sub); font: inherit; cursor: pointer; }
+.chips { display: flex; flex-wrap: wrap; gap: 2.5mm; }
+.chip { padding: 2.5mm 4mm; border: 1px solid var(--line); border-radius: 99px; background: #fff; color: var(--text);
+  font: inherit; cursor: pointer; }
+.chip.on { border-color: var(--accent); background: var(--tint); color: var(--accent); font-weight: 600; }
+.type { display: flex; align-items: center; gap: 4mm; margin: 2mm 0 4mm; }
+.type .emoji { font-size: 32pt; line-height: 1; }
+.type h2 { color: var(--accent); }
+.code { color: var(--sub); }
+.rec-title { margin: 7mm 0 3mm; font-size: 12pt; font-weight: 700; }
+.recs { display: grid; gap: 2.5mm; }
+.recs a { display: flex; align-items: center; gap: 4mm; padding: 3mm; border: 1px solid var(--line); border-radius: 2mm; }
+.recs img { width: 12mm; height: 16mm; object-fit: cover; border-radius: 1mm; }
+.recs b { color: var(--accent); }
+.recs small { color: var(--sub); }
+@media print { .quiz { display: none; } }
+
 /* 휴대폰·좁은 화면: 카드를 한 줄로 쌓기 */
 a { color: inherit; text-decoration: none; }
 @media screen and (max-width: 800px) {
@@ -108,9 +143,22 @@ a { color: inherit; text-decoration: none; }
   .index li { font-size: 15px; line-height: 2.3; }
   .index i { transform: none; }
   .note { margin: 20px 0 8px; font-size: 12px; }
+
+  .quiz { width: auto; margin: 0; padding: 28px 16px 24px; border-bottom: 1px solid var(--line); font-size: 15px; }
+  .btn { padding: 12px 18px; }
+  .q { margin: 8px 0 18px; font-size: 20px; }
+  .q small { font-size: 13px; }
+  .opt { padding: 16px; border-radius: 10px; font-size: 16px; }
+  .chip { padding: 9px 14px; font-size: 15px; }
+  .type .emoji { font-size: 40px; }
+  .rec-title { font-size: 16px; }
+  .recs a { padding: 10px; border-radius: 10px; }
+  .recs img { width: 44px; height: 58px; }
 }
 </style></head>
 <body>
+<section class="quiz" id="quiz"></section>
+<div id="book"></div>
 <section class="page cover">
   <header><p class="label">경북대학교 일반대학원</p><h2>의과학과 교수진 · 연구실 소개</h2></header>
   
@@ -125,7 +173,7 @@ a { color: inherit; text-decoration: none; }
     <div class="index"><h3>교수님 찾아보기 <small>가나다순 · 쪽</small></h3><ol><li><a href="#구윤경"><span>구윤경</span><i></i><b>2</b></a></li><li><a href="#권용환"><span>권용환</span><i></i><b>9</b></a></li><li><a href="#권태균"><span>권태균</span><i></i><b>10</b></a></li><li><a href="#권태환"><span>권태환</span><i></i><b>6</b></a></li><li><a href="#김균후"><span>김균후</span><i></i><b>6</b></a></li><li><a href="#김동선"><span>김동선</span><i></i><b>7</b></a></li><li><a href="#김민지"><span>김민지</span><i></i><b>9</b></a></li><li><a href="#김범수"><span>김범수</span><i></i><b>11</b></a></li><li><a href="#김상현"><span>김상현</span><i></i><b>7</b></a></li><li><a href="#김석호"><span>김석호</span><i></i><b>3</b></a></li><li><a href="#김성준"><span>김성준</span><i></i><b>3</b></a></li><li><a href="#김예리"><span>김예리</span><i></i><b>2</b></a></li><li><a href="#김은수"><span>김은수</span><i></i><b>9</b></a></li><li><a href="#김정민"><span>김정민</span><i></i><b>3</b></a></li><li><a href="#김정은"><span>김정은</span><i></i><b>4</b></a></li><li><a href="#김하정"><span>김하정</span><i></i><b>5</b></a></li><li><a href="#김홍균"><span>김홍균</span><i></i><b>11</b></a></li><li><a href="#남성욱"><span>남성욱</span><i></i><b>4</b></a></li><li><a href="#남수연"><span>남수연</span><i></i><b>12</b></a></li><li><a href="#남용석"><span>남용석</span><i></i><b>7</b></a></li><li><a href="#박권무"><span>박권무</span><i></i><b>8</b></a></li><li><a href="#박근규"><span>박근규</span><i></i><b>9</b></a></li><li><a href="#박동호"><span>박동호</span><i></i><b>12</b></a></li><li><a href="#박준석"><span>박준석</span><i></i><b>12</b></a></li><li><a href="#박지영"><span>박지영</span><i></i><b>4</b></a></li><li><a href="#박진성"><span>박진성</span><i></i><b>11</b></a></li><li><a href="#박한기"><span>박한기</span><i></i><b>9</b></a></li><li><a href="#배재성"><span>배재성</span><i></i><b>5</b></a></li><li><a href="#백문창"><span>백문창</span><i></i><b>4</b></a></li><li><a href="#서인철"><span>서인철</span><i></i><b>2</b></a></li><li><a href="#석경호"><span>석경호</span><i></i><b>7</b></a></li><li><a href="#성숙진"><span>성숙진</span><i></i><b>12</b></a></li><li><a href="#성영관"><span>성영관</span><i></i><b>2</b></a></li><li><a href="#신민상"><span>신민상</span><i></i><b>3</b></a></li><li><a href="#안병철"><span>안병철</span><i></i><b>13</b></a></li><li><a href="#오진영"><span>오진영</span><i></i><b>10</b></a></li><li><a href="#유정수"><span>유정수</span><i></i><b>4</b></a></li><li><a href="#윤성원"><span>윤성원</span><i></i><b>12</b></a></li><li><a href="#윤영란"><span>윤영란</span><i></i><b>5</b></a></li><li><a href="#이경민"><span>이경민</span><i></i><b>8</b></a></li><li><a href="#이병헌"><span>이병헌</span><i></i><b>6</b></a></li><li><a href="#이재만"><span>이재만</span><i></i><b>6</b></a></li><li><a href="#이제철"><span>이제철</span><i></i><b>3</b></a></li><li><a href="#이종걸"><span>이종걸</span><i></i><b>2</b></a></li><li><a href="#이주헌"><span>이주헌</span><i></i><b>11</b></a></li><li><a href="#이충용"><span>이충용</span><i></i><b>4</b></a></li><li><a href="#이태영"><span>이태영</span><i></i><b>13</b></a></li><li><a href="#이현주"><span>이현주</span><i></i><b>13</b></a></li><li><a href="#이호원"><span>이호원</span><i></i><b>11</b></a></li><li><a href="#이화림"><span>이화림</span><i></i><b>7</b></a></li><li><a href="#장세영"><span>장세영</span><i></i><b>9</b></a></li><li><a href="#장용민"><span>장용민</span><i></i><b>5</b></a></li><li><a href="#전성우"><span>전성우</span><i></i><b>10</b></a></li><li><a href="#전재한"><span>전재한</span><i></i><b>10</b></a></li><li><a href="#정현준"><span>정현준</span><i></i><b>12</b></a></li><li><a href="#정호윤"><span>정호윤</span><i></i><b>11</b></a></li><li><a href="#최연경"><span>최연경</span><i></i><b>10</b></a></li><li><a href="#최제용"><span>최제용</span><i></i><b>6</b></a></li><li><a href="#최지웅"><span>최지웅</span><i></i><b>3</b></a></li><li><a href="#하대룡"><span>하대룡</span><i></i><b>13</b></a></li><li><a href="#하은지"><span>하은지</span><i></i><b>5</b></a></li><li><a href="#한승우"><span>한승우</span><i></i><b>10</b></a></li><li><a href="#한형수"><span>한형수</span><i></i><b>5</b></a></li><li><a href="#허근"><span>허근</span><i></i><b>7</b></a></li><li><a href="#홍연철"><span>홍연철</span><i></i><b>2</b></a></li><li><a href="#홍장원"><span>홍장원</span><i></i><b>6</b></a></li></ol></div>
     <aside class="home">
       <figure class="qr big"><svg viewBox="0 0 29 29" class="segno"><path class="qrline" stroke="#1f2430" d="M0 0.5h7m1 0h1m4 0h2m3 0h1m3 0h7m-29 1h1m5 0h1m3 0h1m3 0h1m1 0h1m5 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m1 0h1m2 0h1m1 0h1m1 0h1m4 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m3 0h2m1 0h3m1 0h3m2 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m2 0h3m1 0h2m3 0h1m1 0h1m1 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h3m3 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-18 1h2m3 0h1m1 0h2m-20 1h1m1 0h1m3 0h2m1 0h3m2 0h2m2 0h3m2 0h1m2 0h1m1 0h1m-28 1h1m2 0h1m2 0h1m1 0h1m3 0h1m2 0h2m1 0h2m1 0h2m3 0h2m-29 1h3m1 0h1m1 0h3m1 0h3m2 0h2m2 0h1m3 0h1m1 0h2m1 0h1m-29 1h4m4 0h2m1 0h1m2 0h3m1 0h1m1 0h6m-26 1h2m1 0h2m1 0h2m1 0h1m1 0h1m1 0h2m1 0h2m1 0h1m2 0h2m4 0h1m-29 1h1m1 0h1m1 0h1m7 0h1m3 0h1m2 0h2m1 0h2m3 0h2m-29 1h2m2 0h5m1 0h2m1 0h3m2 0h3m7 0h1m-29 1h2m1 0h2m7 0h1m2 0h1m5 0h4m-25 1h2m4 0h1m2 0h6m1 0h1m3 0h4m4 0h1m-26 1h1m1 0h1m1 0h3m1 0h1m1 0h1m2 0h2m1 0h2m1 0h2m2 0h3m-29 1h3m1 0h1m1 0h1m1 0h3m1 0h1m2 0h1m1 0h4m4 0h1m2 0h1m-24 1h1m2 0h2m2 0h2m1 0h2m1 0h1m1 0h1m1 0h1m1 0h1m-25 1h2m2 0h1m1 0h1m1 0h2m1 0h1m1 0h1m5 0h7m1 0h1m-20 1h1m1 0h3m3 0h2m1 0h2m3 0h3m1 0h1m-29 1h7m1 0h3m2 0h4m3 0h1m1 0h1m1 0h1m3 0h1m-29 1h1m5 0h1m3 0h3m1 0h1m1 0h1m1 0h3m3 0h1m2 0h2m-29 1h1m1 0h3m1 0h1m2 0h1m1 0h1m1 0h4m2 0h7m2 0h1m-29 1h1m1 0h3m1 0h1m2 0h2m3 0h4m1 0h1m1 0h1m2 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m2 0h5m1 0h1m1 0h1m1 0h1m2 0h1m2 0h2m-29 1h1m5 0h1m2 0h1m2 0h1m3 0h1m1 0h1m1 0h2m1 0h3m-26 1h7m1 0h1m1 0h1m3 0h3m3 0h1m2 0h1m1 0h1m2 0h1"/></svg></figure>
-      <p class="book"><b>휴대폰으로 보기</b><br><a href="https://kkonoo.github.io/Biomed_KNUmed/">kkonoo.github.io/<wbr>Biomed_KNUmed</a></p>
+      <p class="book"><b>휴대폰으로 보기</b><br>나에게 맞는 연구실 찾기 테스트도 있어요<br><a href="https://kkonoo.github.io/Biomed_KNUmed/">kkonoo.github.io/<wbr>Biomed_KNUmed</a></p>
       <p class="how">카드 아래 링크를 누르면 연구실 홈페이지나 교수 소개 페이지가 열려요.</p>
       <p class="how">의과학과 홈페이지<br><a href="https://biomed.knu.ac.kr/">biomed.knu.ac.kr</a></p>
     </aside>
@@ -974,4 +1022,93 @@ a { color: inherit; text-decoration: none; }
 </article></div>
   <footer><span>경북대학교 일반대학원 의과학과</span><span>13</span></footer>
 </section>
+<script id="quiz-data" type="application/json">{"axes": [[["W", "🧪", "실험"], ["D", "💻", "데이터"]], [["Q", "🔍", "원리"], ["S", "🛠", "해결"]], [["C", "🔬", "세포·분자"], ["P", "🧍", "사람·환자"]]], "questions": [{"q": "주말에 새로운 걸 배운다면?", "a": [["W", "직접 만들고 만져 보는 원데이 클래스"], ["D", "노트북으로 파고드는 코딩·데이터 강의"]]}, {"q": "수업 과제로 더 해 보고 싶은 건?", "a": [["W", "세포를 키워서 현미경으로 관찰하기"], ["D", "공개 데이터를 내려받아 그래프로 그려 보기"]]}, {"q": "연구실에서 더 끌리는 자리는?", "a": [["W", "실험대 앞, 피펫과 배양기"], ["D", "모니터 앞, 코드와 데이터"]]}, {"q": "‘새 치료제 개발’ 기사를 보면 먼저 드는 생각은?", "a": [["Q", "이 약이 몸속에서 어떻게 작용할까?"], ["S", "환자가 언제부터 쓸 수 있을까?"]]}, {"q": "고장 난 물건이 있다면?", "a": [["Q", "왜 고장 났는지 뜯어보고 원리를 알아내요"], ["S", "일단 고쳐서 다시 쓸 수 있게 만들어요"]]}, {"q": "가장 뿌듯할 것 같은 순간은?", "a": [["Q", "아무도 몰랐던 원인을 처음 밝혔을 때"], ["S", "내가 만든 방법이 실제로 쓰일 때"]]}, {"q": "더 끌리는 사진은?", "a": [["C", "형광으로 빛나는 세포 현미경 사진"], ["P", "환자와 의료진이 함께하는 병원 풍경"]]}, {"q": "더 들어 보고 싶은 강연 제목은?", "a": [["C", "「세포 하나 안에서 벌어지는 일」"], ["P", "「환자 한 명의 사례에서 시작된 연구」"]]}, {"q": "연구 대상으로 더 궁금한 쪽은?", "a": [["C", "분자·세포·실험동물처럼 작은 단위"], ["P", "환자·사람 집단처럼 큰 단위"]]}], "topics": [["cancer", "🎗", "암"], ["infection", "🦠", "감염·미생물"], ["immune", "🛡", "면역·염증·알레르기"], ["brain", "🧠", "뇌·신경·마음"], ["metabolic", "🍩", "대사 (지방간·당뇨·비만·신장)"], ["musculo", "🦴", "뼈·근육·재생"], ["repro", "👶", "생식·발생"], ["sense", "👁", "눈·귀"]], "types": {"WQC": ["🔬", "세포 탐정", "실험대 앞에서 세포와 분자를 직접 다루며 ‘왜 그럴까’를 끝까지 파고드는 타입이에요. 질병이 생기는 원리를 처음 밝히는 기초 연구실이 잘 맞아요."], "WQP": ["🩺", "질병 추적자", "환자 검체와 동물모델을 오가며 병이 생기는 까닭을 쫓는 타입이에요. 진료 현장의 질문을 실험으로 풀어 가는 연구실이 잘 맞아요."], "WSC": ["🧪", "치료제 설계자", "약, 소재, 나노입자를 직접 만들고 시험해 보는 타입이에요. 신약·전달체·재생 소재를 개발하는 연구실이 잘 맞아요."], "WSP": ["🏥", "임상 혁신가", "환자에게 바로 쓰일 진단과 치료 기술에 끌리는 타입이에요. 새 시술·소재·진단법을 임상으로 옮기는 연구실이 잘 맞아요."], "DQC": ["🧬", "데이터 탐험가", "단일세포·유전체 같은 큰 데이터에서 세포의 숨은 규칙을 찾는 타입이에요. 오믹스와 생물정보학을 쓰는 연구실이 잘 맞아요."], "DQP": ["🗺", "인체 지도 제작자", "코호트, 뇌영상, 의료 빅데이터로 사람의 질병 지도를 그리는 타입이에요. 환자 데이터를 분석하는 연구실이 잘 맞아요."], "DSC": ["🤖", "AI 모델러", "계산과 AI로 신약과 실험을 설계하는 타입이에요. 멀티오믹스·약물 데이터를 모델로 만드는 연구실이 잘 맞아요."], "DSP": ["📱", "디지털 헬스 개발자", "AI와 공학으로 진단하고 예측하는 도구를 만드는 타입이에요. 의료영상 AI·의료기기를 개발하는 연구실이 잘 맞아요."]}, "profs": [{"name": "구윤경", "rank": "교수", "dept": "기생충학·열대의학교실", "photo": "photos/kuku1819.jpg", "keywords": ["말라리아", "약물 내성", "열대의학"], "style": "WQC", "topics": ["infection"], "page": 2}, {"name": "홍연철", "rank": "교수", "dept": "기생충학·열대의학교실", "photo": "photos/ychong.jpg", "keywords": ["병원성 원충", "가시아메바", "진단법"], "style": "WQC", "topics": ["infection"], "page": 2}, {"name": "김예리", "rank": "조교수", "dept": "면역학교실", "photo": "photos/yell_90.jpg", "keywords": ["난청", "이독성", "미토콘드리아"], "style": "WQC", "topics": ["sense"], "page": 2}, {"name": "서인철", "rank": "부교수", "dept": "면역학교실", "photo": "photos/iseo.jpg", "keywords": ["마이크로바이옴", "다중오믹스", "코호트 연구"], "style": "DQP", "topics": ["immune", "infection"], "page": 2}, {"name": "성영관", "rank": "교수", "dept": "면역학교실", "photo": "photos/ysung.jpg", "keywords": ["탈모", "모낭 재생", "피부생물학"], "style": "WSC", "topics": ["musculo"], "page": 2}, {"name": "이종걸", "rank": "조교수", "dept": "면역학교실", "photo": "photos/jglee.jpg", "keywords": ["난임", "자궁내막", "생식독성"], "style": "WQC", "topics": ["repro"], "page": 2}, {"name": "최지웅", "rank": "조교수", "dept": "면역학교실", "photo": "photos/wooong0110.jpg", "keywords": ["나노의학", "세포외소포", "면역치료"], "style": "WSC", "topics": ["cancer", "immune"], "page": 3}, {"name": "김석호", "rank": "부교수", "dept": "미생물학교실", "photo": "photos/shukhokim.jpg", "keywords": ["다제내성균", "박테리오파지", "엔도리신"], "style": "WSC", "topics": ["infection"], "page": 3}, {"name": "김성준", "rank": "조교수", "dept": "미생물학교실", "photo": "photos/sjkim0080.jpg", "keywords": ["바이러스", "미토콘드리아", "백신"], "style": "WQC", "topics": ["infection"], "page": 3}, {"name": "김정민", "rank": "교수", "dept": "미생물학교실", "photo": "photos/minkim.jpg", "keywords": ["박테리오파지", "슈퍼박테리아", "장내 미생물"], "style": "WSC", "topics": ["infection"], "page": 3}, {"name": "신민상", "rank": "교수", "dept": "미생물학교실", "photo": "photos/shinms.jpg", "keywords": ["다제내성균", "세균 병원성", "항균 단백질"], "style": "WQC", "topics": ["infection"], "page": 3}, {"name": "이제철", "rank": "교수", "dept": "미생물학교실", "photo": "photos/leejc.jpg", "keywords": ["다제내성균", "막소포", "항균 전략"], "style": "WQC", "topics": ["infection"], "page": 3}, {"name": "이충용", "rank": "부교수", "dept": "미생물학교실", "photo": "photos/cylee87.jpg", "keywords": ["인플루엔자", "바이러스 진화", "백신"], "style": "DQC", "topics": ["infection"], "page": 4}, {"name": "박지영", "rank": "교수", "dept": "병리학교실", "photo": "photos/jyparkmd.jpg", "keywords": ["분자병리", "암 유전체", "NGS"], "style": "WSP", "topics": ["cancer"], "page": 4}, {"name": "김정은", "rank": "교수", "dept": "분자의학교실", "photo": "photos/kjeun.jpg", "keywords": ["근골격계", "뼈 대사", "뼈 전이"], "style": "WQC", "topics": ["musculo", "metabolic"], "page": 4}, {"name": "남성욱", "rank": "교수", "dept": "분자의학교실", "photo": "photos/nams.jpg", "keywords": ["오가노이드", "바이오칩", "이미지 분석"], "style": "WSC", "topics": ["immune"], "page": 4}, {"name": "백문창", "rank": "교수", "dept": "분자의학교실", "photo": "photos/mcbaek.jpg", "keywords": ["엑소좀", "면역항암", "나노소포"], "style": "WSC", "topics": ["cancer", "immune"], "page": 4}, {"name": "유정수", "rank": "교수", "dept": "분자의학교실", "photo": "photos/yooj.jpg", "keywords": ["방사성의약품", "분자영상", "나노의학"], "style": "WSC", "topics": ["cancer"], "page": 4}, {"name": "윤영란", "rank": "교수", "dept": "분자의학교실", "photo": "photos/yry.jpg", "keywords": ["임상약리", "대사체학", "약동학"], "style": "DSC", "topics": ["metabolic"], "page": 5}, {"name": "장용민", "rank": "교수", "dept": "분자의학교실", "photo": "photos/ychang.jpg", "keywords": ["MRI", "분자영상", "뇌영상"], "style": "DSP", "topics": ["brain"], "page": 5}, {"name": "하은지", "rank": "조교수", "dept": "분자의학교실", "photo": "photos/eha.jpg", "keywords": ["멀티오믹스", "질병유전체", "BI"], "style": "DQC", "topics": ["brain"], "page": 5}, {"name": "김하정", "rank": "부교수", "dept": "생리학교실", "photo": "photos/kimhajeong.jpg", "keywords": ["세포생리", "염증 조절", "종양미세환경"], "style": "WQC", "topics": ["immune", "cancer"], "page": 5}, {"name": "배재성", "rank": "교수", "dept": "생리학교실", "photo": "photos/jsbae.jpg", "keywords": ["알츠하이머병", "지질 신호", "신경줄기세포"], "style": "WQC", "topics": ["brain", "metabolic"], "page": 5}, {"name": "한형수", "rank": "교수", "dept": "생리학교실", "photo": "photos/hshan.jpg", "keywords": ["멀티오믹스", "인공지능", "디지털 헬스케어"], "style": "DSC", "topics": ["cancer", "brain"], "page": 5}, {"name": "홍장원", "rank": "교수", "dept": "생리학교실", "photo": "photos/cwhong.jpg", "keywords": ["호중구", "선천면역", "지방간"], "style": "WQC", "topics": ["immune", "metabolic"], "page": 6}, {"name": "권태환", "rank": "교수", "dept": "생화학·세포생물학교실", "photo": "photos/thkwon.jpg", "keywords": ["신장 생리", "수분통로단백", "전사 조절"], "style": "WQC", "topics": ["metabolic"], "page": 6}, {"name": "김균후", "rank": "조교수", "dept": "생화학·세포생물학교실", "photo": "photos/khookim.jpg", "keywords": ["베타세포", "당뇨병", "유전 변이"], "style": "WQC", "topics": ["metabolic"], "page": 6}, {"name": "이병헌", "rank": "교수", "dept": "생화학·세포생물학교실", "photo": "photos/leebh.jpg", "keywords": ["펩타이드", "표적항암제", "종양미세환경"], "style": "WSC", "topics": ["cancer"], "page": 6}, {"name": "이재만", "rank": "부교수", "dept": "생화학·세포생물학교실", "photo": "photos/jaemanlee.jpg", "keywords": ["핵수용체", "간 대사", "자가포식"], "style": "WQC", "topics": ["metabolic"], "page": 6}, {"name": "최제용", "rank": "교수", "dept": "생화학·세포생물학교실", "photo": "photos/jechoi.jpg", "keywords": ["뼈 생물학", "골다공증", "골관절염"], "style": "WQC", "topics": ["musculo"], "page": 6}, {"name": "허근", "rank": "교수", "dept": "생화학·세포생물학교실", "photo": "photos/keunhur.jpg", "keywords": ["액체생검", "엑소좀 RNA", "암 바이오마커"], "style": "WQC", "topics": ["cancer"], "page": 7}, {"name": "김상현", "rank": "교수", "dept": "약리학교실", "photo": "photos/shkim72.jpg", "keywords": ["아토피피부염", "알레르기", "면역약리"], "style": "WSC", "topics": ["immune"], "page": 7}, {"name": "석경호", "rank": "교수", "dept": "약리학교실", "photo": "photos/ksuk.jpg", "keywords": ["신경염증", "교세포", "뇌 노화"], "style": "WQC", "topics": ["brain", "immune"], "page": 7}, {"name": "이화림", "rank": "조교수", "dept": "약리학교실", "photo": "photos/hrl.jpg", "keywords": ["3D 바이오프린팅", "인공장기", "폐 모델"], "style": "WSC", "topics": ["musculo", "cancer"], "page": 7}, {"name": "김동선", "rank": "교수", "dept": "해부학교실", "photo": "photos/doskim.jpg", "keywords": ["후성유전체", "미세먼지", "바이오마커"], "style": "WQC", "topics": ["cancer"], "page": 7}, {"name": "남용석", "rank": "조교수", "dept": "해부학교실", "photo": "photos/namys.jpg", "keywords": ["임상해부학", "신경·혈관", "수술 해부"], "style": "WQP", "topics": ["musculo"], "page": 7}, {"name": "박권무", "rank": "교수", "dept": "해부학교실", "photo": "photos/kmpark.jpg", "keywords": ["신장 손상", "섬유화", "일차섬모"], "style": "WQC", "topics": ["metabolic"], "page": 8}, {"name": "이경민", "rank": "교수", "dept": "해부학교실", "photo": "photos/irislkm.jpg", "keywords": ["신경과학", "인지", "분자신경생물학"], "style": "WQC", "topics": ["brain"], "page": 8}, {"name": "권용환", "rank": "부교수", "dept": "내과학교실", "photo": "photos/tear9754006.jpg", "keywords": ["헬리코박터", "위암", "단일세포"], "style": "WQP", "topics": ["cancer", "infection"], "page": 9}, {"name": "김민지", "rank": "조교수", "dept": "내과학교실", "photo": "photos/mjikim.jpg", "keywords": ["내분비대사", "당뇨병", "미토콘드리아"], "style": "WQC", "topics": ["metabolic"], "page": 9}, {"name": "김은수", "rank": "교수", "dept": "내과학교실", "photo": "photos/dandy813.jpg", "keywords": ["염증성 장질환", "장내 미생물", "AI 진단"], "style": "WQP", "topics": ["immune", "infection"], "page": 9}, {"name": "박근규", "rank": "교수", "dept": "내과학교실", "photo": "photos/kpark.jpg", "keywords": ["암 대사", "간암", "페롭토시스"], "style": "WQC", "topics": ["cancer", "metabolic"], "page": 9}, {"name": "박한기", "rank": "부교수", "dept": "내과학교실", "photo": "photos/hankipark.jpg", "keywords": ["알레르기", "천식", "장내 미생물"], "style": "WQP", "topics": ["immune", "infection"], "page": 9}, {"name": "장세영", "rank": "교수", "dept": "내과학교실", "photo": "photos/vocjsy.jpg", "keywords": ["지방간", "간암", "빅데이터"], "style": "DQP", "topics": ["metabolic", "cancer"], "page": 9}, {"name": "전성우", "rank": "교수", "dept": "내과학교실", "photo": "photos/swjeon.jpg", "keywords": ["치료 내시경", "헬리코박터", "위암"], "style": "WSP", "topics": ["cancer"], "page": 10}, {"name": "전재한", "rank": "부교수", "dept": "내과학교실", "photo": "photos/jeonjh.jpg", "keywords": ["미토콘드리아", "대사질환", "심장·신장"], "style": "WSC", "topics": ["metabolic"], "page": 10}, {"name": "최연경", "rank": "부교수", "dept": "내과학교실", "photo": "photos/ykchoi.jpg", "keywords": ["대사 재프로그래밍", "간암", "지방간염"], "style": "WQC", "topics": ["metabolic", "cancer"], "page": 10}, {"name": "한승우", "rank": "부교수", "dept": "내과학교실", "photo": "photos/kiefedr.jpg", "keywords": ["골관절염", "연골세포 대사", "나노입자"], "style": "WSC", "topics": ["musculo"], "page": 10}, {"name": "오진영", "rank": "조교수", "dept": "마취통증의학교실", "photo": "photos/sgcms3.jpg", "keywords": ["통증의학", "신경차단", "골·연골"], "style": "WSP", "topics": ["musculo"], "page": 10}, {"name": "권태균", "rank": "교수", "dept": "비뇨기과학교실", "photo": "photos/tgkwon.jpg", "keywords": ["비뇨기종양", "재생의학", "세포치료"], "style": "WSP", "topics": ["cancer", "musculo"], "page": 10}, {"name": "김범수", "rank": "교수", "dept": "비뇨기과학교실", "photo": "photos/urokbs.jpg", "keywords": ["요로결석", "신장 재생", "바이오소재"], "style": "WSP", "topics": ["musculo", "metabolic"], "page": 11}, {"name": "이주헌", "rank": "조교수", "dept": "산부인과학교실", "photo": "photos/gyjhlee.jpg", "keywords": ["부인종양", "HPV", "딥러닝"], "style": "DQP", "topics": ["cancer", "repro"], "page": 11}, {"name": "정호윤", "rank": "교수", "dept": "성형외과학교실", "photo": "photos/hy-chung.jpg", "keywords": ["혈관기형", "오가노이드", "조직 재건"], "style": "WSP", "topics": ["musculo"], "page": 11}, {"name": "박진성", "rank": "부교수", "dept": "신경과학교실", "photo": "photos/neurojspark.jpg", "keywords": ["신경근육질환", "루게릭병", "SBMA"], "style": "WQP", "topics": ["brain"], "page": 11}, {"name": "이호원", "rank": "교수", "dept": "신경과학교실", "photo": "photos/neuromd.jpg", "keywords": ["신경퇴행성 질환", "바이오마커", "줄기세포 치료"], "style": "WSP", "topics": ["brain"], "page": 11}, {"name": "김홍균", "rank": "교수", "dept": "안과학교실", "photo": "photos/okeye.jpg", "keywords": ["안구건조증", "장기칩", "세포외소포"], "style": "WSP", "topics": ["sense"], "page": 11}, {"name": "박동호", "rank": "교수", "dept": "안과학교실", "photo": "photos/dongho_park.jpg", "keywords": ["망막", "황반변성", "대사 재프로그래밍"], "style": "WSC", "topics": ["sense"], "page": 12}, {"name": "윤성원", "rank": "교수", "dept": "영상의학교실", "photo": "photos/ysw24neurorad.jpg", "keywords": ["뇌혈관 중재", "의료로봇", "AI 영상"], "style": "DSP", "topics": ["brain"], "page": 12}, {"name": "박준석", "rank": "교수", "dept": "외과학교실", "photo": "photos/parkjs0802.jpg", "keywords": ["바이오소재", "액체생검", "외과"], "style": "WSP", "topics": ["cancer"], "page": 12}, {"name": "남수연", "rank": "조교수", "dept": "융합연구진료센터", "photo": "photos/namsy.jpg", "keywords": ["위암", "오가노이드", "중개연구"], "style": "DQP", "topics": ["cancer"], "page": 12}, {"name": "성숙진", "rank": "부교수", "dept": "융합연구진료센터", "photo": "photos/wintersj.jpg", "keywords": ["대사체학", "지질체학", "임상약리"], "style": "DQP", "topics": ["metabolic"], "page": 12}, {"name": "정현준", "rank": "조교수", "dept": "융합연구진료센터", "photo": "photos/hjjung.jpg", "keywords": ["시스템생리학", "다중오믹스", "계산생물학"], "style": "DQC", "topics": [], "page": 12}, {"name": "이태영", "rank": "조교수", "dept": "정신건강의학교실", "photo": "photos/tylee.jpg", "keywords": ["조현병", "뇌영상", "정신질환 예측"], "style": "DQP", "topics": ["brain"], "page": 13}, {"name": "이현주", "rank": "부교수", "dept": "정형외과학교실", "photo": "photos/hjleee.jpg", "keywords": ["재활공학", "생체역학", "정형외과"], "style": "DSP", "topics": ["musculo"], "page": 13}, {"name": "하대룡", "rank": "부교수", "dept": "피부과학교실", "photo": "photos/dlha.jpg", "keywords": ["피부과 AI", "피부암", "건선"], "style": "DSP", "topics": ["cancer"], "page": 13}, {"name": "안병철", "rank": "교수", "dept": "핵의학교실", "photo": "photos/abc2000.jpg", "keywords": ["갑상선암", "핵의학", "세포외소포"], "style": "WSC", "topics": ["cancer"], "page": 13}]}</script>
+<script>// 관심 분야 테스트: 9문항(둘 중 하나) + 관심 주제(두 개까지) -> 유형 + 잘 맞는 교수님
+(() => {
+  const D = JSON.parse(document.getElementById("quiz-data").textContent);
+  const box = document.getElementById("quiz");
+  const N = D.questions.length;
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const shuffle = a => a.map(v => [Math.random(), v]).sort((x, y) => x[0] - y[0]).map(v => v[1]);
+  let step = -1, ans = [], picks = [], opts = [];
+
+  function intro() {
+    return `<p class="label">의과학과 · 2분 테스트</p>
+      <h2>나에게 맞는 연구 스타일은?</h2>
+      <p class="lead">정답은 없어요. 마음이 가는 쪽을 골라 주세요. 결과에 맞는 교수님 연구실을 추천해 드려요.</p>
+      <div class="row"><button class="btn primary" data-act="start">테스트 시작</button>
+      <a class="btn" href="#book">교수진 바로 보기 ↓</a></div>`;
+  }
+
+  function head(i) {
+    return `<div class="bar"><i style="width:${(i / (N + 1)) * 100}%"></i></div>
+      <p class="label">${i + 1} / ${N + 1}</p>`;
+  }
+
+  function question() {
+    const q = D.questions[step];
+    return head(step) + `<h3 class="q">${esc(q.q)}</h3>
+      <div class="opts">${opts[step].map(([k, t]) =>
+        `<button class="opt${ans[step] === k ? " on" : ""}" data-act="pick" data-k="${k}">${esc(t)}</button>`).join("")}</div>
+      <button class="back" data-act="back">← 이전</button>`;
+  }
+
+  function topics() {
+    return head(N) + `<h3 class="q">가장 궁금한 주제는? <small>두 개까지</small></h3>
+      <div class="chips">${D.topics.map(([k, icon, label]) => {
+        const on = picks.includes(k);
+        return `<button class="chip${on ? " on" : ""}" data-act="topic" data-k="${k}" aria-pressed="${on}"
+          ${!on && picks.length >= 2 ? "disabled" : ""}>${icon} ${esc(label)}</button>`;
+      }).join("")}</div>
+      <div class="row"><button class="btn primary" data-act="done" ${picks.length ? "" : "disabled"}>결과 보기</button></div>
+      <button class="back" data-act="back">← 이전</button>`;
+  }
+
+  function result() {
+    const type = D.axes.map(([a, b], i) => {
+      const n = ans.slice(i * 3, i * 3 + 3).filter(k => k === a[0]).length;
+      return n >= 2 ? a : b;
+    });
+    const code = type.map(t => t[0]).join("");
+    const [icon, name, text] = D.types[code];
+    // 주제가 겹치면 3점, 스타일 글자가 같으면 1점씩. 동점은 섞어서 매번 조금씩 다르게
+    const recs = shuffle(D.profs).map(p => ({ p,
+      s: 3 * p.topics.filter(t => picks.includes(t)).length + [...code].filter((c, i) => p.style[i] === c).length,
+    })).sort((x, y) => y.s - x.s).slice(0, 5).map(r => r.p);
+    return `<p class="label">나의 연구 스타일</p>
+      <div class="type"><span class="emoji">${icon}</span><div><h2>${esc(name)}</h2>
+        <p class="code">${type.map(t => `${t[1]} ${esc(t[2])}`).join(" · ")}</p></div></div>
+      <p class="lead">${esc(text)}</p>
+      <h3 class="rec-title">이런 교수님 연구실이 잘 맞을 수 있어요</h3>
+      <ul class="recs">${recs.map(p => `<li><a href="#${encodeURIComponent(p.name)}">
+        <img src="${esc(p.photo)}" alt=""><span><b>${esc(p.name)}</b> ${esc(p.rank)}<br>
+        <small>${esc(p.dept)} · ${p.page}쪽</small><br><small class="tags">${p.keywords.map(k => "#" + esc(k)).join(" ")}</small></span></a></li>`).join("")}</ul>
+      <div class="row"><button class="btn" data-act="again">다시 하기</button>
+      <a class="btn primary" href="#book">전체 교수진 보기 ↓</a></div>`;
+  }
+
+  function render(scroll) {
+    box.innerHTML = step < 0 ? intro() : step < N ? question() : step === N ? topics() : result();
+    if (scroll && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+  }
+
+  box.addEventListener("click", e => {
+    const b = e.target.closest("[data-act]");
+    if (!b) return;
+    const act = b.dataset.act;
+    if (act === "start") { opts = D.questions.map(q => shuffle(q.a)); ans = []; picks = []; step = 0; }
+    else if (act === "pick") { ans[step] = b.dataset.k; step++; }
+    else if (act === "back") step--;
+    else if (act === "topic") {
+      const k = b.dataset.k;
+      picks = picks.includes(k) ? picks.filter(x => x !== k) : picks.concat(k);
+    }
+    else if (act === "done") step = N + 1;
+    else if (act === "again") step = -1;
+    render(true);
+  });
+
+  render(false);
+})();
+</script>
 </body></html>
