@@ -24,7 +24,7 @@ def qr_svg(url):
 
 def card(p):
     kws = "".join(f"<li>{e(k)}</li>" for k in p["keywords"])
-    return f"""<article class="card">
+    return f"""<article class="card" id="{e(p['name'])}">
   <img class="photo" src="{e(p['photo'])}" alt="">
   <div class="id">
     <h3><span class="name">{e(p['name'])}</span><span class="rank">{e(p['rank'])}</span></h3>
@@ -33,6 +33,7 @@ def card(p):
   <div class="about">
     <p class="line">{e(p['line'])}</p>
     <ul class="kw">{kws}</ul>
+    <a class="go" href="{e(p['link'])}">{e(p['linkLabel'])} →</a>
   </div>
   <figure class="qr">{qr_svg(p['link'])}<figcaption>{e(p['linkLabel'])}</figcaption></figure>
 </article>"""
@@ -61,11 +62,12 @@ def build():
             for p in chunk:
                 where[p["name"]] = no
             pages.append(page(no, "의과학과 교수진", KIND_TITLE[kind],
-                              '<div class="grid">' + "".join(card(p) for p in chunk) + "</div>"))
+                              '<div class="grid">' + "".join(card(p) for p in chunk) + "</div>",
+                              "cont" if i else ""))
 
     n_kind = {k: sum(p["kind"] == k for p in profs) for k in KINDS}
     n_dept = len({p["dept"] for p in profs})
-    index = "".join(f"<li><span>{e(n)}</span><i></i><b>{where[n]}</b></li>"
+    index = "".join(f'<li><a href="#{e(n)}"><span>{e(n)}</span><i></i><b>{where[n]}</b></a></li>'
                     for n in sorted(where))
     cover = page(1, meta["school"], meta["title"], f"""
   <p class="lead">{e(meta['lead'])}</p>
@@ -79,7 +81,7 @@ def build():
     <div class="index"><h3>교수님 찾아보기 <small>가나다순 · 쪽</small></h3><ol>{index}</ol></div>
     <aside class="home">
       <figure class="qr big">{qr_svg(meta['deptUrl'])}</figure>
-      <p><b>의과학과 홈페이지</b><br>{e(meta['deptUrl'].split('//')[1].rstrip('/'))}</p>
+      <p><b>의과학과 홈페이지</b><br><a href="{e(meta['deptUrl'])}">{e(meta['deptUrl'].split('//')[1].rstrip('/'))}</a></p>
       <p class="how">카드마다 있는 QR을 찍으면 연구실 홈페이지나 교수 소개 페이지로 연결돼요.</p>
     </aside>
   </div>

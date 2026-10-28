@@ -56,10 +56,52 @@ h2 { font-size: 20pt; font-weight: 700; letter-spacing: -0.03em; line-height: 1.
 .index h3 { font-size: 12pt; font-weight: 700; margin-bottom: 4mm; }
 .index small { color: var(--sub); font-size: 8.5pt; font-weight: 400; margin-left: 1.5mm; }
 .index ol { columns: 4; column-gap: 7mm; }
-.index li { display: flex; align-items: baseline; gap: 1mm; font-size: 10pt; line-height: 2.1; break-inside: avoid; }
+.index li { font-size: 10pt; line-height: 2.1; break-inside: avoid; }
+.index a { display: flex; align-items: baseline; gap: 1mm; }
 .index i { flex: 1; border-bottom: 1px dotted #c5cad2; transform: translateY(-1mm); }
 .index b { color: var(--accent); font-weight: 600; min-width: 4mm; text-align: right; }
 .home { align-self: start; padding: 5mm; border: 1px solid var(--line); border-radius: 2mm; font-size: 8.5pt; }
 .home .qr svg { width: 34mm; height: 34mm; margin: 0 auto 3mm; }
 .home .how { margin-top: 3mm; color: var(--sub); font-size: 8pt; }
 .note { color: var(--sub); font-size: 7.5pt; margin-bottom: 4mm; }
+
+/* 휴대폰·좁은 화면: 카드를 한 줄로 쌓고, QR 대신 누르는 링크 */
+a { color: inherit; text-decoration: none; }
+.go { display: none; }
+@media screen and (max-width: 800px) {
+  body { background: #f7f8fa; font-size: 14px; }
+  .page { width: auto; height: auto; margin: 0; padding: 28px 16px 4px; background: none; display: block; overflow: visible; }
+  .page.cont > header, .page > footer { display: none; }
+  .page > header { margin-bottom: 16px; padding-bottom: 12px; }
+  .label { font-size: 13px; }
+  h2 { font-size: 22px; }
+  .grid { display: block; margin: 0; }
+  .card { grid-template-columns: 76px 1fr; grid-template-rows: auto auto; column-gap: 14px; row-gap: 12px;
+    margin-bottom: 12px; padding: 16px; background: #fff; border-radius: 10px; scroll-margin-top: 12px; }
+  .photo { width: 76px; height: 101px; border-radius: 6px; }
+  .id { grid-column: 2; }
+  .name { font-size: 20px; }
+  .rank, .dept { font-size: 13px; }
+  .about { grid-column: 1 / 3; gap: 10px; }
+  .line { font-size: 15px; }
+  .kw li { font-size: 12px; }
+  .qr, .home .how { display: none; }
+  .go { display: block; padding: 10px 0 2px; border-top: 1px solid var(--line); color: var(--accent); font-size: 14px; font-weight: 600; }
+
+  .cover .label { font-size: 14px; }
+  .cover h2 { font-size: 26px; }
+  .lead { font-size: 15px; }
+  .stats { grid-template-columns: repeat(2, 1fr); gap: 8px; margin: 20px 0; }
+  .stats div { padding: 12px 14px; background: #fff; border-radius: 10px; }
+  .stats b { font-size: 24px; }
+  .stats span { font-size: 13px; }
+  .cover-body { display: flex; flex-direction: column-reverse; gap: 20px; }
+  .home { align-self: stretch; padding: 14px 16px; background: #fff; border-radius: 10px; font-size: 14px; }
+  .home a { color: var(--accent); }
+  .index h3 { font-size: 16px; margin-bottom: 8px; }
+  .index small { font-size: 12px; }
+  .index ol { columns: 2; column-gap: 20px; }
+  .index li { font-size: 15px; line-height: 2.3; }
+  .index i { transform: none; }
+  .note { margin: 20px 0 8px; font-size: 12px; }
+}
