@@ -1228,7 +1228,10 @@
     "이태영",
     "tylee@knu.ac.kr"
    ],
-   "style": "DQP",
+   "style": [
+    "DQP",
+    "DSP"
+   ],
    "topics": [
     "brain"
    ],
@@ -1541,7 +1544,12 @@
     "DQP"
    ],
    "topics": [
-    "brain"
+    "cancer",
+    "infection",
+    "immune",
+    "brain",
+    "metabolic",
+    "musculo"
    ],
    "photo": "photos/eha.jpg",
    "email": "eha@knu.ac.kr",
