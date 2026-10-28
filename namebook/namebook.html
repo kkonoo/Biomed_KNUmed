@@ -21,29 +21,31 @@ ul, ol { list-style: none; }
   display: flex; flex-direction: column; overflow: hidden; break-after: page; }
 @media print { body { background: #fff; } .page { margin: 0; } }
 
-.page > header { padding-bottom: 4mm; margin-bottom: 6mm; border-bottom: 1px solid var(--line); }
+.page > header { padding-bottom: 4mm; margin-bottom: 5mm; border-bottom: 1px solid var(--line); }
 .label { color: var(--accent); font-size: 9pt; font-weight: 500; }
 h2 { font-size: 20pt; font-weight: 700; letter-spacing: -0.03em; line-height: 1.3; }
 .page > footer { position: absolute; left: 12mm; right: 12mm; bottom: 7mm; display: flex; justify-content: space-between;
   color: var(--sub); font-size: 7.5pt; }
 
 /* 카드 6장 (2 x 3) */
-.grid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3, 1fr); gap: 5mm; flex: 1; margin-bottom: 4mm; }
-.card { position: relative; display: grid; grid-template-columns: 26mm 1fr; grid-template-rows: 35mm 1fr;
-  column-gap: 4mm; row-gap: 4mm; padding: 5mm; border: 1px solid var(--line); border-radius: 2mm; }
-.photo { grid-column: 1; grid-row: 1; width: 26mm; height: 35mm; object-fit: cover; object-position: 50% 20%;
+.grid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3, minmax(0, 1fr)); gap: 4mm; flex: 1; margin-bottom: 4mm; }
+.card { position: relative; display: grid; grid-template-columns: 21mm 1fr; grid-template-rows: 28mm 1fr;
+  column-gap: 4mm; row-gap: 3mm; padding: 4.5mm 5mm; border: 1px solid var(--line); border-radius: 2mm; }
+.photo { grid-column: 1; grid-row: 1; width: 21mm; height: 28mm; object-fit: cover; object-position: 50% 20%;
   background: var(--photo); border-radius: 1mm; }
 .id { grid-column: 2; grid-row: 1; align-self: start; }
 .id h3 { display: flex; align-items: baseline; gap: 2mm; }
 .name { color: var(--accent); font-size: 16pt; font-weight: 700; letter-spacing: -0.02em; }
 .rank { font-size: 9.5pt; font-weight: 500; }
 .dept { color: var(--sub); font-size: 9pt; margin-top: 1mm; }
-.about { grid-column: 1 / 3; grid-row: 2; display: flex; flex-direction: column; gap: 2mm; }
-.line { font-size: 10pt; line-height: 1.55; }
+.contact { margin-top: 3mm; color: var(--sub); font-size: 8pt; line-height: 1.45; }
+.contact span { color: var(--accent); font-weight: 600; }
+.about { grid-column: 1 / 3; grid-row: 2; display: flex; flex-direction: column; gap: 1.5mm; }
+.line { font-size: 9pt; line-height: 1.5; }
 .kw { display: flex; flex-wrap: wrap; gap: 1.2mm; margin-top: auto; }
 .kw li { color: var(--sub); font-size: 7.5pt; }
 .kw li::before { content: "#"; color: var(--accent); margin-right: 0.3mm; }
-.go { align-self: flex-start; color: var(--accent); font-size: 8.5pt; font-weight: 600; }
+.go { display: flex; flex-wrap: wrap; gap: 4mm; color: var(--accent); font-size: 8.5pt; font-weight: 600; }
 
 /* 표지 */
 .cover > header { margin-bottom: 7mm; }
@@ -82,13 +84,13 @@ a { color: inherit; text-decoration: none; }
   .photo { width: 76px; height: 101px; border-radius: 6px; }
   .id { grid-column: 2; }
   .name { font-size: 20px; }
-  .rank, .dept { font-size: 13px; }
+  .rank, .dept, .contact { font-size: 13px; }
   .about { grid-column: 1 / 3; gap: 10px; }
   .line { font-size: 15px; }
   .kw li { font-size: 12px; }
   .home .qr, .home .book { display: none; }
   .home .how { font-size: 13px; }
-  .go { align-self: stretch; padding: 10px 0 2px; border-top: 1px solid var(--line); color: var(--accent); font-size: 14px; font-weight: 600; }
+  .go { gap: 16px; padding: 10px 0 2px; border-top: 1px solid var(--line); font-size: 14px; }
 
   .cover .label { font-size: 14px; }
   .cover h2 { font-size: 26px; }
@@ -114,13 +116,13 @@ a { color: inherit; text-decoration: none; }
   
   <p class="lead">의과학과에서는 기초의학과 임상의학 교수님들이 함께 대학원생을 지도해요. 관심 가는 연구 주제를 찾아보고, 링크를 눌러 연구실을 더 알아보세요.</p>
   <div class="stats">
-    <div><b>67</b><span>교수진</span></div>
-    <div><b>40</b><span>기초의학</span></div>
-    <div><b>27</b><span>임상의학</span></div>
+    <div><b>69</b><span>교수진</span></div>
+    <div><b>41</b><span>기초의학</span></div>
+    <div><b>28</b><span>임상의학</span></div>
     <div><b>23</b><span>교실·센터</span></div>
   </div>
   <div class="cover-body">
-    <div class="index"><h3>교수님 찾아보기 <small>가나다순 · 쪽</small></h3><ol><li><a href="#구윤경"><span>구윤경</span><i></i><b>2</b></a></li><li><a href="#권용환"><span>권용환</span><i></i><b>9</b></a></li><li><a href="#권태균"><span>권태균</span><i></i><b>10</b></a></li><li><a href="#권태환"><span>권태환</span><i></i><b>6</b></a></li><li><a href="#김균후"><span>김균후</span><i></i><b>6</b></a></li><li><a href="#김동선"><span>김동선</span><i></i><b>8</b></a></li><li><a href="#김민지"><span>김민지</span><i></i><b>9</b></a></li><li><a href="#김범수"><span>김범수</span><i></i><b>11</b></a></li><li><a href="#김상현"><span>김상현</span><i></i><b>7</b></a></li><li><a href="#김석호"><span>김석호</span><i></i><b>3</b></a></li><li><a href="#김성준"><span>김성준</span><i></i><b>3</b></a></li><li><a href="#김예리"><span>김예리</span><i></i><b>2</b></a></li><li><a href="#김은수"><span>김은수</span><i></i><b>9</b></a></li><li><a href="#김인겸"><span>김인겸</span><i></i><b>7</b></a></li><li><a href="#김정민"><span>김정민</span><i></i><b>3</b></a></li><li><a href="#김하정"><span>김하정</span><i></i><b>5</b></a></li><li><a href="#김홍균"><span>김홍균</span><i></i><b>11</b></a></li><li><a href="#남성욱"><span>남성욱</span><i></i><b>4</b></a></li><li><a href="#남수연"><span>남수연</span><i></i><b>12</b></a></li><li><a href="#남용석"><span>남용석</span><i></i><b>8</b></a></li><li><a href="#박권무"><span>박권무</span><i></i><b>8</b></a></li><li><a href="#박근규"><span>박근규</span><i></i><b>9</b></a></li><li><a href="#박낭운"><span>박낭운</span><i></i><b>6</b></a></li><li><a href="#박동호"><span>박동호</span><i></i><b>12</b></a></li><li><a href="#박준석"><span>박준석</span><i></i><b>12</b></a></li><li><a href="#박지영"><span>박지영</span><i></i><b>4</b></a></li><li><a href="#박진성"><span>박진성</span><i></i><b>11</b></a></li><li><a href="#박한기"><span>박한기</span><i></i><b>9</b></a></li><li><a href="#배재성"><span>배재성</span><i></i><b>5</b></a></li><li><a href="#백문창"><span>백문창</span><i></i><b>4</b></a></li><li><a href="#부용출"><span>부용출</span><i></i><b>4</b></a></li><li><a href="#서인철"><span>서인철</span><i></i><b>2</b></a></li><li><a href="#석경호"><span>석경호</span><i></i><b>7</b></a></li><li><a href="#성숙진"><span>성숙진</span><i></i><b>12</b></a></li><li><a href="#성영관"><span>성영관</span><i></i><b>2</b></a></li><li><a href="#신민상"><span>신민상</span><i></i><b>3</b></a></li><li><a href="#안병철"><span>안병철</span><i></i><b>13</b></a></li><li><a href="#오진영"><span>오진영</span><i></i><b>10</b></a></li><li><a href="#유정수"><span>유정수</span><i></i><b>4</b></a></li><li><a href="#윤성원"><span>윤성원</span><i></i><b>12</b></a></li><li><a href="#윤영란"><span>윤영란</span><i></i><b>5</b></a></li><li><a href="#이경민"><span>이경민</span><i></i><b>8</b></a></li><li><a href="#이병헌"><span>이병헌</span><i></i><b>6</b></a></li><li><a href="#이재만"><span>이재만</span><i></i><b>6</b></a></li><li><a href="#이제철"><span>이제철</span><i></i><b>3</b></a></li><li><a href="#이종걸"><span>이종걸</span><i></i><b>2</b></a></li><li><a href="#이주헌"><span>이주헌</span><i></i><b>11</b></a></li><li><a href="#이충용"><span>이충용</span><i></i><b>4</b></a></li><li><a href="#이태영"><span>이태영</span><i></i><b>12</b></a></li><li><a href="#이현주"><span>이현주</span><i></i><b>13</b></a></li><li><a href="#이호원"><span>이호원</span><i></i><b>11</b></a></li><li><a href="#이화림"><span>이화림</span><i></i><b>7</b></a></li><li><a href="#장세영"><span>장세영</span><i></i><b>9</b></a></li><li><a href="#장용민"><span>장용민</span><i></i><b>5</b></a></li><li><a href="#전성우"><span>전성우</span><i></i><b>10</b></a></li><li><a href="#전재한"><span>전재한</span><i></i><b>10</b></a></li><li><a href="#정호윤"><span>정호윤</span><i></i><b>11</b></a></li><li><a href="#최연경"><span>최연경</span><i></i><b>10</b></a></li><li><a href="#최제용"><span>최제용</span><i></i><b>7</b></a></li><li><a href="#최지웅"><span>최지웅</span><i></i><b>3</b></a></li><li><a href="#하대룡"><span>하대룡</span><i></i><b>13</b></a></li><li><a href="#하은지"><span>하은지</span><i></i><b>5</b></a></li><li><a href="#한승우"><span>한승우</span><i></i><b>10</b></a></li><li><a href="#한형수"><span>한형수</span><i></i><b>5</b></a></li><li><a href="#허근"><span>허근</span><i></i><b>7</b></a></li><li><a href="#홍연철"><span>홍연철</span><i></i><b>2</b></a></li><li><a href="#홍장원"><span>홍장원</span><i></i><b>6</b></a></li></ol></div>
+    <div class="index"><h3>교수님 찾아보기 <small>가나다순 · 쪽</small></h3><ol><li><a href="#구윤경"><span>구윤경</span><i></i><b>2</b></a></li><li><a href="#권용환"><span>권용환</span><i></i><b>9</b></a></li><li><a href="#권태균"><span>권태균</span><i></i><b>10</b></a></li><li><a href="#권태환"><span>권태환</span><i></i><b>6</b></a></li><li><a href="#김균후"><span>김균후</span><i></i><b>6</b></a></li><li><a href="#김동선"><span>김동선</span><i></i><b>8</b></a></li><li><a href="#김민지"><span>김민지</span><i></i><b>9</b></a></li><li><a href="#김범수"><span>김범수</span><i></i><b>11</b></a></li><li><a href="#김상현"><span>김상현</span><i></i><b>7</b></a></li><li><a href="#김석호"><span>김석호</span><i></i><b>3</b></a></li><li><a href="#김성준"><span>김성준</span><i></i><b>3</b></a></li><li><a href="#김예리"><span>김예리</span><i></i><b>2</b></a></li><li><a href="#김은수"><span>김은수</span><i></i><b>9</b></a></li><li><a href="#김인겸"><span>김인겸</span><i></i><b>7</b></a></li><li><a href="#김정민"><span>김정민</span><i></i><b>3</b></a></li><li><a href="#김정은"><span>김정은</span><i></i><b>4</b></a></li><li><a href="#김하정"><span>김하정</span><i></i><b>5</b></a></li><li><a href="#김홍균"><span>김홍균</span><i></i><b>11</b></a></li><li><a href="#남성욱"><span>남성욱</span><i></i><b>4</b></a></li><li><a href="#남수연"><span>남수연</span><i></i><b>12</b></a></li><li><a href="#남용석"><span>남용석</span><i></i><b>8</b></a></li><li><a href="#박권무"><span>박권무</span><i></i><b>8</b></a></li><li><a href="#박근규"><span>박근규</span><i></i><b>9</b></a></li><li><a href="#박낭운"><span>박낭운</span><i></i><b>6</b></a></li><li><a href="#박동호"><span>박동호</span><i></i><b>12</b></a></li><li><a href="#박준석"><span>박준석</span><i></i><b>12</b></a></li><li><a href="#박지영"><span>박지영</span><i></i><b>4</b></a></li><li><a href="#박진성"><span>박진성</span><i></i><b>11</b></a></li><li><a href="#박한기"><span>박한기</span><i></i><b>9</b></a></li><li><a href="#배재성"><span>배재성</span><i></i><b>5</b></a></li><li><a href="#백문창"><span>백문창</span><i></i><b>4</b></a></li><li><a href="#부용출"><span>부용출</span><i></i><b>4</b></a></li><li><a href="#서인철"><span>서인철</span><i></i><b>2</b></a></li><li><a href="#석경호"><span>석경호</span><i></i><b>7</b></a></li><li><a href="#성숙진"><span>성숙진</span><i></i><b>12</b></a></li><li><a href="#성영관"><span>성영관</span><i></i><b>2</b></a></li><li><a href="#신민상"><span>신민상</span><i></i><b>3</b></a></li><li><a href="#안병철"><span>안병철</span><i></i><b>13</b></a></li><li><a href="#오진영"><span>오진영</span><i></i><b>10</b></a></li><li><a href="#유정수"><span>유정수</span><i></i><b>5</b></a></li><li><a href="#윤성원"><span>윤성원</span><i></i><b>12</b></a></li><li><a href="#윤영란"><span>윤영란</span><i></i><b>5</b></a></li><li><a href="#이경민"><span>이경민</span><i></i><b>8</b></a></li><li><a href="#이병헌"><span>이병헌</span><i></i><b>6</b></a></li><li><a href="#이재만"><span>이재만</span><i></i><b>7</b></a></li><li><a href="#이제철"><span>이제철</span><i></i><b>3</b></a></li><li><a href="#이종걸"><span>이종걸</span><i></i><b>2</b></a></li><li><a href="#이주헌"><span>이주헌</span><i></i><b>11</b></a></li><li><a href="#이충용"><span>이충용</span><i></i><b>4</b></a></li><li><a href="#이태영"><span>이태영</span><i></i><b>13</b></a></li><li><a href="#이현주"><span>이현주</span><i></i><b>13</b></a></li><li><a href="#이호원"><span>이호원</span><i></i><b>11</b></a></li><li><a href="#이화림"><span>이화림</span><i></i><b>8</b></a></li><li><a href="#장세영"><span>장세영</span><i></i><b>9</b></a></li><li><a href="#장용민"><span>장용민</span><i></i><b>5</b></a></li><li><a href="#전성우"><span>전성우</span><i></i><b>10</b></a></li><li><a href="#전재한"><span>전재한</span><i></i><b>10</b></a></li><li><a href="#정현준"><span>정현준</span><i></i><b>12</b></a></li><li><a href="#정호윤"><span>정호윤</span><i></i><b>11</b></a></li><li><a href="#최연경"><span>최연경</span><i></i><b>10</b></a></li><li><a href="#최제용"><span>최제용</span><i></i><b>7</b></a></li><li><a href="#최지웅"><span>최지웅</span><i></i><b>3</b></a></li><li><a href="#하대룡"><span>하대룡</span><i></i><b>13</b></a></li><li><a href="#하은지"><span>하은지</span><i></i><b>5</b></a></li><li><a href="#한승우"><span>한승우</span><i></i><b>10</b></a></li><li><a href="#한형수"><span>한형수</span><i></i><b>6</b></a></li><li><a href="#허근"><span>허근</span><i></i><b>7</b></a></li><li><a href="#홍연철"><span>홍연철</span><i></i><b>2</b></a></li><li><a href="#홍장원"><span>홍장원</span><i></i><b>6</b></a></li></ol></div>
     <aside class="home">
       <figure class="qr big"><svg viewBox="0 0 29 29" class="segno"><path class="qrline" stroke="#1f2430" d="M0 0.5h7m1 0h1m4 0h2m3 0h1m3 0h7m-29 1h1m5 0h1m3 0h1m3 0h1m1 0h1m5 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m1 0h1m2 0h1m1 0h1m1 0h1m4 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m3 0h2m1 0h3m1 0h3m2 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m2 0h3m1 0h2m3 0h1m1 0h1m1 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h3m3 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-18 1h2m3 0h1m1 0h2m-20 1h1m1 0h1m3 0h2m1 0h3m2 0h2m2 0h3m2 0h1m2 0h1m1 0h1m-28 1h1m2 0h1m2 0h1m1 0h1m3 0h1m2 0h2m1 0h2m1 0h2m3 0h2m-29 1h3m1 0h1m1 0h3m1 0h3m2 0h2m2 0h1m3 0h1m1 0h2m1 0h1m-29 1h4m4 0h2m1 0h1m2 0h3m1 0h1m1 0h6m-26 1h2m1 0h2m1 0h2m1 0h1m1 0h1m1 0h2m1 0h2m1 0h1m2 0h2m4 0h1m-29 1h1m1 0h1m1 0h1m7 0h1m3 0h1m2 0h2m1 0h2m3 0h2m-29 1h2m2 0h5m1 0h2m1 0h3m2 0h3m7 0h1m-29 1h2m1 0h2m7 0h1m2 0h1m5 0h4m-25 1h2m4 0h1m2 0h6m1 0h1m3 0h4m4 0h1m-26 1h1m1 0h1m1 0h3m1 0h1m1 0h1m2 0h2m1 0h2m1 0h2m2 0h3m-29 1h3m1 0h1m1 0h1m1 0h3m1 0h1m2 0h1m1 0h4m4 0h1m2 0h1m-24 1h1m2 0h2m2 0h2m1 0h2m1 0h1m1 0h1m1 0h1m1 0h1m-25 1h2m2 0h1m1 0h1m1 0h2m1 0h1m1 0h1m5 0h7m1 0h1m-20 1h1m1 0h3m3 0h2m1 0h2m3 0h3m1 0h1m-29 1h7m1 0h3m2 0h4m3 0h1m1 0h1m1 0h1m3 0h1m-29 1h1m5 0h1m3 0h3m1 0h1m1 0h1m1 0h3m3 0h1m2 0h2m-29 1h1m1 0h3m1 0h1m2 0h1m1 0h1m1 0h4m2 0h7m2 0h1m-29 1h1m1 0h3m1 0h1m2 0h2m3 0h4m1 0h1m1 0h1m2 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m2 0h5m1 0h1m1 0h1m1 0h1m2 0h1m2 0h2m-29 1h1m5 0h1m2 0h1m2 0h1m3 0h1m1 0h1m1 0h2m1 0h3m-26 1h7m1 0h1m1 0h1m3 0h3m3 0h1m2 0h1m1 0h1m2 0h1"/></svg></figure>
       <p class="book"><b>휴대폰으로 보기</b><br><a href="https://kkonoo.github.io/Biomed_KNUmed/">kkonoo.github.io/<wbr>Biomed_KNUmed</a></p>
@@ -138,66 +140,72 @@ a { color: inherit; text-decoration: none; }
   <div class="id">
     <h3><span class="name">구윤경</span><span class="rank">교수</span></h3>
     <p class="dept">기생충학·열대의학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">말라리아 원충이 약에 내성을 갖는 원리를 밝히고 새 항말라리아 약물을 찾아요</p>
     <ul class="kw"><li>말라리아</li><li>약물 내성</li><li>열대의학</li></ul>
-    <a class="go" href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTI4Mw==">교수 소개 페이지 →</a>
+    <p class="go"><a href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTI4Mw==">교수 소개 페이지 →</a></p>
   </div>
 </article><article class="card" id="홍연철">
   <img class="photo" src="photos/ychong.jpg" alt="">
   <div class="id">
     <h3><span class="name">홍연철</span><span class="rank">교수</span></h3>
     <p class="dept">기생충학·열대의학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">아메바성 뇌염을 일으키는 가시아메바 등 병원성 원충의 생존 기전과 진단·치료법을 연구해요</p>
     <ul class="kw"><li>병원성 원충</li><li>가시아메바</li><li>진단법</li></ul>
-    <a class="go" href="https://research.knu.ac.kr/en/persons/yeonchul-hong/">연구자 프로필 →</a>
+    <p class="go"><a href="https://research.knu.ac.kr/en/persons/yeonchul-hong/">연구자 프로필 →</a></p>
   </div>
 </article><article class="card" id="김예리">
   <img class="photo" src="photos/yell_90.jpg" alt="">
   <div class="id">
     <h3><span class="name">김예리</span><span class="rank">조교수</span></h3>
     <p class="dept">면역학교실</p>
+    <p class="contact"><span>담당자</span> 김예리<br>yell_90@knu.ac.kr</p>
   </div>
   <div class="about">
-    <p class="line">난청이 생기는 기전을 밝히고 청력을 지키는 치료제를 개발해요</p>
+    <p class="line">유전자 변화는 어떻게 신경과 근육의 질병으로 이어질까요? 감각신경생물학·대사 연구실은 유전자 조절과 미토콘드리아 기능을 중심으로 질병의 비밀을 탐구합니다. 유전체 분석부터 세포·동물모델 실험까지, 다양한 접근으로 질병의 원인을 밝히고 새로운 치료의 가능성을 찾아갑니다.</p>
     <ul class="kw"><li>난청</li><li>이독성</li><li>미토콘드리아</li></ul>
-    <a class="go" href="https://scholar.google.com/citations?user=TFwfm9IAAAAJ">Google Scholar →</a>
+    <p class="go"><a href="https://scholar.google.com/citations?user=TFwfm9IAAAAJ">Google Scholar →</a></p>
   </div>
 </article><article class="card" id="서인철">
   <img class="photo" src="photos/iseo.jpg" alt="">
   <div class="id">
     <h3><span class="name">서인철</span><span class="rank">부교수</span></h3>
     <p class="dept">면역학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">마이크로바이옴과 다중오믹스, 대규모 코호트 데이터로 면역·감염 질환을 연구해요</p>
     <ul class="kw"><li>마이크로바이옴</li><li>다중오믹스</li><li>코호트 연구</li></ul>
-    <a class="go" href="https://scholar.google.com/citations?user=zDr9aw0AAAAJ">Google Scholar →</a>
+    <p class="go"><a href="https://scholar.google.com/citations?user=zDr9aw0AAAAJ">Google Scholar →</a></p>
   </div>
 </article><article class="card" id="성영관">
   <img class="photo" src="photos/ysung.jpg" alt="">
   <div class="id">
     <h3><span class="name">성영관</span><span class="rank">교수</span></h3>
     <p class="dept">면역학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">탈모가 생기는 원리를 밝히고 모낭 재생과 발모 치료제를 개발해요</p>
     <ul class="kw"><li>탈모</li><li>모낭 재생</li><li>피부생물학</li></ul>
-    <a class="go" href="https://scholar.google.com/citations?user=fU6gc4EAAAAJ">Google Scholar →</a>
+    <p class="go"><a href="https://scholar.google.com/citations?user=fU6gc4EAAAAJ">Google Scholar →</a></p>
   </div>
 </article><article class="card" id="이종걸">
   <img class="photo" src="photos/jglee.jpg" alt="">
   <div class="id">
     <h3><span class="name">이종걸</span><span class="rank">조교수</span></h3>
     <p class="dept">면역학교실</p>
+    <p class="contact"><span>담당자</span> 이종걸<br>jglee@knu.ac.kr</p>
   </div>
   <div class="about">
-    <p class="line">자궁 내 환경을 모사해 임신 질환과 난임의 원인·치료 전략을 연구해요</p>
+    <p class="line">생식유전생물학연구실은 임신이 시작되는 과정을 세포·분자 수준에서 연구합니다. 자궁내막의 탈락막화, 배아 착상, 태반 형성에 주목하며, 사람 유래 세포모델과 동물실험을 통해 환경유해물질이 초기 임신에 미치는 영향과 난임·임신성 질환의 원인을 탐구합니다.</p>
     <ul class="kw"><li>난임</li><li>자궁내막</li><li>생식독성</li></ul>
-    <a class="go" href="https://im.knu.ac.kr/lee">연구실 홈페이지 →</a>
+    <p class="go"><a href="https://im.knu.ac.kr/lee">연구실 홈페이지 →</a></p>
   </div>
 </article></div>
   <footer><span>경북대학교 일반대학원 의과학과</span><span>2</span></footer>
@@ -208,66 +216,72 @@ a { color: inherit; text-decoration: none; }
   <div class="id">
     <h3><span class="name">최지웅</span><span class="rank">조교수</span></h3>
     <p class="dept">면역학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">세포외소포·나노의약·마이크로로봇으로 종양 면역을 바꾸는 치료 기술을 개발해요</p>
     <ul class="kw"><li>나노의학</li><li>세포외소포</li><li>면역치료</li></ul>
-    <a class="go" href="https://scholar.google.com/citations?user=IZrgQWMAAAAJ">Google Scholar →</a>
+    <p class="go"><a href="https://choi-dds.knu.ac.kr/">연구실 홈페이지 →</a></p>
   </div>
 </article><article class="card" id="김석호">
   <img class="photo" src="photos/shukhokim.jpg" alt="">
   <div class="id">
     <h3><span class="name">김석호</span><span class="rank">부교수</span></h3>
     <p class="dept">미생물학교실</p>
+    <p class="contact"><span>담당자</span> 조경민<br>gmj350124@naver.com</p>
   </div>
   <div class="about">
-    <p class="line">박테리오파지와 엔도리신으로 다제내성균 감염을 치료하는 방법을 개발해요</p>
+    <p class="line">AMR &amp; Phages Lab은 항생제 내성(AMR) 극복을 위해 박테리오파지(Phages) 기반 차세대 항균 치료 기술을 연구합니다. 합성생물학 기반 파지-항생제 시너지 및 정밀 전달 시스템을 개발하여 난치성 세균 감염 제어의 혁신을 이끕니다.</p>
     <ul class="kw"><li>다제내성균</li><li>박테리오파지</li><li>엔도리신</li></ul>
-    <a class="go" href="https://www.researchgate.net/lab/Shukho-Kim-Lab-MDR-Phages-Shukho-Kim">ResearchGate →</a>
+    <p class="go"><a href="https://www.researchgate.net/lab/Shukho-Kim-Lab-MDR-Phages-Shukho-Kim">ResearchGate →</a></p>
   </div>
 </article><article class="card" id="김성준">
   <img class="photo" src="photos/sjkim0080.jpg" alt="">
   <div class="id">
     <h3><span class="name">김성준</span><span class="rank">조교수</span></h3>
     <p class="dept">미생물학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">바이러스가 미토콘드리아 등 세포소기관을 이용하는 원리를 밝히고 백신을 연구해요</p>
     <ul class="kw"><li>바이러스</li><li>미토콘드리아</li><li>백신</li></ul>
-    <a class="go" href="https://scholar.google.com/citations?user=MeQ0ov4AAAAJ">Google Scholar →</a>
+    <p class="go"><a href="http://kimlab.knu.ac.kr/">연구실 홈페이지 →</a></p>
   </div>
 </article><article class="card" id="김정민">
   <img class="photo" src="photos/minkim.jpg" alt="">
   <div class="id">
     <h3><span class="name">김정민</span><span class="rank">교수</span></h3>
     <p class="dept">미생물학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">다제내성 세균을 잡는 박테리오파지 치료제와 장내 미생물을 연구해요</p>
     <ul class="kw"><li>박테리오파지</li><li>슈퍼박테리아</li><li>장내 미생물</li></ul>
-    <a class="go" href="https://research.knu.ac.kr/en/persons/jungmin-kim/">연구자 프로필 →</a>
+    <p class="go"><a href="https://research.knu.ac.kr/en/persons/jungmin-kim/">연구자 프로필 →</a></p>
   </div>
 </article><article class="card" id="신민상">
   <img class="photo" src="photos/shinms.jpg" alt="">
   <div class="id">
     <h3><span class="name">신민상</span><span class="rank">교수</span></h3>
     <p class="dept">미생물학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">다제내성균(아시네토박터)의 병원성 조절 기전과 항균 단백질을 연구해요</p>
     <ul class="kw"><li>다제내성균</li><li>세균 병원성</li><li>항균 단백질</li></ul>
-    <a class="go" href="https://scholar.google.com/citations?user=o4Ucq2sAAAAJ">Google Scholar →</a>
+    <p class="go"><a href="https://scholar.google.com/citations?user=o4Ucq2sAAAAJ">Google Scholar →</a></p>
   </div>
 </article><article class="card" id="이제철">
   <img class="photo" src="photos/leejc.jpg" alt="">
   <div class="id">
     <h3><span class="name">이제철</span><span class="rank">교수</span></h3>
     <p class="dept">미생물학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">다제내성균의 독성 단백질과 막소포를 연구해 항생제를 대신할 치료 전략을 찾아요</p>
     <ul class="kw"><li>다제내성균</li><li>막소포</li><li>항균 전략</li></ul>
-    <a class="go" href="https://scholar.google.com/citations?user=5TlwgOYAAAAJ">Google Scholar →</a>
+    <p class="go"><a href="https://scholar.google.com/citations?user=5TlwgOYAAAAJ">Google Scholar →</a></p>
   </div>
 </article></div>
   <footer><span>경북대학교 일반대학원 의과학과</span><span>3</span></footer>
@@ -278,324 +292,364 @@ a { color: inherit; text-decoration: none; }
   <div class="id">
     <h3><span class="name">이충용</span><span class="rank">부교수</span></h3>
     <p class="dept">미생물학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">인플루엔자 등 인수공통 바이러스의 진화와 종간 전파를 머신러닝과 백신 연구로 추적해요</p>
     <ul class="kw"><li>인플루엔자</li><li>바이러스 진화</li><li>백신</li></ul>
-    <a class="go" href="http://virus.knu.ac.kr/">연구실 홈페이지 →</a>
+    <p class="go"><a href="http://virus.knu.ac.kr/">연구실 홈페이지 →</a></p>
   </div>
 </article><article class="card" id="박지영">
   <img class="photo" src="photos/jyparkmd.jpg" alt="">
   <div class="id">
     <h3><span class="name">박지영</span><span class="rank">교수</span></h3>
     <p class="dept">병리학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">차세대 염기서열 분석(NGS)으로 갑상선암·부인암을 진단하는 분자병리를 연구해요</p>
     <ul class="kw"><li>분자병리</li><li>암 유전체</li><li>NGS</li></ul>
-    <a class="go" href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTMwNw==">교수 소개 페이지 →</a>
+    <p class="go"><a href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTMwNw==">교수 소개 페이지 →</a></p>
+  </div>
+</article><article class="card" id="김정은">
+  <img class="photo" src="photos/kjeun.jpg" alt="">
+  <div class="id">
+    <h3><span class="name">김정은</span><span class="rank">교수</span></h3>
+    <p class="dept">분자의학교실</p>
+    <p class="contact"><span>담당자</span> 김정은<br>kjeun@knu.ac.kr</p>
+  </div>
+  <div class="about">
+    <p class="line">Skeletal Connectome Lab은 골격을 중심으로 근육·힘줄·신경·호르몬의 연결과 상호작용을 연구합니다. 뼈세포의 기능, 호르몬에 의한 근육·힘줄 조절, 근골격계·대사 질환, 암의 뼈 전이 및 비만 관련 유전자 기능을 탐구합니다.</p>
+    <ul class="kw"><li>근골격계</li><li>뼈 대사</li><li>뼈 전이</li></ul>
+    <p class="go"><a href="https://kimslab-2fwddodh.manus.space/">연구실 홈페이지 →</a></p>
   </div>
 </article><article class="card" id="남성욱">
   <img class="photo" src="photos/nams.jpg" alt="">
   <div class="id">
     <h3><span class="name">남성욱</span><span class="rank">교수</span></h3>
     <p class="dept">분자의학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">장 오가노이드 배양 칩과 이미지 분석 기술로 동물실험을 대신할 모델을 만들어요</p>
     <ul class="kw"><li>오가노이드</li><li>바이오칩</li><li>이미지 분석</li></ul>
-    <a class="go" href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTI2NA==">교수 소개 페이지 →</a>
+    <p class="go"><a href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTI2NA==">교수 소개 페이지 →</a></p>
   </div>
 </article><article class="card" id="백문창">
   <img class="photo" src="photos/mcbaek.jpg" alt="">
   <div class="id">
     <h3><span class="name">백문창</span><span class="rank">교수</span></h3>
     <p class="dept">분자의학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">엑소좀(세포외소포)으로 암을 진단·치료하는 면역항암 기술을 개발해요</p>
     <ul class="kw"><li>엑소좀</li><li>면역항암</li><li>나노소포</li></ul>
-    <a class="go" href="http://exosome.knu.ac.kr">연구실 홈페이지 →</a>
+    <p class="go"><a href="http://exosome.knu.ac.kr">연구실 홈페이지 →</a></p>
   </div>
 </article><article class="card" id="부용출">
   <img class="photo" src="photos/ycboo.jpg" alt="">
   <div class="id">
     <h3><span class="name">부용출</span><span class="rank">교수</span></h3>
     <p class="dept">분자의학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">피부 항산화·미백·항노화 소재를 찾고, 고혈당이 상처 회복을 늦추는 원리를 연구해요</p>
     <ul class="kw"><li>피부 항산화</li><li>미백</li><li>화장품 소재</li></ul>
-    <a class="go" href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTE5ODg=">교수 소개 페이지 →</a>
-  </div>
-</article><article class="card" id="유정수">
-  <img class="photo" src="photos/yooj.jpg" alt="">
-  <div class="id">
-    <h3><span class="name">유정수</span><span class="rank">교수</span></h3>
-    <p class="dept">분자의학교실</p>
-  </div>
-  <div class="about">
-    <p class="line">암을 찾아 영상화하고 치료하는 방사성의약품과 분자영상 프로브를 개발해요</p>
-    <ul class="kw"><li>방사성의약품</li><li>분자영상</li><li>나노의학</li></ul>
-    <a class="go" href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTI2Nw==">교수 소개 페이지 →</a>
+    <p class="go"><a href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTE5ODg=">교수 소개 페이지 →</a></p>
   </div>
 </article></div>
   <footer><span>경북대학교 일반대학원 의과학과</span><span>4</span></footer>
 </section><section class="page cont">
   <header><p class="label">의과학과 교수진</p><h2>기초의학 교실</h2></header>
-  <div class="grid"><article class="card" id="윤영란">
+  <div class="grid"><article class="card" id="유정수">
+  <img class="photo" src="photos/yooj.jpg" alt="">
+  <div class="id">
+    <h3><span class="name">유정수</span><span class="rank">교수</span></h3>
+    <p class="dept">분자의학교실</p>
+    
+  </div>
+  <div class="about">
+    <p class="line">암을 찾아 영상화하고 치료하는 방사성의약품과 분자영상 프로브를 개발해요</p>
+    <ul class="kw"><li>방사성의약품</li><li>분자영상</li><li>나노의학</li></ul>
+    <p class="go"><a href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTI2Nw==">교수 소개 페이지 →</a></p>
+  </div>
+</article><article class="card" id="윤영란">
   <img class="photo" src="photos/yry.jpg" alt="">
   <div class="id">
     <h3><span class="name">윤영란</span><span class="rank">교수</span></h3>
     <p class="dept">분자의학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">약이 몸속에서 움직이는 방식(약동학)과 대사체를 분석하고 AI로 신약 개발을 도와요</p>
     <ul class="kw"><li>임상약리</li><li>대사체학</li><li>약동학</li></ul>
-    <a class="go" href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTI2Ng==">교수 소개 페이지 →</a>
+    <p class="go"><a href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTI2Ng==">교수 소개 페이지 →</a></p>
   </div>
 </article><article class="card" id="장용민">
   <img class="photo" src="photos/ychang.jpg" alt="">
   <div class="id">
     <h3><span class="name">장용민</span><span class="rank">교수</span></h3>
     <p class="dept">분자의학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">MRI·자기공명분광으로 뇌와 질병을 들여다보는 분자영상 기술을 개발해요</p>
     <ul class="kw"><li>MRI</li><li>분자영상</li><li>뇌영상</li></ul>
-    <a class="go" href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTI2NQ==">교수 소개 페이지 →</a>
+    <p class="go"><a href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTI2NQ==">교수 소개 페이지 →</a></p>
   </div>
 </article><article class="card" id="하은지">
   <img class="photo" src="photos/eha.jpg" alt="">
   <div class="id">
     <h3><span class="name">하은지</span><span class="rank">조교수</span></h3>
     <p class="dept">분자의학교실</p>
+    <p class="contact"><span>담당자</span> 김은경<br>kek8735@knu.ac.kr</p>
   </div>
   <div class="about">
-    <p class="line">AI 기반 멀티오믹스로 뇌 회로와 정신질환 유전자 조절을 연구해요</p>
-    <ul class="kw"><li>멀티오믹스</li><li>뇌 회로</li><li>정신질환</li></ul>
-    <a class="go" href="https://halab.knu.ac.kr">연구실 홈페이지 →</a>
+    <p class="line">유전체의학 연구실은 단일세포·공간전사체·미생물군집 등 오믹스 빅데이터로 질병을 이해하는 연구실입니다. 연구실 RPG HaLab Quest에서 분야 탐색부터 연구까지의 여정을 미리 체험해 보세요.</p>
+    <ul class="kw"><li>멀티오믹스</li><li>질병유전체</li><li>BI</li></ul>
+    <p class="go"><a href="https://halab.knu.ac.kr">연구실 홈페이지 →</a><a href="https://halab-quest.knu.ac.kr">HaLab Quest →</a></p>
   </div>
 </article><article class="card" id="김하정">
   <img class="photo" src="photos/kimhajeong.jpg" alt="">
   <div class="id">
     <h3><span class="name">김하정</span><span class="rank">부교수</span></h3>
     <p class="dept">생리학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">죽은 세포를 치우는 탐식 작용과 염증 조절, 종양미세환경을 연구해요</p>
     <ul class="kw"><li>세포생리</li><li>염증 조절</li><li>종양미세환경</li></ul>
-    <a class="go" href="https://research.knu.ac.kr/en/persons/hajeong-kim/">연구자 프로필 →</a>
+    <p class="go"><a href="https://research.knu.ac.kr/en/persons/hajeong-kim/">연구자 프로필 →</a></p>
   </div>
 </article><article class="card" id="배재성">
   <img class="photo" src="photos/jsbae.jpg" alt="">
   <div class="id">
     <h3><span class="name">배재성</span><span class="rank">교수</span></h3>
     <p class="dept">생리학교실</p>
+    <p class="contact"><span>담당자</span> 한완희</p>
   </div>
   <div class="about">
-    <p class="line">알츠하이머병 등 뇌질환에서 지질 신호와 미세아교세포의 역할을 연구해요</p>
+    <p class="line">환자 샘플 분석부터 정밀한 동물 모델 검증을 통한 신약개발까지! 배재성 교수 연구실은 스핑고지질대사 조절을 축으로 알츠하이머병을 비롯한 뇌 및 전신 대사질환의 병인 기전을 규명합니다. 깊이 있는 기초 실험과 중개연구를 통해 실질적 치료제 개발을 합니다.</p>
     <ul class="kw"><li>알츠하이머병</li><li>지질 신호</li><li>신경줄기세포</li></ul>
-    <a class="go" href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTMxNw==">교수 소개 페이지 →</a>
-  </div>
-</article><article class="card" id="한형수">
-  <img class="photo" src="photos/hshan.jpg" alt="">
-  <div class="id">
-    <h3><span class="name">한형수</span><span class="rank">교수</span></h3>
-    <p class="dept">생리학교실</p>
-  </div>
-  <div class="about">
-    <p class="line">멀티오믹스와 인공지능으로 암·치매를 연구하고 디지털 헬스케어를 개발해요</p>
-    <ul class="kw"><li>멀티오믹스</li><li>인공지능</li><li>디지털 헬스케어</li></ul>
-    <a class="go" href="https://scholar.google.com/citations?user=8Sr9DVcAAAAJ">Google Scholar →</a>
+    <p class="go"><a href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTMxNw==">교수 소개 페이지 →</a></p>
   </div>
 </article></div>
   <footer><span>경북대학교 일반대학원 의과학과</span><span>5</span></footer>
 </section><section class="page cont">
   <header><p class="label">의과학과 교수진</p><h2>기초의학 교실</h2></header>
-  <div class="grid"><article class="card" id="홍장원">
+  <div class="grid"><article class="card" id="한형수">
+  <img class="photo" src="photos/hshan.jpg" alt="">
+  <div class="id">
+    <h3><span class="name">한형수</span><span class="rank">교수</span></h3>
+    <p class="dept">생리학교실</p>
+    
+  </div>
+  <div class="about">
+    <p class="line">멀티오믹스와 인공지능으로 암·치매를 연구하고 디지털 헬스케어를 개발해요</p>
+    <ul class="kw"><li>멀티오믹스</li><li>인공지능</li><li>디지털 헬스케어</li></ul>
+    <p class="go"><a href="https://scholar.google.com/citations?user=8Sr9DVcAAAAJ">Google Scholar →</a></p>
+  </div>
+</article><article class="card" id="홍장원">
   <img class="photo" src="photos/cwhong.jpg" alt="">
   <div class="id">
     <h3><span class="name">홍장원</span><span class="rank">교수</span></h3>
     <p class="dept">생리학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">호중구 등 선천면역세포가 지방간·당뇨 합병증에 관여하는 원리를 연구해요</p>
     <ul class="kw"><li>호중구</li><li>선천면역</li><li>지방간</li></ul>
-    <a class="go" href="https://scholar.google.com/citations?user=5HZWdXcAAAAJ">Google Scholar →</a>
+    <p class="go"><a href="https://scholar.google.com/citations?user=5HZWdXcAAAAJ">Google Scholar →</a></p>
   </div>
 </article><article class="card" id="권태환">
   <img class="photo" src="photos/thkwon.jpg" alt="">
   <div class="id">
     <h3><span class="name">권태환</span><span class="rank">교수</span></h3>
     <p class="dept">생화학·세포생물학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">콩팥이 몸의 수분을 조절하는 원리(수분통로 AQP2)를 유전자 전사 수준에서 연구해요</p>
     <ul class="kw"><li>신장 생리</li><li>수분통로단백</li><li>전사 조절</li></ul>
-    <a class="go" href="https://scholar.google.com/citations?user=e2JgDbkAAAAJ">Google Scholar →</a>
+    <p class="go"><a href="https://scholar.google.com/citations?user=e2JgDbkAAAAJ">Google Scholar →</a></p>
   </div>
 </article><article class="card" id="김균후">
   <img class="photo" src="photos/khookim.jpg" alt="">
   <div class="id">
     <h3><span class="name">김균후</span><span class="rank">조교수</span></h3>
     <p class="dept">생화학·세포생물학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">췌장 베타세포가 대사 스트레스에 반응하는 원리와 당뇨병 유전 변이를 연구해요</p>
     <ul class="kw"><li>베타세포</li><li>당뇨병</li><li>유전 변이</li></ul>
-    <a class="go" href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTI0NzM=">교수 소개 페이지 →</a>
+    <p class="go"><a href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTI0NzM=">교수 소개 페이지 →</a></p>
   </div>
 </article><article class="card" id="박낭운">
   <img class="photo" src="photos/nwpark.jpg" alt="">
   <div class="id">
     <h3><span class="name">박낭운</span><span class="rank">교수</span></h3>
     <p class="dept">생화학·세포생물학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">엘라스틴 유사 폴리펩타이드로 암을 찾아가는 약물·유전자(siRNA) 전달체를 개발해요</p>
     <ul class="kw"><li>약물전달</li><li>종양 표적</li><li>유전자 전달</li></ul>
-    <a class="go" href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTMxNQ==">교수 소개 페이지 →</a>
+    <p class="go"><a href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTMxNQ==">교수 소개 페이지 →</a></p>
   </div>
 </article><article class="card" id="이병헌">
   <img class="photo" src="photos/leebh.jpg" alt="">
   <div class="id">
     <h3><span class="name">이병헌</span><span class="rank">교수</span></h3>
     <p class="dept">생화학·세포생물학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">파지 디스플레이로 암을 찾아가는 펩타이드를 발굴해 표적 항암제를 개발해요</p>
     <ul class="kw"><li>펩타이드</li><li>표적항암제</li><li>종양미세환경</li></ul>
-    <a class="go" href="https://scholar.google.com/citations?user=NCNICI0AAAAJ">Google Scholar →</a>
-  </div>
-</article><article class="card" id="이재만">
-  <img class="photo" src="photos/jaemanlee.jpg" alt="">
-  <div class="id">
-    <h3><span class="name">이재만</span><span class="rank">부교수</span></h3>
-    <p class="dept">생화학·세포생물학교실</p>
-  </div>
-  <div class="about">
-    <p class="line">핵수용체(PPARα 등)가 간 대사와 섭식·체중을 조절하는 원리를 연구해요</p>
-    <ul class="kw"><li>핵수용체</li><li>간 대사</li><li>자가포식</li></ul>
-    <a class="go" href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTMxMA==">교수 소개 페이지 →</a>
+    <p class="go"><a href="https://scholar.google.com/citations?user=NCNICI0AAAAJ">Google Scholar →</a></p>
   </div>
 </article></div>
   <footer><span>경북대학교 일반대학원 의과학과</span><span>6</span></footer>
 </section><section class="page cont">
   <header><p class="label">의과학과 교수진</p><h2>기초의학 교실</h2></header>
-  <div class="grid"><article class="card" id="최제용">
+  <div class="grid"><article class="card" id="이재만">
+  <img class="photo" src="photos/jaemanlee.jpg" alt="">
+  <div class="id">
+    <h3><span class="name">이재만</span><span class="rank">부교수</span></h3>
+    <p class="dept">생화학·세포생물학교실</p>
+    
+  </div>
+  <div class="about">
+    <p class="line">핵수용체(PPARα 등)가 간 대사와 섭식·체중을 조절하는 원리를 연구해요</p>
+    <ul class="kw"><li>핵수용체</li><li>간 대사</li><li>자가포식</li></ul>
+    <p class="go"><a href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTMxMA==">교수 소개 페이지 →</a></p>
+  </div>
+</article><article class="card" id="최제용">
   <img class="photo" src="photos/jechoi.jpg" alt="">
   <div class="id">
     <h3><span class="name">최제용</span><span class="rank">교수</span></h3>
     <p class="dept">생화학·세포생물학교실</p>
+    <p class="contact"><span>담당자</span> 박민</p>
   </div>
   <div class="about">
-    <p class="line">뼈와 연골이 만들어지고 망가지는 원리를 밝혀 골다공증·골관절염 치료를 연구해요</p>
+    <p class="line">최제용 교수 연구실은 근골격조직에서 RUNX/CBFβ의 기능을 분자유전학 및 유전자 발현 조절 접근법으로 연구합니다. 골광화와 같은 생리 현상은 물론 골다공증·골관절염 등 근골격계 질환의 진단과 치료법 개발에 몰두하며, 일본, 미국, 중국 등과 활발히 국제 공동연구를 수행하고 있습니다.</p>
     <ul class="kw"><li>뼈 생물학</li><li>골다공증</li><li>골관절염</li></ul>
-    <a class="go" href="https://bonechoi.knu.ac.kr/">연구실 홈페이지 →</a>
+    <p class="go"><a href="https://bonechoi.knu.ac.kr/">연구실 홈페이지 →</a></p>
   </div>
 </article><article class="card" id="허근">
   <img class="photo" src="photos/keunhur.jpg" alt="">
   <div class="id">
     <h3><span class="name">허근</span><span class="rank">교수</span></h3>
     <p class="dept">생화학·세포생물학교실</p>
+    <p class="contact"><span>담당자</span> 허근<br>keunhur@knu.ac.kr</p>
   </div>
   <div class="about">
-    <p class="line">엑소좀 마이크로RNA·원형RNA로 혈액에서 암을 찾는 액체생검을 연구해요</p>
+    <p class="line">허근 교수 연구실은 대장암 및 간암의 발생과 전이 기전을 연구합니다. 비암호화 RNA, 엑소좀, RNA 메틸화와 오가노이드 모델을 활용하여 암 조기진단 바이오마커와 새로운 치료 표적을 발굴합니다.</p>
     <ul class="kw"><li>액체생검</li><li>엑소좀 RNA</li><li>암 바이오마커</li></ul>
-    <a class="go" href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTMxMQ==">교수 소개 페이지 →</a>
+    <p class="go"><a href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTMxMQ==">교수 소개 페이지 →</a></p>
   </div>
 </article><article class="card" id="김상현">
   <img class="photo" src="photos/shkim72.jpg" alt="">
   <div class="id">
     <h3><span class="name">김상현</span><span class="rank">교수</span></h3>
     <p class="dept">약리학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">아토피피부염·알레르기 염증의 기전을 밝히고 새 치료 물질과 약물전달 기술을 개발해요</p>
     <ul class="kw"><li>아토피피부염</li><li>알레르기</li><li>면역약리</li></ul>
-    <a class="go" href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTI5OA==">교수 소개 페이지 →</a>
+    <p class="go"><a href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTI5OA==">교수 소개 페이지 →</a></p>
   </div>
 </article><article class="card" id="김인겸">
   <img class="photo" src="photos/inkim.jpg" alt="">
   <div class="id">
     <h3><span class="name">김인겸</span><span class="rank">교수</span></h3>
     <p class="dept">약리학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">고혈압이 생기는 원리를 면역세포·장내 미생물 관점에서 단일세포 분석으로 연구해요</p>
     <ul class="kw"><li>고혈압</li><li>면역</li><li>단일세포 분석</li></ul>
-    <a class="go" href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTMwMQ==">교수 소개 페이지 →</a>
+    <p class="go"><a href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTMwMQ==">교수 소개 페이지 →</a></p>
   </div>
 </article><article class="card" id="석경호">
   <img class="photo" src="photos/ksuk.jpg" alt="">
   <div class="id">
     <h3><span class="name">석경호</span><span class="rank">교수</span></h3>
     <p class="dept">약리학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">뇌의 교세포와 신경염증이 뇌 노화와 뇌질환에 미치는 영향을 연구해요</p>
     <ul class="kw"><li>신경염증</li><li>교세포</li><li>뇌 노화</li></ul>
-    <a class="go" href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTI5OQ==">교수 소개 페이지 →</a>
-  </div>
-</article><article class="card" id="이화림">
-  <img class="photo" src="photos/hrl.jpg" alt="">
-  <div class="id">
-    <h3><span class="name">이화림</span><span class="rank">조교수</span></h3>
-    <p class="dept">약리학교실</p>
-  </div>
-  <div class="about">
-    <p class="line">3D 바이오프린팅으로 숨 쉬는 폐 모델 같은 인공 장기를 만들어 약효를 평가해요</p>
-    <ul class="kw"><li>3D 바이오프린팅</li><li>인공장기</li><li>폐 모델</li></ul>
-    <a class="go" href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTI0MzM=">교수 소개 페이지 →</a>
+    <p class="go"><a href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTI5OQ==">교수 소개 페이지 →</a></p>
   </div>
 </article></div>
   <footer><span>경북대학교 일반대학원 의과학과</span><span>7</span></footer>
 </section><section class="page cont">
   <header><p class="label">의과학과 교수진</p><h2>기초의학 교실</h2></header>
-  <div class="grid"><article class="card" id="김동선">
+  <div class="grid"><article class="card" id="이화림">
+  <img class="photo" src="photos/hrl.jpg" alt="">
+  <div class="id">
+    <h3><span class="name">이화림</span><span class="rank">조교수</span></h3>
+    <p class="dept">약리학교실</p>
+    <p class="contact"><span>담당자</span> 이화림<br>hrl@knu.ac.kr</p>
+  </div>
+  <div class="about">
+    <p class="line">3D 에서는 모든 생명 현상이 달라집니다. 우리는 바이오프린팅으로 체외모델을 만들고, 세포에서 조직, 인체까지 아우르는 메커니즘을 분석하여 질병연구, 신약개발과 4D 인공장기까지 도전합니다.</p>
+    <ul class="kw"><li>3D 바이오프린팅</li><li>인공장기</li><li>폐 모델</li></ul>
+    <p class="go"><a href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTI0MzM=">교수 소개 페이지 →</a></p>
+  </div>
+</article><article class="card" id="김동선">
   <img class="photo" src="photos/doskim.jpg" alt="">
   <div class="id">
     <h3><span class="name">김동선</span><span class="rank">교수</span></h3>
     <p class="dept">해부학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">후성유전체 분석으로 미세먼지가 폐·피부 질환을 일으키는 기전과 바이오마커를 찾아요</p>
     <ul class="kw"><li>후성유전체</li><li>미세먼지</li><li>바이오마커</li></ul>
-    <a class="go" href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTMyMw==">교수 소개 페이지 →</a>
+    <p class="go"><a href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTMyMw==">교수 소개 페이지 →</a></p>
   </div>
 </article><article class="card" id="남용석">
   <img class="photo" src="photos/namys.jpg" alt="">
   <div class="id">
     <h3><span class="name">남용석</span><span class="rank">조교수</span></h3>
     <p class="dept">해부학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">시신 해부 연구로 수술에 필요한 신경·혈관의 정확한 해부학 지도를 만들어요</p>
     <ul class="kw"><li>임상해부학</li><li>신경·혈관</li><li>수술 해부</li></ul>
-    <a class="go" href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTIxMjg=">교수 소개 페이지 →</a>
+    <p class="go"><a href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTIxMjg=">교수 소개 페이지 →</a></p>
   </div>
 </article><article class="card" id="박권무">
   <img class="photo" src="photos/kmpark.jpg" alt="">
   <div class="id">
     <h3><span class="name">박권무</span><span class="rank">교수</span></h3>
     <p class="dept">해부학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">급성 신장 손상과 섬유화가 생기고 회복되는 기전을 연구해요</p>
     <ul class="kw"><li>신장 손상</li><li>섬유화</li><li>일차섬모</li></ul>
-    <a class="go" href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTMyMg==">교수 소개 페이지 →</a>
+    <p class="go"><a href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTMyMg==">교수 소개 페이지 →</a></p>
   </div>
 </article><article class="card" id="이경민">
   <img class="photo" src="photos/irislkm.jpg" alt="">
   <div class="id">
     <h3><span class="name">이경민</span><span class="rank">교수</span></h3>
     <p class="dept">해부학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">인지·시스템 신경과학과 분자신경생물학으로 뇌가 일하는 원리를 연구해요</p>
     <ul class="kw"><li>신경과학</li><li>인지</li><li>분자신경생물학</li></ul>
-    <a class="go" href="https://research.knu.ac.kr/en/persons/kyungmin-lee/">연구자 프로필 →</a>
+    <p class="go"><a href="https://research.knu.ac.kr/en/persons/kyungmin-lee/">연구자 프로필 →</a></p>
   </div>
 </article></div>
   <footer><span>경북대학교 일반대학원 의과학과</span><span>8</span></footer>
@@ -606,66 +660,72 @@ a { color: inherit; text-decoration: none; }
   <div class="id">
     <h3><span class="name">권용환</span><span class="rank">부교수</span></h3>
     <p class="dept">내과학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">헬리코박터 감염과 위암을 단일세포 분석과 임상시험으로 연구해요</p>
     <ul class="kw"><li>헬리코박터</li><li>위암</li><li>단일세포</li></ul>
-    <a class="go" href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTIyNg==">교수 소개 페이지 →</a>
+    <p class="go"><a href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTIyNg==">교수 소개 페이지 →</a></p>
   </div>
 </article><article class="card" id="김민지">
   <img class="photo" src="photos/mjikim.jpg" alt="">
   <div class="id">
     <h3><span class="name">김민지</span><span class="rank">조교수</span></h3>
     <p class="dept">내과학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">미토콘드리아 대사(PDK4)를 겨냥해 당뇨병·비만·근감소증을 연구해요</p>
     <ul class="kw"><li>내분비대사</li><li>당뇨병</li><li>미토콘드리아</li></ul>
-    <a class="go" href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTI0MzQ=">교수 소개 페이지 →</a>
+    <p class="go"><a href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTI0MzQ=">교수 소개 페이지 →</a></p>
   </div>
 </article><article class="card" id="김은수">
   <img class="photo" src="photos/dandy813.jpg" alt="">
   <div class="id">
     <h3><span class="name">김은수</span><span class="rank">교수</span></h3>
     <p class="dept">내과학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">궤양성대장염·크론병 같은 염증성 장질환을 임상 연구, AI, 장내 미생물로 연구해요</p>
     <ul class="kw"><li>염증성 장질환</li><li>장내 미생물</li><li>AI 진단</li></ul>
-    <a class="go" href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTIyNw==">교수 소개 페이지 →</a>
+    <p class="go"><a href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTIyNw==">교수 소개 페이지 →</a></p>
   </div>
 </article><article class="card" id="박근규">
   <img class="photo" src="photos/kpark.jpg" alt="">
   <div class="id">
     <h3><span class="name">박근규</span><span class="rank">교수</span></h3>
     <p class="dept">내과학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">간암 등 암세포의 대사와 페롭토시스 내성 기전을 밝혀 새 치료 표적을 찾아요</p>
     <ul class="kw"><li>암 대사</li><li>간암</li><li>페롭토시스</li></ul>
-    <a class="go" href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTIyMQ==">교수 소개 페이지 →</a>
+    <p class="go"><a href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTIyMQ==">교수 소개 페이지 →</a></p>
   </div>
 </article><article class="card" id="박한기">
   <img class="photo" src="photos/hankipark.jpg" alt="">
   <div class="id">
     <h3><span class="name">박한기</span><span class="rank">부교수</span></h3>
     <p class="dept">내과학교실</p>
+    <p class="contact"><span>담당자</span> 박한기<br>haan33@naver.com</p>
   </div>
   <div class="about">
-    <p class="line">장내 미생물과 장관 면역이 천식·두드러기 같은 알레르기 질환에 미치는 영향을 연구해요</p>
+    <p class="line">장관면역-염증조절 실험실은 장-폐 축을 중심으로 장내 환경, 마이크로바이옴, 장점막면역이 천식 등 원격 장기의 만성염증을 어떻게 조절하는지 연구합니다. 환자 검체와 세포·동물모델을 활용해 장-폐 간 면역세포 이동과 미생물·대사체의 점막 방어 기전을 밝히고, 새로운 질환 조절 전략을 찾고자 합니다.</p>
     <ul class="kw"><li>알레르기</li><li>천식</li><li>장내 미생물</li></ul>
-    <a class="go" href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTIyMw==">교수 소개 페이지 →</a>
+    <p class="go"><a href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTIyMw==">교수 소개 페이지 →</a></p>
   </div>
 </article><article class="card" id="장세영">
   <img class="photo" src="photos/vocjsy.jpg" alt="">
   <div class="id">
     <h3><span class="name">장세영</span><span class="rank">교수</span></h3>
     <p class="dept">내과학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">지방간과 간암을 동물모델과 의료 빅데이터로 연구해요</p>
     <ul class="kw"><li>지방간</li><li>간암</li><li>빅데이터</li></ul>
-    <a class="go" href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTIyOA==">교수 소개 페이지 →</a>
+    <p class="go"><a href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTIyOA==">교수 소개 페이지 →</a></p>
   </div>
 </article></div>
   <footer><span>경북대학교 일반대학원 의과학과</span><span>9</span></footer>
@@ -676,66 +736,72 @@ a { color: inherit; text-decoration: none; }
   <div class="id">
     <h3><span class="name">전성우</span><span class="rank">교수</span></h3>
     <p class="dept">내과학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">치료 내시경(ESD)과 시술 기구 개발, 헬리코박터와 위암을 연구해요</p>
     <ul class="kw"><li>치료 내시경</li><li>헬리코박터</li><li>위암</li></ul>
-    <a class="go" href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTIzMA==">교수 소개 페이지 →</a>
+    <p class="go"><a href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTIzMA==">교수 소개 페이지 →</a></p>
   </div>
 </article><article class="card" id="전재한">
   <img class="photo" src="photos/jeonjh.jpg" alt="">
   <div class="id">
     <h3><span class="name">전재한</span><span class="rank">부교수</span></h3>
     <p class="dept">내과학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">미토콘드리아 대사 조절로 심장·신장·대사질환의 새 치료법을 찾아요</p>
     <ul class="kw"><li>미토콘드리아</li><li>대사질환</li><li>심장·신장</li></ul>
-    <a class="go" href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTIyNQ==">교수 소개 페이지 →</a>
+    <p class="go"><a href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTIyNQ==">교수 소개 페이지 →</a></p>
   </div>
 </article><article class="card" id="최연경">
   <img class="photo" src="photos/ykchoi.jpg" alt="">
   <div class="id">
     <h3><span class="name">최연경</span><span class="rank">부교수</span></h3>
     <p class="dept">내과학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">암과 대사질환에서 세포 대사가 바뀌는 원리(글루타민·피리미딘 대사)를 연구해요</p>
     <ul class="kw"><li>대사 재프로그래밍</li><li>간암</li><li>지방간염</li></ul>
-    <a class="go" href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTIxNA==">교수 소개 페이지 →</a>
+    <p class="go"><a href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTIxNA==">교수 소개 페이지 →</a></p>
   </div>
 </article><article class="card" id="한승우">
   <img class="photo" src="photos/kiefedr.jpg" alt="">
   <div class="id">
     <h3><span class="name">한승우</span><span class="rank">부교수</span></h3>
     <p class="dept">내과학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">골관절염에서 연골세포의 대사와 노화를 밝히고 나노입자 치료제를 개발해요</p>
     <ul class="kw"><li>골관절염</li><li>연골세포 대사</li><li>나노입자</li></ul>
-    <a class="go" href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTIwNQ==">교수 소개 페이지 →</a>
+    <p class="go"><a href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTIwNQ==">교수 소개 페이지 →</a></p>
   </div>
 </article><article class="card" id="오진영">
   <img class="photo" src="photos/sgcms3.jpg" alt="">
   <div class="id">
     <h3><span class="name">오진영</span><span class="rank">조교수</span></h3>
     <p class="dept">마취통증의학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">마취통증의학 임상 연구와 뼈·연골 생물학 공동연구를 하고 있어요</p>
     <ul class="kw"><li>통증의학</li><li>신경차단</li><li>골·연골</li></ul>
-    <a class="go" href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTQx">교수 소개 페이지 →</a>
+    <p class="go"><a href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTQx">교수 소개 페이지 →</a></p>
   </div>
 </article><article class="card" id="권태균">
   <img class="photo" src="photos/tgkwon.jpg" alt="">
   <div class="id">
     <h3><span class="name">권태균</span><span class="rank">교수</span></h3>
     <p class="dept">비뇨기과학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">비뇨기암 치료와 조직공학·세포치료 기반 재생의학을 연구해요</p>
     <ul class="kw"><li>비뇨기종양</li><li>재생의학</li><li>세포치료</li></ul>
-    <a class="go" href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTkx">교수 소개 페이지 →</a>
+    <p class="go"><a href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTkx">교수 소개 페이지 →</a></p>
   </div>
 </article></div>
   <footer><span>경북대학교 일반대학원 의과학과</span><span>10</span></footer>
@@ -746,66 +812,72 @@ a { color: inherit; text-decoration: none; }
   <div class="id">
     <h3><span class="name">김범수</span><span class="rank">교수</span></h3>
     <p class="dept">비뇨기과학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">요로결석 내시경 치료와 하이드로젤·엑소좀을 이용한 신장 조직 재생을 연구해요</p>
     <ul class="kw"><li>요로결석</li><li>신장 재생</li><li>바이오소재</li></ul>
-    <a class="go" href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTg5">교수 소개 페이지 →</a>
+    <p class="go"><a href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTg5">교수 소개 페이지 →</a></p>
   </div>
 </article><article class="card" id="이주헌">
   <img class="photo" src="photos/gyjhlee.jpg" alt="">
   <div class="id">
     <h3><span class="name">이주헌</span><span class="rank">조교수</span></h3>
     <p class="dept">산부인과학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">HPV 유전형별 자궁경부암 위험과 난소종양, CT 딥러닝 진단을 연구해요</p>
     <ul class="kw"><li>부인종양</li><li>HPV</li><li>딥러닝</li></ul>
-    <a class="go" href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTIxMzk=">교수 소개 페이지 →</a>
+    <p class="go"><a href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTIxMzk=">교수 소개 페이지 →</a></p>
   </div>
 </article><article class="card" id="정호윤">
   <img class="photo" src="photos/hy-chung.jpg" alt="">
   <div class="id">
     <h3><span class="name">정호윤</span><span class="rank">교수</span></h3>
     <p class="dept">성형외과학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">혈관기형과 흉터를 줄기세포 오가노이드로 재현하고 조직 재건 기술을 개발해요</p>
     <ul class="kw"><li>혈관기형</li><li>오가노이드</li><li>조직 재건</li></ul>
-    <a class="go" href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTE1Mg==">교수 소개 페이지 →</a>
+    <p class="go"><a href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTE1Mg==">교수 소개 페이지 →</a></p>
   </div>
 </article><article class="card" id="박진성">
   <img class="photo" src="photos/neurojspark.jpg" alt="">
   <div class="id">
     <h3><span class="name">박진성</span><span class="rank">부교수</span></h3>
     <p class="dept">신경과학교실</p>
+    
   </div>
   <div class="about">
-    <p class="line">루게릭병(ALS) 등 신경근육질환의 혈액 바이오마커와 치료를 연구해요</p>
-    <ul class="kw"><li>신경근육질환</li><li>루게릭병</li><li>바이오마커</li></ul>
-    <a class="go" href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTI5">교수 소개 페이지 →</a>
+    <p class="line">루게릭병(ALS)·척수구근근위축증(SBMA) 등 신경근육질환의 혈액 바이오마커와 치료를 연구해요</p>
+    <ul class="kw"><li>신경근육질환</li><li>루게릭병</li><li>SBMA</li></ul>
+    <p class="go"><a href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTI5">교수 소개 페이지 →</a></p>
   </div>
 </article><article class="card" id="이호원">
   <img class="photo" src="photos/neuromd.jpg" alt="">
   <div class="id">
     <h3><span class="name">이호원</span><span class="rank">교수</span></h3>
     <p class="dept">신경과학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">신경퇴행성 질환의 조기진단 바이오마커와 줄기세포 치료, 웨어러블 보행 분석을 연구해요</p>
     <ul class="kw"><li>신경퇴행성 질환</li><li>바이오마커</li><li>줄기세포 치료</li></ul>
-    <a class="go" href="https://research.knu.ac.kr/en/persons/ho-won-lee/">연구자 프로필 →</a>
+    <p class="go"><a href="https://research.knu.ac.kr/en/persons/ho-won-lee/">연구자 프로필 →</a></p>
   </div>
 </article><article class="card" id="김홍균">
   <img class="photo" src="photos/okeye.jpg" alt="">
   <div class="id">
     <h3><span class="name">김홍균</span><span class="rank">교수</span></h3>
     <p class="dept">안과학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">안구건조증·각막질환을 장기칩 모델, 세포외소포 치료제, AI 영상 분석으로 연구해요</p>
     <ul class="kw"><li>안구건조증</li><li>장기칩</li><li>세포외소포</li></ul>
-    <a class="go" href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTExMQ==">교수 소개 페이지 →</a>
+    <p class="go"><a href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTExMQ==">교수 소개 페이지 →</a></p>
   </div>
 </article></div>
   <footer><span>경북대학교 일반대학원 의과학과</span><span>11</span></footer>
@@ -816,103 +888,124 @@ a { color: inherit; text-decoration: none; }
   <div class="id">
     <h3><span class="name">박동호</span><span class="rank">교수</span></h3>
     <p class="dept">안과학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">망막 세포의 대사 이상을 겨냥해 황반변성을 먹는 약으로 치료하는 방법을 연구해요</p>
     <ul class="kw"><li>망막</li><li>황반변성</li><li>대사 재프로그래밍</li></ul>
-    <a class="go" href="https://scholar.google.com/citations?user=CJjSb9MAAAAJ">Google Scholar →</a>
+    <p class="go"><a href="https://scholar.google.com/citations?user=CJjSb9MAAAAJ">Google Scholar →</a></p>
   </div>
 </article><article class="card" id="윤성원">
   <img class="photo" src="photos/ysw24neurorad.jpg" alt="">
   <div class="id">
     <h3><span class="name">윤성원</span><span class="rank">교수</span></h3>
     <p class="dept">영상의학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">뇌혈관 질환 중재시술, 자기장으로 움직이는 로봇 가이드와이어, AI 영상 분석을 연구해요</p>
     <ul class="kw"><li>뇌혈관 중재</li><li>의료로봇</li><li>AI 영상</li></ul>
-    <a class="go" href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTIxNDI=">교수 소개 페이지 →</a>
+    <p class="go"><a href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTIxNDI=">교수 소개 페이지 →</a></p>
   </div>
 </article><article class="card" id="박준석">
   <img class="photo" src="photos/parkjs0802.jpg" alt="">
   <div class="id">
     <h3><span class="name">박준석</span><span class="rank">교수</span></h3>
     <p class="dept">외과학교실</p>
+    <p class="contact"><span>담당자</span> 김혜정<br>khj8232@knu.ac.kr</p>
   </div>
   <div class="about">
-    <p class="line">수술용 접착·지혈 바이오소재와 세포외소포 기반 암 진단 기술을 개발해요</p>
+    <p class="line">대장암을 비롯한 다양한 암을 대상으로 세포외소포(EV), 액체생검 및 분자진단 기술을 활용한 바이오마커 발굴과 조기진단을 연구합니다. 또한 AI 기반 항암제 독성 예측과 정밀의료 기술 개발을 통해 기초연구의 임상 적용을 목표로 합니다.</p>
     <ul class="kw"><li>바이오소재</li><li>액체생검</li><li>외과</li></ul>
-    <a class="go" href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTE5Ng==">교수 소개 페이지 →</a>
+    <p class="go"><a href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTE5Ng==">교수 소개 페이지 →</a></p>
   </div>
 </article><article class="card" id="남수연">
   <img class="photo" src="photos/namsy.jpg" alt="">
   <div class="id">
     <h3><span class="name">남수연</span><span class="rank">조교수</span></h3>
     <p class="dept">융합연구진료센터</p>
+    <p class="contact"><span>담당자</span> 김도향<br>kmdh77@knuh-ext.kr</p>
   </div>
   <div class="about">
-    <p class="line">헬리코박터·위암과 비만 관련 소화기 질환을 환자유래 오가노이드와 빅데이터로 연구해요</p>
+    <p class="line">국가 빅데이터를 활용한 암 발생·예방 연구와 환자유래 오가노이드, 단일세포·공간전사체 및 다중오믹스 분석을 통해 소화기암의 발생 기전과 치료저항성을 규명하고, 정밀의료를 위한 바이오마커 발굴 및 임상 적용을 위한 융합연구실입니다.</p>
     <ul class="kw"><li>위암</li><li>오가노이드</li><li>중개연구</li></ul>
-    <a class="go" href="https://scholar.google.com/citations?user=gXYBmIMAAAAJ">Google Scholar →</a>
+    <p class="go"><a href="https://scholar.google.com/citations?user=gXYBmIMAAAAJ">Google Scholar →</a></p>
   </div>
 </article><article class="card" id="성숙진">
   <img class="photo" src="photos/wintersj.jpg" alt="">
   <div class="id">
     <h3><span class="name">성숙진</span><span class="rank">부교수</span></h3>
     <p class="dept">융합연구진료센터</p>
+    
   </div>
   <div class="about">
     <p class="line">혈액·소변의 대사체·지질체를 분석해 질병 바이오마커와 약물 반응을 연구해요</p>
     <ul class="kw"><li>대사체학</li><li>지질체학</li><li>임상약리</li></ul>
-    <a class="go" href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTQ=">교수 소개 페이지 →</a>
+    <p class="go"><a href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTQ=">교수 소개 페이지 →</a></p>
   </div>
-</article><article class="card" id="이태영">
-  <img class="photo" src="photos/tylee.jpg" alt="">
+</article><article class="card" id="정현준">
+  <img class="photo" src="photos/hjjung.jpg" alt="">
   <div class="id">
-    <h3><span class="name">이태영</span><span class="rank">조교수</span></h3>
-    <p class="dept">정신건강의학교실</p>
+    <h3><span class="name">정현준</span><span class="rank">조교수</span></h3>
+    <p class="dept">융합연구진료센터</p>
+    <p class="contact"><span>담당자</span> 정현준<br>hjjung@knu.ac.kr</p>
   </div>
   <div class="about">
-    <p class="line">조현병 등 정신질환을 뇌영상으로 일찍 찾아내고 예측하는 연구를 해요</p>
-    <ul class="kw"><li>조현병</li><li>뇌영상</li><li>정신질환 예측</li></ul>
-    <a class="go" href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTIxNTQ=">교수 소개 페이지 →</a>
+    <p class="line">시스템생리학 연구실은 다양한 생리적 환경에서 세포의 상태와 기능 변화를 연구합니다. 다중오믹스 통합 분석과 시스템생물학·계산생물학적 접근을 통해 세포 상태의 이질성과 역동적 변화에 기반한 질병 발생 기작을 이해하고, 정밀의학을 위한 진단 및 치료 전략을 탐구합니다.</p>
+    <ul class="kw"><li>시스템생리학</li><li>다중오믹스</li><li>계산생물학</li></ul>
+    <p class="go"><a href="https://hynjnjung.github.io/">연구실 홈페이지 →</a></p>
   </div>
 </article></div>
   <footer><span>경북대학교 일반대학원 의과학과</span><span>12</span></footer>
 </section><section class="page cont">
   <header><p class="label">의과학과 교수진</p><h2>임상의학 교실</h2></header>
-  <div class="grid"><article class="card" id="이현주">
+  <div class="grid"><article class="card" id="이태영">
+  <img class="photo" src="photos/tylee.jpg" alt="">
+  <div class="id">
+    <h3><span class="name">이태영</span><span class="rank">조교수</span></h3>
+    <p class="dept">정신건강의학교실</p>
+    <p class="contact"><span>담당자</span> 이태영<br>tylee@knu.ac.kr</p>
+  </div>
+  <div class="about">
+    <p class="line">계산정신과학연구실은 정신질환이 왜 생기고 어떻게 치료할지를 뇌영상·뇌파·AI·계산모델로 연구합니다. 고위험군부터 조현병·기분장애까지 종단 코호트, 치료저항성 기전, 뇌자극치료를 연구합니다. 코딩·데이터분석에 관심 있는 타전공생도 적극 환영합니다.</p>
+    <ul class="kw"><li>조현병</li><li>뇌영상</li><li>정신질환 예측</li></ul>
+    <p class="go"><a href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTIxNTQ=">교수 소개 페이지 →</a></p>
+  </div>
+</article><article class="card" id="이현주">
   <img class="photo" src="photos/hjleee.jpg" alt="">
   <div class="id">
     <h3><span class="name">이현주</span><span class="rank">부교수</span></h3>
     <p class="dept">정형외과학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">생체신호 센서·가상현실 같은 공학 기술로 절단 환자 재활과 정형외과 수술을 도와요</p>
     <ul class="kw"><li>재활공학</li><li>생체역학</li><li>정형외과</li></ul>
-    <a class="go" href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTE2Nw==">교수 소개 페이지 →</a>
+    <p class="go"><a href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTE2Nw==">교수 소개 페이지 →</a></p>
   </div>
 </article><article class="card" id="하대룡">
   <img class="photo" src="photos/dlha.jpg" alt="">
   <div class="id">
     <h3><span class="name">하대룡</span><span class="rank">부교수</span></h3>
     <p class="dept">피부과학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">인공지능으로 피부암을 판별하는 피부과 AI와 피부질환을 연구해요</p>
     <ul class="kw"><li>피부과 AI</li><li>피부암</li><li>건선</li></ul>
-    <a class="go" href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTkz">교수 소개 페이지 →</a>
+    <p class="go"><a href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTkz">교수 소개 페이지 →</a></p>
   </div>
 </article><article class="card" id="안병철">
   <img class="photo" src="photos/abc2000.jpg" alt="">
   <div class="id">
     <h3><span class="name">안병철</span><span class="rank">교수</span></h3>
     <p class="dept">핵의학교실</p>
+    
   </div>
   <div class="about">
     <p class="line">방사성요오드 치료가 듣지 않는 갑상선암을 재분화시키는 치료와 세포외소포를 연구해요</p>
     <ul class="kw"><li>갑상선암</li><li>핵의학</li><li>세포외소포</li></ul>
-    <a class="go" href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTM4">교수 소개 페이지 →</a>
+    <p class="go"><a href="https://med.knu.ac.kr/pages/sub.htm?nav_code=knu1670413496&amp;mode=view&amp;mv_data=aWR4PTM4">교수 소개 페이지 →</a></p>
   </div>
 </article></div>
   <footer><span>경북대학교 일반대학원 의과학과</span><span>13</span></footer>

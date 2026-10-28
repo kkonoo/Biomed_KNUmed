@@ -24,16 +24,22 @@ def qr_svg(url):
 
 def card(p):
     kws = "".join(f"<li>{e(k)}</li>" for k in p["keywords"])
+    links = "".join(f'<a href="{e(url)}">{e(label)} →</a>' for url, label in p["links"])
+    contact = ""
+    if p["contact"]:
+        who, info = p["contact"]
+        contact = f'<p class="contact"><span>담당자</span> {e(who)}' + (f"<br>{e(info)}" if info else "") + "</p>"
     return f"""<article class="card" id="{e(p['name'])}">
   <img class="photo" src="{e(p['photo'])}" alt="">
   <div class="id">
     <h3><span class="name">{e(p['name'])}</span><span class="rank">{e(p['rank'])}</span></h3>
     <p class="dept">{e(p['dept'])}</p>
+    {contact}
   </div>
   <div class="about">
     <p class="line">{e(p['line'])}</p>
     <ul class="kw">{kws}</ul>
-    <a class="go" href="{e(p['link'])}">{e(p['linkLabel'])} →</a>
+    <p class="go">{links}</p>
   </div>
 </article>"""
 
