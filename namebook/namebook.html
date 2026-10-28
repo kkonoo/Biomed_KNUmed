@@ -67,7 +67,6 @@ h2 { font-size: 20pt; font-weight: 700; letter-spacing: -0.03em; line-height: 1.
 .home { align-self: start; padding: 5mm; border: 1px solid var(--line); border-radius: 2mm; font-size: 8.5pt; }
 .home .qr svg { display: block; width: 34mm; height: 34mm; margin: 0 auto 3mm; }
 .home .how { margin-top: 3mm; color: var(--sub); font-size: 8pt; }
-.note { color: var(--sub); font-size: 7.5pt; margin-bottom: 4mm; }
 
 /* 관심 분야 테스트 (화면에서만, 인쇄에서는 숨김) */
 .quiz { width: 210mm; margin: 0 auto 8mm; padding: 12mm 14mm; background: #fff; font-size: 11pt; }
@@ -97,7 +96,10 @@ h2 { font-size: 20pt; font-weight: 700; letter-spacing: -0.03em; line-height: 1.
 .type h2 { color: var(--accent); }
 .code { color: var(--sub); }
 .rec-title { margin: 7mm 0 3mm; font-size: 12pt; font-weight: 700; }
+.rec-title small { margin-left: 2mm; color: var(--sub); font-size: 9pt; font-weight: 400; }
 .recs { display: grid; gap: 2.5mm; }
+.pager { display: flex; align-items: center; justify-content: center; gap: 4mm; margin-top: 4mm; }
+.pager span { min-width: 12mm; color: var(--sub); text-align: center; }
 .recs a { display: flex; align-items: center; gap: 4mm; padding: 3mm; border: 1px solid var(--line); border-radius: 2mm; }
 .recs img { width: 12mm; height: 16mm; object-fit: cover; border-radius: 1mm; }
 .recs b { color: var(--accent); }
@@ -142,7 +144,6 @@ a { color: inherit; text-decoration: none; }
   .index ol { columns: 2; column-gap: 20px; }
   .index li { font-size: 15px; line-height: 2.3; }
   .index i { transform: none; }
-  .note { margin: 20px 0 8px; font-size: 12px; }
 
   .quiz { width: auto; margin: 0; padding: 28px 16px 24px; border-bottom: 1px solid var(--line); font-size: 15px; }
   .btn { padding: 12px 18px; }
@@ -152,6 +153,7 @@ a { color: inherit; text-decoration: none; }
   .chip { padding: 9px 14px; font-size: 15px; }
   .type .emoji { font-size: 40px; }
   .rec-title { font-size: 16px; }
+  .rec-title small { font-size: 13px; }
   .recs a { padding: 10px; border-radius: 10px; }
   .recs img { width: 44px; height: 58px; }
 }
@@ -178,7 +180,6 @@ a { color: inherit; text-decoration: none; }
       <p class="how">의과학과 홈페이지<br><a href="https://biomed.knu.ac.kr/">biomed.knu.ac.kr</a></p>
     </aside>
   </div>
-  <p class="note">2026년 10월 기준 · 사진과 소속은 경북대 의과대학 홈페이지, 연구 소개는 교수님 실적 자료와 공개 프로필을 바탕으로 정리했어요.</p>
   <footer><span>경북대학교 일반대학원 의과학과</span><span>1</span></footer>
 </section>
 <section class="page ">
@@ -1030,7 +1031,8 @@ a { color: inherit; text-decoration: none; }
   const N = D.questions.length;
   const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const shuffle = a => a.map(v => [Math.random(), v]).sort((x, y) => x[0] - y[0]).map(v => v[1]);
-  let step = -1, ans = [], picks = [], opts = [];
+  const PER = 5;  // 추천 목록 한 쪽에 5분
+  let step = -1, ans = [], picks = [], opts = [], type = [], recs = [], rpage = 0;
 
   function intro() {
     return `<p class="label">의과학과 · 2분 테스트</p>
@@ -1064,33 +1066,48 @@ a { color: inherit; text-decoration: none; }
       <button class="back" data-act="back">← 이전</button>`;
   }
 
-  function result() {
-    const type = D.axes.map(([a, b], i) => {
+  // 유형과 추천 목록은 결과에 들어갈 때 한 번만 정한다 (넘길 때마다 섞이지 않게)
+  function finish() {
+    type = D.axes.map(([a, b], i) => {
       const n = ans.slice(i * 3, i * 3 + 3).filter(k => k === a[0]).length;
       return n >= 2 ? a : b;
     });
     const code = type.map(t => t[0]).join("");
-    const [icon, name, text] = D.types[code];
     // 주제가 겹치면 3점, 스타일 글자가 같으면 1점씩(유형이 여럿이면 가장 가까운 것). 동점은 섞어서 매번 조금씩 다르게
-    const recs = shuffle(D.profs).map(p => ({ p,
-      s: 3 * p.topics.filter(t => picks.includes(t)).length
-        + Math.max(...[].concat(p.style).map(st => [...code].filter((c, i) => st[i] === c).length)),
-    })).sort((x, y) => y.s - x.s).slice(0, 5).map(r => r.p);
+    const scored = shuffle(D.profs).map(p => {
+      const hit = p.topics.filter(t => picks.includes(t)).length;
+      const same = Math.max(...[].concat(p.style).map(st => [...code].filter((c, i) => st[i] === c).length));
+      return { p, s: 3 * hit + same, ok: same === 3 || (hit > 0 && same >= 2) };
+    }).sort((x, y) => y.s - x.s);
+    // 같은 유형 전부 + 주제가 겹치는 가까운 유형. 5분이 안 되면 다음으로 가까운 분으로 채움
+    const ok = scored.filter(r => r.ok);
+    recs = (ok.length >= PER ? ok : ok.concat(scored.filter(r => !r.ok).slice(0, PER - ok.length))).map(r => r.p);
+    rpage = 0;
+  }
+
+  function result() {
+    const [icon, name, text] = D.types[type.map(t => t[0]).join("")];
+    const pages = Math.ceil(recs.length / PER);
+    const shown = recs.slice(rpage * PER, rpage * PER + PER);
     return `<p class="label">나의 연구 스타일</p>
       <div class="type"><span class="emoji">${icon}</span><div><h2>${esc(name)}</h2>
         <p class="code">${type.map(t => `${t[1]} ${esc(t[2])}`).join(" · ")}</p></div></div>
       <p class="lead">${esc(text)}</p>
-      <h3 class="rec-title">이런 교수님 연구실이 잘 맞을 수 있어요</h3>
-      <ul class="recs">${recs.map(p => `<li><a href="#${encodeURIComponent(p.name)}">
+      <h3 class="rec-title">이런 교수님 연구실이 잘 맞을 수 있어요 <small>${recs.length}분 · 잘 맞는 순</small></h3>
+      <ul class="recs">${shown.map(p => `<li><a href="#${encodeURIComponent(p.name)}">
         <img src="${esc(p.photo)}" alt=""><span><b>${esc(p.name)}</b> ${esc(p.rank)}<br>
         <small>${esc(p.dept)} · ${p.page}쪽</small><br><small class="tags">${p.keywords.map(k => "#" + esc(k)).join(" ")}</small></span></a></li>`).join("")}</ul>
+      ${pages > 1 ? `<div class="pager"><button class="btn" data-act="prev" ${rpage ? "" : "disabled"}>‹ 이전</button>
+        <span>${rpage + 1} / ${pages}</span>
+        <button class="btn" data-act="next" ${rpage < pages - 1 ? "" : "disabled"}>다음 ›</button></div>` : ""}
       <div class="row"><button class="btn" data-act="again">다시 하기</button>
       <a class="btn primary" href="#book">전체 교수진 보기 ↓</a></div>`;
   }
 
-  function render(scroll) {
+  function render(target) {
     box.innerHTML = step < 0 ? intro() : step < N ? question() : step === N ? topics() : result();
-    if (scroll && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+    const el = target && (box.querySelector(target) || box);
+    if (el && el.getBoundingClientRect().top < 0) el.scrollIntoView();
   }
 
   box.addEventListener("click", e => {
@@ -1104,12 +1121,13 @@ a { color: inherit; text-decoration: none; }
       const k = b.dataset.k;
       picks = picks.includes(k) ? picks.filter(x => x !== k) : picks.concat(k);
     }
-    else if (act === "done") step = N + 1;
+    else if (act === "done") { finish(); step = N + 1; }
     else if (act === "again") step = -1;
-    render(true);
+    else if (act === "prev" || act === "next") { rpage += act === "next" ? 1 : -1; return render(".rec-title"); }
+    render("#quiz");
   });
 
-  render(false);
+  render(null);
 })();
 </script>
 </body></html>

@@ -5,7 +5,8 @@
   const N = D.questions.length;
   const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const shuffle = a => a.map(v => [Math.random(), v]).sort((x, y) => x[0] - y[0]).map(v => v[1]);
-  let step = -1, ans = [], picks = [], opts = [];
+  const PER = 5;  // 추천 목록 한 쪽에 5분
+  let step = -1, ans = [], picks = [], opts = [], type = [], recs = [], rpage = 0;
 
   function intro() {
     return `<p class="label">의과학과 · 2분 테스트</p>
@@ -39,33 +40,48 @@
       <button class="back" data-act="back">← 이전</button>`;
   }
 
-  function result() {
-    const type = D.axes.map(([a, b], i) => {
+  // 유형과 추천 목록은 결과에 들어갈 때 한 번만 정한다 (넘길 때마다 섞이지 않게)
+  function finish() {
+    type = D.axes.map(([a, b], i) => {
       const n = ans.slice(i * 3, i * 3 + 3).filter(k => k === a[0]).length;
       return n >= 2 ? a : b;
     });
     const code = type.map(t => t[0]).join("");
-    const [icon, name, text] = D.types[code];
     // 주제가 겹치면 3점, 스타일 글자가 같으면 1점씩(유형이 여럿이면 가장 가까운 것). 동점은 섞어서 매번 조금씩 다르게
-    const recs = shuffle(D.profs).map(p => ({ p,
-      s: 3 * p.topics.filter(t => picks.includes(t)).length
-        + Math.max(...[].concat(p.style).map(st => [...code].filter((c, i) => st[i] === c).length)),
-    })).sort((x, y) => y.s - x.s).slice(0, 5).map(r => r.p);
+    const scored = shuffle(D.profs).map(p => {
+      const hit = p.topics.filter(t => picks.includes(t)).length;
+      const same = Math.max(...[].concat(p.style).map(st => [...code].filter((c, i) => st[i] === c).length));
+      return { p, s: 3 * hit + same, ok: same === 3 || (hit > 0 && same >= 2) };
+    }).sort((x, y) => y.s - x.s);
+    // 같은 유형 전부 + 주제가 겹치는 가까운 유형. 5분이 안 되면 다음으로 가까운 분으로 채움
+    const ok = scored.filter(r => r.ok);
+    recs = (ok.length >= PER ? ok : ok.concat(scored.filter(r => !r.ok).slice(0, PER - ok.length))).map(r => r.p);
+    rpage = 0;
+  }
+
+  function result() {
+    const [icon, name, text] = D.types[type.map(t => t[0]).join("")];
+    const pages = Math.ceil(recs.length / PER);
+    const shown = recs.slice(rpage * PER, rpage * PER + PER);
     return `<p class="label">나의 연구 스타일</p>
       <div class="type"><span class="emoji">${icon}</span><div><h2>${esc(name)}</h2>
         <p class="code">${type.map(t => `${t[1]} ${esc(t[2])}`).join(" · ")}</p></div></div>
       <p class="lead">${esc(text)}</p>
-      <h3 class="rec-title">이런 교수님 연구실이 잘 맞을 수 있어요</h3>
-      <ul class="recs">${recs.map(p => `<li><a href="#${encodeURIComponent(p.name)}">
+      <h3 class="rec-title">이런 교수님 연구실이 잘 맞을 수 있어요 <small>${recs.length}분 · 잘 맞는 순</small></h3>
+      <ul class="recs">${shown.map(p => `<li><a href="#${encodeURIComponent(p.name)}">
         <img src="${esc(p.photo)}" alt=""><span><b>${esc(p.name)}</b> ${esc(p.rank)}<br>
         <small>${esc(p.dept)} · ${p.page}쪽</small><br><small class="tags">${p.keywords.map(k => "#" + esc(k)).join(" ")}</small></span></a></li>`).join("")}</ul>
+      ${pages > 1 ? `<div class="pager"><button class="btn" data-act="prev" ${rpage ? "" : "disabled"}>‹ 이전</button>
+        <span>${rpage + 1} / ${pages}</span>
+        <button class="btn" data-act="next" ${rpage < pages - 1 ? "" : "disabled"}>다음 ›</button></div>` : ""}
       <div class="row"><button class="btn" data-act="again">다시 하기</button>
       <a class="btn primary" href="#book">전체 교수진 보기 ↓</a></div>`;
   }
 
-  function render(scroll) {
+  function render(target) {
     box.innerHTML = step < 0 ? intro() : step < N ? question() : step === N ? topics() : result();
-    if (scroll && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+    const el = target && (box.querySelector(target) || box);
+    if (el && el.getBoundingClientRect().top < 0) el.scrollIntoView();
   }
 
   box.addEventListener("click", e => {
@@ -79,10 +95,11 @@
       const k = b.dataset.k;
       picks = picks.includes(k) ? picks.filter(x => x !== k) : picks.concat(k);
     }
-    else if (act === "done") step = N + 1;
+    else if (act === "done") { finish(); step = N + 1; }
     else if (act === "again") step = -1;
-    render(true);
+    else if (act === "prev" || act === "next") { rpage += act === "next" ? 1 : -1; return render(".rec-title"); }
+    render("#quiz");
   });
 
-  render(false);
+  render(null);
 })();
