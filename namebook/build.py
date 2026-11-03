@@ -26,7 +26,8 @@ def card(p):
     kws = "".join(f"<li>{e(k)}</li>" for k in p["keywords"])
     links = "".join(f'<a href="{e(url)}">{e(label)} →</a>' for url, label in p["links"])
     contact = ""
-    if p["contact"]:
+    # 담당자가 교수님 본인이고 연락처가 위 이메일과 같으면 한 번만 보여 준다
+    if p["contact"] and p["contact"] != [p["name"], p["email"]]:
         who, info = p["contact"]
         contact = f'<p class="contact"><span>담당자</span> {e(who)}' + (f"<br>{e(info)}" if info else "") + "</p>"
     return f"""<article class="card" id="{e(p['name'])}">
@@ -34,6 +35,7 @@ def card(p):
   <div class="id">
     <h3><span class="name">{e(p['name'])}</span><span class="rank">{e(p['rank'])}</span></h3>
     <p class="dept">{e(p['dept'])}</p>
+    <p class="mail"><a href="mailto:{e(p['email'])}">{e(p['email'])}</a></p>
     {contact}
   </div>
   <div class="about">
