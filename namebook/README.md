@@ -3,11 +3,14 @@
 대학원 체험 박람회에서 학부생에게 보여 줄 교수진 소개 책자예요. A4 한 장에 6명씩, 사진 · 이름 · 교실 · 이메일 · 한 줄 소개 · 키워드 · 링크를 넣었어요. PDF에서도 링크를 누르면 열려요.
 
 - `namebook.pdf` — 인쇄용 (표지 1쪽 + 기초의학 7쪽 + 임상의학 5쪽)
-- `namebook.html` — 같은 내용을 브라우저로 보기 (휴대폰에서는 카드가 한 줄씩 나와요). 맨 앞에 관심 분야 테스트가 있어요(인쇄에는 안 나와요). 저장소 대문 `index.html`이 이 파일로 연결돼요
+- `namebook.html` — 화면용 페이지. [의과대학 연구실 찾기](https://lab-finder-med.knu.ac.kr/)와 같은 틀이에요: 관심 분야 테스트, 이름·교실·키워드 찾기, 구분·교실·주제 칩, 한 쪽에 12분씩 카드(넓은 화면 4·3·2줄, 휴대폰 1줄). 테스트 추천에서 교수님을 누르면 그분 카드가 있는 쪽이 열려요. 저장소 대문 `index.html`이 이 파일로 연결돼요
+- `print.html` — PDF를 만드는 A4 책자 (`build.py`가 이 파일을 Chrome으로 인쇄해요)
 - `data/profs.json` — 교수님별 내용. 고칠 때는 이 파일만 고쳐요
 - `data/quiz.json` — 테스트 질문 · 결과 유형 · 관심 주제
 - `photos/` — 사진 (3:4, 파일 이름은 이메일 아이디)
-- `build.py`, `style.css`, `quiz.js` — 만드는 코드, 디자인, 테스트 동작 (색·글꼴은 HaLab 슬라이드 갤러리 blue와 맞춤)
+- `build.py` — 위 HTML·PDF를 만드는 코드
+- `web.css`, `book.js`, `quiz.js` — 화면 디자인, 교수진 둘러보기(찾기·칩·쪽), 테스트 동작 · `style.css` — 인쇄 책자 디자인 (색·글꼴은 HaLab 슬라이드 갤러리 blue와 맞춤)
+- `img/symbol.png` — 머리 줄의 경북대학교 심볼
 - `fonts/` — Pretendard (SIL OFL, `fonts/LICENSE.txt`)
 
 ## 고치고 다시 만들기

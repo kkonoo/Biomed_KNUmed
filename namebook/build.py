@@ -1,4 +1,4 @@
-"""의과학과 교수진 이름 북: data/profs.json -> namebook.html -> namebook.pdf
+"""의과학과 교수진 이름 북: data/profs.json -> namebook.html (화면) + print.html (A4 책자) -> namebook.pdf
 
     pip install segno
     python3 build.py            # HTML + PDF (Chrome/Chromium 있으면)
@@ -94,29 +94,78 @@ def build():
     </aside>
   </div>""", "cover")
 
-    # 화면 맨 앞의 관심 분야 테스트 (인쇄에서는 숨김)
-    quiz = json.loads((ROOT / "data/quiz.json").read_text(encoding="utf-8"))
-    quiz["profs"] = [{k: p[k] for k in ("name", "rank", "dept", "photo", "keywords", "style", "topics")}
-                     | {"page": where[p["name"]]} for p in profs]
-    quiz_json = json.dumps(quiz, ensure_ascii=False).replace("</", "<\\/")
-
+    # 인쇄용 A4 책자 (PDF는 이 파일로 만들어요)
     css = (ROOT / "style.css").read_text(encoding="utf-8")
-    js = (ROOT / "quiz.js").read_text(encoding="utf-8")
-    out = f"""<!doctype html>
+    (ROOT / "print.html").write_text(f"""<!doctype html>
 <html lang="ko"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{e(meta['title'])}</title>
 <style>{css}</style></head>
 <body>
-<section class="quiz" id="quiz"></section>
-<div id="book"></div>
 {cover}
 {''.join(pages)}
-<script id="quiz-data" type="application/json">{quiz_json}</script>
+</body></html>""", encoding="utf-8")
+    print(f"print.html: {len(profs)}명, {len(pages) + 1}쪽")
+
+    # 화면용: 의과대학 연구실 찾기(lab-finder-med)와 같은 틀. 카드·찾기·칩·쪽은 book.js, 테스트는 quiz.js가 그려요
+    data = json.loads((ROOT / "data/quiz.json").read_text(encoding="utf-8"))
+    data["profs"] = [{k: p[k] for k in ("name", "rank", "dept", "kind", "line", "keywords", "links", "contact",
+                                        "style", "topics", "photo", "email")}
+                     | {"id": p["email"].split("@")[0]} for p in profs]
+    data_json = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
+    css = (ROOT / "web.css").read_text(encoding="utf-8")
+    js = "\n".join((ROOT / f).read_text(encoding="utf-8") for f in ("quiz.js", "book.js"))
+    stats = "".join(f"<div><b>{v}</b><span>{k}</span></div>" for k, v in
+                    [("교수진", len(profs)), ("기초의학", n_kind["기초"]), ("임상의학", n_kind["임상"]), ("교실·센터", n_dept)])
+    filters = "".join(f'<div class="filter"><span>{k}</span><div class="chips" id="{i}"></div></div>'
+                      for k, i in [("구분", "fKind"), ("교실", "fDept"), ("주제", "fTopic")])
+    (ROOT / "namebook.html").write_text(f"""<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{e(meta['title'])}</title>
+<meta name="description" content="{e(meta['lead'])}">
+<style>{css}</style></head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="namebook.html"><img class="mark" src="img/symbol.png" alt="경북대학교"><span><small>{e(meta['school'])}</small><b>{e(meta['title'])}</b></span></a>
+    <nav><a class="on" href="namebook.html">교수진 소개</a><a href="namebook.pdf">인쇄용 PDF</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <div>
+      <h1>{e(meta['title'])}</h1>
+      <p class="lead">{e(meta['lead'])}</p>
+      <div class="stats">{stats}</div>
+    </div>
+    <aside class="qr-box">
+      {qr_svg(meta['bookUrl'])}
+      <p class="phone"><b>휴대폰으로 보기</b></p>
+      <p class="how"><b>의과학과 홈페이지</b> <a href="{e(meta['deptUrl'])}">{e(meta['deptUrl'].split('//')[1].rstrip('/'))}</a></p>
+    </aside>
+  </section>
+
+  <section class="quiz panel" id="quiz"></section>
+
+  <section class="book" id="book">
+    <h2>교수진 둘러보기</h2>
+    <input class="search" id="q" type="search" placeholder="이름·교실·키워드로 찾기" aria-label="교수님 찾기">
+    <div class="filters">{filters}</div>
+    <p class="count" id="count"></p>
+    <div class="cards" id="cards"></div>
+    <nav class="pages" id="pages" aria-label="쪽"></nav>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap"><span>{e(meta['school'])} 의과학과</span><a href="namebook.pdf">인쇄용 PDF</a></div>
+</footer>
+
+<script id="data" type="application/json">{data_json}</script>
 <script>{js}</script>
-</body></html>"""
-    (ROOT / "namebook.html").write_text(out, encoding="utf-8")
-    print(f"namebook.html: {len(profs)}명, {len(pages) + 1}쪽")
+</body></html>""", encoding="utf-8")
+    print(f"namebook.html: {len(profs)}명")
 
 
 def pdf():
@@ -130,7 +179,7 @@ def pdf():
         return
     subprocess.run([chrome, "--headless", "--no-sandbox", "--no-pdf-header-footer",
                     "--virtual-time-budget=5000", f"--print-to-pdf={ROOT / 'namebook.pdf'}",
-                    (ROOT / "namebook.html").as_uri()], check=True, capture_output=True)
+                    (ROOT / "print.html").as_uri()], check=True, capture_output=True)
     print("namebook.pdf")
 
 
